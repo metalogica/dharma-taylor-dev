@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DharmaTailor</title>
-    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_pack_tag    'application' %>
+    <title>DharmaTailor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="root">
+      <%= yield %>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            First column
+          </div>
+          <div class="column">
+            Second column
+          </div>
+          <div class="column">
+            Third column
+          </div>
+          <div class="column">
+            Fourth column
+          </div>
+        </div>
+      </div>
+    </div>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
