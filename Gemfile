@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Generates javascript file that defines all Rails named routes as javascript helpers
+# gem 'js-routes', '~> 1.4', '>= 1.4.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
