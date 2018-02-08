@@ -1,2 +1,23 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<div class="container is-fluid">
+  <div class="columns">
+    <div class="column is-hidden-mobile">
+      <ul>
+        <%-@projects.each do |project|%>
+          <li>
+            <%=link_to project.name, project_path(project)%>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="column">
+      <div class="image-container">
+        <%=cl_image_tag "projects2_cpc9wf.jpg"%>
+      </div>
+    </div>
+    <div class="column">
+      <div class="image-container">
+        <%=cl_image_tag "projects1_cjwczw.jpg"%>
+      </div>
+    </div>
+  </div>
+</div>

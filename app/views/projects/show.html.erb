@@ -1,2 +1,61 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<div class="container is-fluid">
+  <div class="columns">
+    <div class="column is-one-third is-hidden-mobile">
+      <ul>
+        <%-@projects.each do |project|%>
+          <li>
+            <%=link_to project.name, project_path(project)%>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="column is-two-thirds">
+      <%-@project.prints.each_slice(2) do |group|%>
+        <div class="columns">
+          <%-group.each_with_index do |print, index|%>
+            <div class="column is-half">
+              <div class="image-container">
+                <%=cl_image_tag print.url%>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      <%end%>
+      <%-@project.videostills.each_slice(2) do |group|%>
+        <div class="columns">
+          <%-group.each_with_index do |videostill, index|%>
+            <div class="column is-half">
+              <div class="image-container">
+                <%=cl_image_tag videostill.url%>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      <%end%>
+      <%-@project.photos.each_slice(2) do |group|%>
+        <div class="columns">
+          <%-group.each_with_index do |photo, index|%>
+          <%-puts photo%>
+          <%-puts index%>
+            <div class="column is-half">
+              <div class="image-container">
+                <%=cl_image_tag photo.url%>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-offset-one-third">
+      <div class="description">
+        Sleeveless Jacket by Komakino
+        Styles by Jamie Bull
+        Photography by Kim Jakobsen To
+        Hair by Charlie le Mindu
+        Make-up Artist - Thomas de Kluyver
+      </div>
+    </div>
+  </div>
+</div>

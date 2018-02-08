@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'information', to: 'pages#information'
 
-  resources :projects, only: [:index, :show]
+  resource :archive, only: [:show]
+  resources :projects, only: [:index, :show], path: "featured"
 
 end

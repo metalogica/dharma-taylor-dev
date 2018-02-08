@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar" :class="[isHome ? 'is-transparent' : 'is-black']">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://image.ibb.co/cWRgM6/DTlogo_small_black.png" alt="Dharma Tailor" width="49" height="48">
+      <a class="navbar-item" href="/">
+        <img :src='brand' alt="Dharma Tailor" width="49" height="48">
       </a>
-      <a class="navbar-item">
-        Projects
+      <a class="navbar-item" href="/featured">
+        Featured
       </a>
-      <a class="navbar-item">
+      <a class="navbar-item" href="/information">
         Information
       </a>
       <div class="navbar-burger burger" data-target="navMenuColorblack">
@@ -19,7 +19,7 @@
 
     <div id="navMenuColorblack" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a class="navbar-item" href="/archive">
           Archive
         </a>
         <a class="navbar-item" href="mailto:dharmataylorcontact@gmail.com">

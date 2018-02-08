@@ -16,6 +16,10 @@ gem 'puma', '~> 3.7'
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Client library for easily using the Cloudinary service
+gem 'cloudinary', '~> 1.8', '>= 1.8.3'
+# It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids.
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 # Generates javascript file that defines all Rails named routes as javascript helpers
 # gem 'js-routes', '~> 1.4', '>= 1.4.3'
 # Use Redis adapter to run Action Cable in production

@@ -5,7 +5,7 @@
 
     <title>DharmaTailor</title>
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
+    <!-- <link rel="icon" href="/public/favicon.ico" type="image/x-icon"> -->
 
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag    'application' %>
@@ -14,6 +14,7 @@
   <body class= "<%= controller.controller_path %> <%= controller.action_name %>">
     <div id="app">
       <div class="page">
+        <div id="page-sidebar"></div>
         <div class="page-header">
           <navbar :is-home="<%=current_page?(root_path)%>"></navbar>
         </div>

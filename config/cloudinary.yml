@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ortsac
+  api_key: '314743491186617'
+  api_secret: Ih7IQFyZdZIXycOc-WHY70JvAjs
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ortsac
+  api_key: '314743491186617'
+  api_secret: Ih7IQFyZdZIXycOc-WHY70JvAjs
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ortsac
+  api_key: '314743491186617'
+  api_secret: Ih7IQFyZdZIXycOc-WHY70JvAjs
+  enhance_image_tag: true
+  static_image_support: false

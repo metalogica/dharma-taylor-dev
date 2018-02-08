@@ -5,6 +5,11 @@ module.exports = {
         required:true
      }
   },
+  computed: {
+    brand: function () {
+      return require((this.isHome ? '../../images/DTlogo-small-black.png' : '../../images/DTlogo-small-white.png'))
+    }
+  },
   mounted: function () {
 
     // Get all "navbar-burger" elements

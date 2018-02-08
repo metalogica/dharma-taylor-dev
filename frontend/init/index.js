@@ -4,12 +4,13 @@ import "bulma/bulma";
 import Vue from 'vue';
 
 // Components import
-import '../components/home/home'
 import Navbar from '../components/navbar/navbar.vue'
+
+import '../layouts/home'
+import '../layouts/projects'
 
 // Main css import
 import "./index.scss";
-
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,4 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     components: { Navbar }
   })
+
+
+  // var $target = document.getElementById("page-sidebar");
+  // console.log($target)
+  // $target.classList.toggle('active');
 });
