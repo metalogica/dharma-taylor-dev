@@ -1,0 +1,39 @@
+#page-sidebar {
+  position: fixed;
+  background-color: black;
+  height: 100vh;
+  width: 300px;
+  z-index: 9999;
+  box-shadow: 10px 0 5px -8px #333;
+  padding: 30px 15px 30px 15px;
+  display: none;
+}
+
+#page-sidebar.active {
+  display: block;
+}
+
+.page-sidebar-header {
+  width: 100%;
+
+  .image-container {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  .image-container img {
+    object-fit: contain;
+  }
+}
+
+.page-sidebar-button-close {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+}
+
+.page-sidebar-button-close {
+  position: relative;
+  float: right;
+  cursor: pointer;
+}

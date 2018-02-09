@@ -5,6 +5,7 @@ import Vue from 'vue';
 
 // Components import
 import Navbar from '../components/navbar/navbar.vue'
+import Sidebar from '../components/sidebar/sidebar.vue'
 
 import '../layouts/home'
 import '../layouts/projects'
@@ -16,11 +17,6 @@ import "./index.scss";
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
-    components: { Navbar }
+    components: { Navbar, Sidebar }
   })
-
-
-  // var $target = document.getElementById("page-sidebar");
-  // console.log($target)
-  // $target.classList.toggle('active');
 });
