@@ -1,7 +1,25 @@
 @import "normalize.css/normalize.css";
 
+@font-face {
+  font-family: "Dharma";
+  src: url('../fonts/myfont-regular-webfont.woff2') format('woff2'),
+       url('../fonts/myfont-regular-webfont.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Lineto";
+  src: url('../fonts/lineto-circular-pro-book.woff') format('woff');
+  font-weight: normal;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-  font-family: "Myfont" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Dharma" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 24px;
   color: #fff;
 }

@@ -9,6 +9,7 @@ import Sidebar from '../components/sidebar/sidebar.vue'
 
 import '../layouts/home'
 import '../layouts/projects'
+import '../layouts/information'
 
 // Main css import
 import "./index.scss";

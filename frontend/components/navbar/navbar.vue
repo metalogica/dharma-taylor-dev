@@ -5,10 +5,10 @@
         <img :src='brand' alt="Dharma Tailor" width="49" height="48">
       </a>
       <a class="navbar-item" href="/featured">
-        Featured
+        FEATURED
       </a>
       <a class="navbar-item" href="/information">
-        Information
+        INFORMATION
       </a>
       <div class="navbar-burger burger" data-target="navMenuColorblack">
         <span></span>
@@ -20,15 +20,15 @@
     <div id="navMenuColorblack" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="/archive">
-          Archive
+          ARCHIVE
         </a>
         <a class="navbar-item" href="mailto:dharmataylorcontact@gmail.com">
-          Contact
+          CONTACT
         </a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          Dharma Tailor
+          DHARMA TAYLOR
         </div>
       </div>
     </div>
