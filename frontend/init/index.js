@@ -5,7 +5,7 @@ import Vue from 'vue';
 
 // Components import
 import Navbar from '../components/navbar/navbar.vue'
-import Sidebar from '../components/sidebar/sidebar.vue'
+import Modal from '../components/modal/modal.vue'
 
 import '../layouts/home'
 import '../layouts/projects'
@@ -18,6 +18,20 @@ import "./index.scss";
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
-    components: { Navbar, Sidebar }
+    components: { Navbar, Modal},
+    data: function () {
+      return {
+        modalData: {
+          show: false,
+          image_url: ''
+        }
+      }
+    },
+    methods: {
+      showModal: function(e) {
+        this.modalData.image_url=e.srcElement.currentSrc;
+        this.modalData.show=true;
+      }
+    }
   })
 });

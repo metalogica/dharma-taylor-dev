@@ -4,4 +4,19 @@
 
 .navbar.is-transparent {
   background-color: transparent;
+
+  .navbar-item {
+    color: #fff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.navbar.is-transparent.home {
+  .navbar-item {
+    color: #000;
+  }
+
 }

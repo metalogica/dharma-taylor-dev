@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" :class="[isHome ? 'is-transparent' : 'is-black']">
+  <nav class="navbar is-fixed-top is-transparent" :class="{home: isHome}">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img :src='brand' alt="Dharma Tailor" width="49" height="48">

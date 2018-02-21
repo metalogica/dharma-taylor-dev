@@ -1,5 +1,18 @@
 body.projects.index {
-  .image-container img {
-    object-fit: contain;
+  .navigation-menu {
+    padding-top: 4rem;
+  }
+}
+
+body.projects.show {
+  .page-content {
+    font-family: "Lineto" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 5rem 0 2rem 0;
+    }
   }
 }

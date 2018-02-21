@@ -1,7 +1,87 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+archive = Project.create!({name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil})
+untitled = Project.create!({name: "'Untitled'", description: "", visibility: false, highlight: false, slug: "new-collection", project_order: 1})
+tate = Project.create!({name: "Tate", description: "Production of animation video work as part of the Late at Tate series - \nIn response to Rasheed Araeen’s 1969 sculpture.\nProjected within the Duveen Galleries in and amongst a solo led garment making workshop.", visibility: true, highlight: false, slug: "tate", project_order: 3})
+helmet_like = Project.create!({name: "Helmet Like", description: "Photography by Richard and HayleymHair and Grooming by Olivia Davey\nModel - Todd Jennings\nFootwear - Reebok Classics UK", visibility: true, highlight: false, slug: "helmet-like", project_order: 4})
+one_three_eight = Project.create!({name: "One Three Eight - Trek", description: "An amalgamation of boyhood fantasy and hi-tech warrior-ware through 3d constructed headpiece sculpted work designed and illustrated on architectural design software such as 3ds max and maya. Hues of reds and black run throughout One Three Eight Trek.", visibility: true, highlight: false, slug: "one-three-eight-trek", project_order: 5})
+london_parallel = Project.create!({name: "London - Parallel", description: "London Parallel - heavily influenced by digital culture. \nThis collection of handmade headpieces looks like a series of tribal masks from a geometric, colour-saturated future.\nThe headpieces are created using 3D software - a low polygon head shape is designed in 3ds Max, textures added in ZBrush, and then the wireframe design is put into a program that can read the facets as separate pattern pieces.\nUsing a screen printing technique in the hues of the RGB (Red, Green, Black) colour model.", visibility: true, highlight: false, slug: "london-parallel", project_order: 6})
+knockout = Project.create!({name: "Knockout", description: "Knock-Out collection as part of the ‘ARRRGH!’ Monsters in Fashion exhibit at the Benaki Museum in Athens.\nPublication “Not a Toy” Fashioning Radical Characters.\nEdited by Atopos cvc. Published by Pictoplasma, Berlin.", visibility: true, highlight: false, slug: "knockout", project_order: 7})
+trailblazing = Project.create!({name: "Trailblazing", description: "Photography by Nina Manandhar\nModel – Nimshi\nFootwear - Fila UK\nLeaves by Mother Nature", visibility: true, highlight: false, slug: "trailblazing", project_order: 2})
+insectbite = Project.create!({name: "Insectbite", description: "Sleeveless Jacket by Komakino\nStyles by Jamie Bull\nPhotography by Kim Jakobsen To\nHair by Charlie le Mindu\nMake-up Artist - Thomas de Kluyver\n Video stills captured by Dharma Taylor", visibility: true, highlight: false, slug: "insectbite", project_order: 8})
+
+Image.create!([
+  {project_id: 9, nature: "photo", url: "01-photo-Insectbite_pb3yrx"},
+  {project_id: 9, nature: "photo", url: "02-photo-Insectbite_yq5nuk"},
+  {project_id: 9, nature: "printable", url: "03-print-Insectbite_tt80gn"},
+  {project_id: 9, nature: "printable", url: "04-print-Insectbite_yssvih"},
+  {project_id: 9, nature: "videostill", url: "05-insectbite-video-still_evcy3j"},
+  {project_id: 9, nature: "videostill", url: "06-insectbite-video-still_dxwrpv"},
+  {project_id: 9, nature: "videostill", url: "07-insectbite-video-still_zjenbf"},
+  {project_id: 9, nature: "videostill", url: "08-insectbite-video-still_z7sauc"},
+  {project_id: 1, nature: "archive", url: "01-archive_nwde0h"},
+  {project_id: 1, nature: "archive", url: "02-archive_yko12e"},
+  {project_id: 1, nature: "archive", url: "03-archive_mlhkhk"},
+  {project_id: 1, nature: "archive", url: "04-archive_qwsksy"},
+  {project_id: 1, nature: "archive", url: "05-archive_lnt2kb"},
+  {project_id: 1, nature: "archive", url: "06-archive_ayc6uo"},
+  {project_id: 1, nature: "archive", url: "07-archive_dtckqt"},
+  {project_id: 1, nature: "archive", url: "08-archive_pfse0u"},
+  {project_id: 1, nature: "archive", url: "09-archive_nylak6"},
+  {project_id: 1, nature: "archive", url: "10-archive_mchdan"},
+  {project_id: 1, nature: "archive", url: "11-archive_hvj3hl"},
+  {project_id: 1, nature: "archive", url: "12-archive_p5r6va"},
+  {project_id: 1, nature: "archive", url: "13-archive_x7omgu"},
+  {project_id: 1, nature: "archive", url: "14-archive_f25nul"},
+  {project_id: 1, nature: "archive", url: "15-archive_pycxmv"},
+  {project_id: 1, nature: "archive", url: "16-archive_cmyzeh"},
+  {project_id: 1, nature: "archive", url: "17-archive_xnnwf3"},
+  {project_id: 1, nature: "archive", url: "18-archive_ayqr32"},
+  {project_id: 1, nature: "archive", url: "19-archive_pbq7yl"},
+  {project_id: 1, nature: "archive", url: "20-archive_g5luar"},
+  {project_id: 1, nature: "archive", url: "21-archive_pposjl"},
+  {project_id: 1, nature: "archive", url: "22-archive_ayspf5"},
+  {project_id: 1, nature: "archive", url: "23-archive_xukm02"},
+  {project_id: 1, nature: "archive", url: "24-archive_sxi8pz"},
+  {project_id: 7, nature: "videostill", url: "05-videostill-Knockout_ph8jpl"},
+  {project_id: 7, nature: "videostill", url: "04-videostill-Knockout_j1pxke"},
+  {project_id: 7, nature: "videostill", url: "03-videostill-Knockout_ph9sg1"},
+  {project_id: 7, nature: "videostill", url: "02-videostill-Knockout_xzakhd"},
+  {project_id: 7, nature: "printable", url: "07-print-Knockout_oacszw"},
+  {project_id: 7, nature: "printable", url: "06-print-Knockout_wrtdun"},
+  {project_id: 7, nature: "photo", url: "01-photo-Knockout_usmwkc"},
+  {project_id: 3, nature: "videostill", url: "08-videosill-tate_jn990x"},
+  {project_id: 3, nature: "videostill", url: "07-videosill-tate_zpxcwi"},
+  {project_id: 3, nature: "videostill", url: "06-videosill-tate_owm3jd"},
+  {project_id: 3, nature: "videostill", url: "05-videosill-tate_tkjaok"},
+  {project_id: 3, nature: "videostill", url: "04-videosill-tate_kq3vqv"},
+  {project_id: 3, nature: "videostill", url: "03-videosill-tate_fteysa"},
+  {project_id: 3, nature: "videostill", url: "02-videosill-tate_rajhbf"},
+  {project_id: 3, nature: "videostill", url: "01-videosill-tate_s3mptd"},
+  {project_id: 6, nature: "videostill", url: "07-videostill-London-Parallel_p0ko44"},
+  {project_id: 6, nature: "videostill", url: "06-videostill-London-Parallel_anx2ym"},
+  {project_id: 6, nature: "videostill", url: "05-videostill-London-Parallel_chbfke"},
+  {project_id: 6, nature: "videostill", url: "04-videostill-London-Parallel_qvlqbq"},
+  {project_id: 6, nature: "videostill", url: "03-videostill-London-Parallel_ao3fsb"},
+  {project_id: 6, nature: "photo", url: "02-photo-London-Parallel_eayw3m"},
+  {project_id: 6, nature: "photo", url: "01-photo-London-Parallel_sglyqz"},
+  {project_id: 5, nature: "photo", url: "05-photo-138trek_qdxwns"},
+  {project_id: 5, nature: "photo", url: "04-photo-138trek_tyxs3h"},
+  {project_id: 5, nature: "photo", url: "03-photo-138trek_vejbta"},
+  {project_id: 5, nature: "photo", url: "02-photo-138trek_cafazz"},
+  {project_id: 5, nature: "photo", url: "01-photo-138trek_tviwem"},
+  {project_id: 4, nature: "printable", url: "10-print-Helmet-like_c2c8lr"},
+  {project_id: 4, nature: "printable", url: "09-print-Helmet-like_t9n8r4"},
+  {project_id: 4, nature: "photo", url: "08-photo-Helmet-like_qx7enp"},
+  {project_id: 4, nature: "photo", url: "07-photo-Helmet-like_se2lxb"},
+  {project_id: 4, nature: "photo", url: "06-photo-Helmet-like_pawztv"},
+  {project_id: 4, nature: "photo", url: "05-photo-Helmet-like_artxjq"},
+  {project_id: 4, nature: "photo", url: "04-photo-Helmet-like_hnnyws"},
+  {project_id: 4, nature: "photo", url: "03-photo-Helmet-like_auogvm"},
+  {project_id: 4, nature: "photo", url: "02-photo-Helmet-like_vu0ecw"},
+  {project_id: 4, nature: "photo", url: "01-photo-Helmet-like_ez9ctm"},
+  {project_id: 8, nature: "printable", url: "06-print-Trailblazing_q8nhyu"},
+  {project_id: 8, nature: "printable", url: "05-print-Trailblazing_dyejjr"},
+  {project_id: 8, nature: "photo", url: "04-photo-Trailblazing_ifcjtd"},
+  {project_id: 8, nature: "photo", url: "03-photo-Trailblazing_zzfyty"},
+  {project_id: 8, nature: "photo", url: "02-photo-Trailblazing_xf0ubc"},
+  {project_id: 8, nature: "photo", url: "01-photo-Trailblazing_yz248z"}
+])

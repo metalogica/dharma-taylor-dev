@@ -1,10 +1,16 @@
-<div class="container is-fluid">
-  <%-@archive.in_groups_of(6) do |group| %>
+<div class="container">
+  <%-@archive.each_slice(6) do |group| %>
     <div class="columns">
-      <%-group.each do |photo|%>
-        <div class="column is-2">
-          <div class="image-container">
-            <%=cl_image_tag photo.url%>
+      <%-group.each_slice(3) do |slice|%>
+        <div class="column is-half">
+          <div class="columns is-mobile">
+            <%-slice.each do |photo|%>
+              <div class="column is-one-third ">
+                <div class="image-container" @click="showModal">
+                  <%=cl_image_tag photo.url%>
+                </div>
+              </div>
+            <%end%>
           </div>
         </div>
       <%end%>

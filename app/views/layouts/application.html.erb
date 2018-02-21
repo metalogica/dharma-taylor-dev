@@ -3,20 +3,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DharmaTailor</title>
-
-    <!-- <link rel="icon" href="/public/favicon.ico" type="image/x-icon"> -->
+    <title>DHARMATAYLOR</title>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag    'application' %>
   </head>
-
   <body class= "<%= controller.controller_path %> <%= controller.action_name %>">
     <div id="app">
       <div class="page">
-        <sidebar></sidebar>
         <div class="page-header">
           <navbar :is-home="<%=current_page?(root_path)%>"></navbar>
+          <modal :modal-data="modalData" @close="modalData.show = false"></modal>
         </div>
         <div class="page-content">
           <%= yield %>
