@@ -45,6 +45,11 @@ body {
   // box-sizing: border-box;
 }
 
-.page-content .container {
+.page-content .container,
+.page-content .container-fluid {
   padding-top: 5rem;
+}
+
+.form-row > .col, .form-row > [class*="col-"] {
+    padding-bottom: 15px;
 }

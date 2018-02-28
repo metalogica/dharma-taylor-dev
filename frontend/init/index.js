@@ -1,8 +1,8 @@
-// Bulma import
-import "bulma/bulma";
 // Vue import
 import Vue from 'vue';
 
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css';
 // Components import
 import Navbar from '../components/navbar/navbar.vue'
 import Modal from '../components/modal/modal.vue'
@@ -10,10 +10,12 @@ import Modal from '../components/modal/modal.vue'
 import '../layouts/home'
 import '../layouts/projects'
 import '../layouts/information'
+import '../layouts/archive'
 
 // Main css import
 import "./index.scss";
 
+Vue.use(BootstrapVue);
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({

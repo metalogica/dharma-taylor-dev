@@ -1,5 +1,5 @@
 body.archives.show {
-  .image-container img {
-    object-fit: contain;
+  img:hover {
+    cursor: pointer;
   }
 }

@@ -1,27 +1,19 @@
-<div class="container is-fluid">
-  <div class="columns is-mobile">
-    <div class="column is-10-mobile is-offset-1-mobile">
-      <div class="columns is-variable is-1">
-        <div class="column is-one-third">
-          <ul class= "navigation-menu">
-            <%-@projects.each do |project|%>
-              <li>
-                <%=link_to project.name.upcase, project_path(project)%>
-              </li>
-            <%end%>
-          </ul>
-        </div>
-        <div class="column is-one-third">
-          <div class="image-container">
-            <%=cl_image_tag "01-indexpage_zfje0e"%>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="image-container">
-            <%=cl_image_tag "02-indexpage_pa9url"%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<b-container fluid>
+  <b-form-row>
+    <b-col sm="12" lg="4">
+      <ul class= "navigation-menu">
+        <%-@projects.each do |project|%>
+          <li>
+            <%=link_to project.name.upcase, project_path(project)%>
+          </li>
+        <%end%>
+      </ul>
+    </b-col>
+    <b-col sm="12" lg="4">
+      <b-img src="<%=cl_image_path "01-indexpage_zfje0e"%>" fluid></b-img>
+    </b-col>
+    <b-col sm="12" lg="4">
+      <b-img src="<%=cl_image_path "02-indexpage_pa9url"%>" fluid></b-img> 
+    </b-col>
+  </b-form-row>
+</b-container>

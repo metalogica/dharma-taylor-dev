@@ -1,19 +1,11 @@
-<div class="container">
+<b-container fluid>
   <%-@archive.each_slice(6) do |group| %>
-    <div class="columns">
-      <%-group.each_slice(3) do |slice|%>
-        <div class="column is-half">
-          <div class="columns is-mobile">
-            <%-slice.each do |photo|%>
-              <div class="column is-one-third ">
-                <div class="image-container" @click="showModal">
-                  <%=cl_image_tag photo.url%>
-                </div>
-              </div>
-            <%end%>
-          </div>
-        </div>
+    <b-form-row>
+      <%-group.each do |photo|%>
+        <b-col cols="4" sm="4" lg="2">
+          <b-img src="<%=cl_image_path photo.url%>" fluid @click="showModal"></b-img>
+        </b-col>
       <%end%>
-    </div>
+    </b-form-row>
   <%end%>
-</div>
+</b-container>

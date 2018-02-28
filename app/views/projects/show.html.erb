@@ -1,46 +1,36 @@
-<div class="container">
-  <div class="columns is-mobile">
-    <div class="column is-10 is-offset-1">
-      <%-@project.photos.each_slice(2) do |group|%>
-        <div class="columns is-variable is-1">
-          <%-group.each do |photo|%>
-            <div class="column is-half">
-              <div class="image-container">
-                <%=cl_image_tag photo.url%>
-              </div>
-            </div>
-          <%end%>
-        </div>
+<b-container >
+  <%-@project.photos.each_slice(2) do |group|%>
+    <b-form-row class="justify-content-md-center">
+      <%-group.each do |photo|%>
+        <b-col sm="12" md="5">
+          <b-img src="<%=cl_image_path photo.url%>" fluid></b-img>
+        </b-col>
       <%end%>
-      <%-@project.prints.each do |print|%>
-        <div class="columns">
-          <div class="column">
-            <div class="image-container">
-              <%=cl_image_tag print.url%>
-            </div>
-          </div>
-        </div>
-      <%end%>
-      <%-@project.videostills.each do |videostill|%>
-        <div class="columns">
-          <div class="column">
-            <div class="image-container">
-              <%=cl_image_tag videostill.url%>
-            </div>
-          </div>
-        </div>
-      <%end%>
-      <div class="columns">
-        <div class="column">
-          <div class="description is-pulled-right">
-            <%= simple_format @project.description %>
-          </div>
-        </div>
+    </b-form-row>
+  <%end%>
+  <b-form-row>
+    <%-@project.prints.each do |print|%>
+      <b-col cols="10" offset="1">
+        <b-img src="<%=cl_image_path print.url%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
+    <%-@project.videostills.each do |videostill|%>
+      <b-col cols="10" offset="1">
+        <b-img src="<%=cl_image_path videostill.url%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
+    <b-col>
+      <div class="description text-right">
+        <%= simple_format @project.description %>
       </div>
-      <div class="pagination">
-        <%=link_to "⟵", project_path(@project.previous) if !@project.previous.nil?%>
-        <%=link_to "⟶", project_path(@project.next) if !@project.next.nil?%>
-      </div>
-    </div>
+    </b-col>
+  </b-form-row>
+  <div class="pagination">
+    <%=@project.previous.nil? ? raw("<span></span>") : link_to("⟵", project_path(@project.previous))%>
+    <%=@project.next.nil? ? raw("<span></span>") : link_to("⟶", project_path(@project.next))%>
   </div>
-</div>
+</b-container>
