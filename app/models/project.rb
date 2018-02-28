@@ -5,8 +5,10 @@ class Project < ApplicationRecord
   scope :ordered, -> { where(visibility: true).order(:project_order) }
 
   has_many :images
-  has_many :prints, -> {printable}, class_name: "Image"
   has_many :photos, -> {photo}, class_name: "Image"
+  has_many :portrait_photos, -> {photo.portrait}, class_name: "Image"
+  has_many :landscape_photos, -> {photo.landscape}, class_name: "Image"
+  has_many :prints, -> {printable}, class_name: "Image"
   has_many :videostills, -> {videostill}, class_name: "Image"
 
   def next

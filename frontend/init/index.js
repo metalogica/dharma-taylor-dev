@@ -1,7 +1,7 @@
 // Vue import
 import Vue from 'vue';
 
-import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 // Components import
 import Navbar from '../components/navbar/navbar.vue'

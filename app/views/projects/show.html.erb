@@ -1,32 +1,43 @@
 <b-container >
-  <%-@project.photos.each_slice(2) do |group|%>
+  <%-@project.portrait_photos.each_slice(2) do |group|%>
     <b-form-row class="justify-content-md-center">
-      <%-group.each do |photo|%>
+      <%-group.each do |portrait_photo|%>
         <b-col sm="12" md="5">
-          <b-img src="<%=cl_image_path photo.url%>" fluid></b-img>
+          <b-img src="<%=cl_image_path portrait_photo.url%>" fluid></b-img>
         </b-col>
       <%end%>
     </b-form-row>
   <%end%>
   <b-form-row>
+    <%-@project.landscape_photos.each do |landscape_photo|%>
+      <b-col sm="12" md="10" offset-md="1">
+        <b-img src="<%=cl_image_path landscape_photo.url%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
     <%-@project.prints.each do |print|%>
-      <b-col cols="10" offset="1">
+      <b-col sm="12" md="10" offset-md="1">
         <b-img src="<%=cl_image_path print.url%>" fluid></b-img>
       </b-col>
     <%end%>
   </b-form-row>
   <b-form-row>
     <%-@project.videostills.each do |videostill|%>
-      <b-col cols="10" offset="1">
+      <b-col sm="12" md="10" offset-md="1">
         <b-img src="<%=cl_image_path videostill.url%>" fluid></b-img>
       </b-col>
     <%end%>
   </b-form-row>
   <b-form-row>
-    <b-col>
-      <div class="description text-right">
-        <%= simple_format @project.description %>
-      </div>
+    <b-col sm="12" md="10" offset-md="1">
+      <b-form-row>
+        <b-col cols="6" offset="6">
+          <div class="description float-right">
+            <%= simple_format @project.description %>
+          </div>
+        </b-col>
+      </b-form-row>
     </b-col>
   </b-form-row>
   <div class="pagination">
