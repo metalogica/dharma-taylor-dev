@@ -1,7 +1,11 @@
 <template>
   <b-navbar toggleable="md"  fixed="top" :class='{home: isHome}'>
-    <b-navbar-brand href="/">
+    <b-navbar-brand href="/" class="d-none d-md-block" :class='{"d-block": isHome}'>
       <img :src='brand' alt="Dharma Tailor" width="49" height="48">
+    </b-navbar-brand>
+
+    <b-navbar-brand class="d-md-none">
+      <breadcrumb></breadcrumb>
     </b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">

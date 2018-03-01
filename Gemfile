@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'cloudinary', '~> 1.8', '>= 1.8.3'
 # It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids.
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+#BreadcrumbsOnRails is a simple Ruby on Rails plugin for creating and managing a breadcrumb navigation for a Rails project
+gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
 # Generates javascript file that defines all Rails named routes as javascript helpers
 # gem 'js-routes', '~> 1.4', '>= 1.4.3'
 # Use Redis adapter to run Action Cable in production

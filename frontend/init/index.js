@@ -3,10 +3,13 @@ import Vue from 'vue';
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
+
 // Components import
 import Navbar from '../components/navbar/navbar.vue'
 import Modal from '../components/modal/modal.vue'
+import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 
+// Layouts import
 import '../layouts/home'
 import '../layouts/projects'
 import '../layouts/information'
@@ -16,6 +19,8 @@ import '../layouts/archive'
 import "./index.scss";
 
 Vue.use(BootstrapVue);
+Vue.component('breadcrumb', Breadcrumb);
+
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
