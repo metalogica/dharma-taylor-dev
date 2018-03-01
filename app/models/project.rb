@@ -12,10 +12,10 @@ class Project < ApplicationRecord
   has_many :videostills, -> {videostill}, class_name: "Image"
 
   def next
-    self.class.where("project_order > ? AND visibility = true", project_order).first
+    self.class.ordered.where("project_order > ? AND visibility = true", project_order).first
   end
 
   def previous
-    self.class.where("project_order < ? AND visibility = true", project_order).last
+    self.class.ordered.where("project_order < ? AND visibility = true", project_order).last
   end
 end
