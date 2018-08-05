@@ -1,11 +1,38 @@
 body.projects.index {
-  .navigation-menu {
-    padding-top: 4rem;
-    padding-left: 0;
-    list-style: none;
+  // .navigation-menu {
+  //   padding-top: 4rem;
+  //   padding-left: 0;
+  //   list-style: none;
+  //
+  //   a:hover {
+  //     text-decoration: none;
+  //   }
+  // }
 
-    a:hover {
-      text-decoration: none;
+  .project-info {
+    position: absolute;
+    bottom: 8%;
+    right: 9%;
+
+    .name {
+      font-size: 1.375em;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 0.6875em;
+        line-height: 0.6875em;
+      }
+    }
+
+    .description {
+      display: block;
+      font-family: "Lineto" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.4em;
+      text-align: right;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 0.25em;
+        line-height: 0.25em;
+      }
     }
   }
 }
