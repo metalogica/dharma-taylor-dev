@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if current_page?('/') %>
+      <!-- Google Analytics -->
+      <script>
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49026503-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <!-- End Google Analytics -->
+      <meta name="google-site-verification" content="m6SIurjhMppO8efH6qJ1_zMGe-gvh0rlL_n90ivY11I" /> <meta charset="UTF-8">
+    <%end%>
     <meta name="description" content="London-born​ fashion designer​ Dharma Taylor graduated from Rochester University and the London College of Fashion with a masters in menswear. She has worked on various artistic fashion projects which have been shown by a variety of national and international organisations including the Benaki Museum in Athens, the V&A and Tate Britain.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>DHARMA TAYLOR <%=@title%></title>
 
     <%= csrf_meta_tags %>
-    <%= stylesheet_pack_tag    'application' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
   <body class= "<%= controller.controller_path %> <%= controller.action_name %>">
     <div id="app">
