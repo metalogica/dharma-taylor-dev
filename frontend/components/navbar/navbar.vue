@@ -14,7 +14,6 @@
         <b-nav-item href="/featured">FEATURED</b-nav-item>
         <b-nav-item href="/information">INFORMATION</b-nav-item>
         <b-nav-item href="/archive">ARCHIVE</b-nav-item>
-        <b-nav-item href="mailto:dharmataylorcontact@gmail.com">CONTACT</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->

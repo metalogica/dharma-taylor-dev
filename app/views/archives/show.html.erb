@@ -3,7 +3,7 @@
     <b-form-row>
       <%-group.each do |photo|%>
         <b-col cols="4" sm="4" lg="2">
-          <b-img src="<%=cl_image_path photo.url%>" fluid @click="showModal"></b-img>
+          <b-img src="<%=cl_image_path photo.url%>" alt="<%="#{photo.url.split('_').first}"%>" fluid @click="showModal"></b-img>
         </b-col>
       <%end%>
     </b-form-row>

@@ -10,7 +10,6 @@ Project.create!([
   {name: "Insectbite", description: "Sleeveless Jacket by Komakino\nStyles by Jamie Bull\nPhotography by Kim Jakobsen To\nHair by Charlie le Mindu\nMake-up Artist - Thomas de Kluyver\n Video stills captured by Dharma Taylor", visibility: true, highlight: false, slug: "insectbite", project_order: 8}
 ])
 
-
 Image.create!([
   {project_id: 1, nature: "archive", url: "01-archive_nwde0h", format: "landscape"},
   {project_id: 1, nature: "archive", url: "02-archive_yko12e", format: "landscape"},
@@ -36,6 +35,17 @@ Image.create!([
   {project_id: 1, nature: "archive", url: "22-archive_ayspf5", format: "landscape"},
   {project_id: 1, nature: "archive", url: "23-archive_xukm02", format: "landscape"},
   {project_id: 1, nature: "archive", url: "24-archive_sxi8pz", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "25-archive_nnlx0m", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "26-archive_v98m3j", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "27-archive_enhvbt", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "28-archive_zkebmb", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "30-archive_alaoim", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "31-archive_lh03rv", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "32-archive_vxzwo3", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "33-archive_ino8ew", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "34-archive_opfc36", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "35-archive_qhlrss", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "36-archive_wmvw8a", format: "landscape"},
   {project_id: 9, nature: "photo", url: "01-photo-Insectbite_pb3yrx", format: "portrait"},
   {project_id: 9, nature: "photo", url: "02-photo-Insectbite_yq5nuk", format: "portrait"},
   {project_id: 5, nature: "photo", url: "05-photo-138trek_qdxwns", format: "landscape"},

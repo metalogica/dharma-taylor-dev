@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% if current_page?('/') %>
-      <!-- Google Analytics -->
-      <script>
+    <!-- Google Analytics -->
+    <script>
 
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-49026503-1', 'auto');
-        ga('send', 'pageview');
-      </script>
-      <!-- End Google Analytics -->
-      <meta name="google-site-verification" content="m6SIurjhMppO8efH6qJ1_zMGe-gvh0rlL_n90ivY11I" /> <meta charset="UTF-8">
-    <%end%>
-    <meta name="description" content="London-born​ fashion designer​ Dharma Taylor graduated from Rochester University and the London College of Fashion with a masters in menswear. She has worked on various artistic fashion projects which have been shown by a variety of national and international organisations including the Benaki Museum in Athens, the V&A and Tate Britain.">
+      ga('create', 'UA-49026503-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <meta name="google-site-verification" content="m6SIurjhMppO8efH6qJ1_zMGe-gvh0rlL_n90ivY11I" /> <meta charset="UTF-8">
+    <!-- End Google Analytics -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/97/three.min.js"></script>
+		<script src="/vendor/three/assets/OrbitControls.js"></script>
+		<script src="/vendor/three/assets/OBJLoader.js"></script>
+		<script src="/vendor/three/assets/MTLLoader.js"></script> -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DHARMA TAYLOR <%=@title%></title>
+    <%= display_meta_tags :site => 'Dharma Taylor' %>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag 'application' %>
@@ -34,6 +38,42 @@
         <div class="page-content">
           <%= yield %>
         </div>
+        <% unless current_page?(root_path) %>
+          <div class="page-footer">
+            <div class="container d-flex justify-content-between">
+              <ul>
+                <li>© 2018 DHARMA TAYLOR</li>
+                <li>All rights reserved.</li>
+              </ul>
+              <ul>
+                <li>+44 (0) 754 713 68 08</li>
+                <li>studio@dharmataylor.com</li>
+                <li>London, UK</li>
+              </ul>
+              <div class="d-flex justify-content-between">
+                <ul>
+                  <li>
+                    <a href="/archive">archive</a>
+                  </li>
+                  <li>
+                    <a href="/information">information</a>
+                  </li>
+                  <li>
+                    <a href="mailto:dharmataylorcontact@gmail.com">contact</a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="https://www.instagram.com/dharmataylor/?hl=en" target="_blank" >ig/</a>
+                  </li>
+                  <li>
+                    <a href="https://dharma-taylor.tumblr.com/" target="_blank" >tb/</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <%= javascript_pack_tag 'application' %>
