@@ -11,14 +11,14 @@
     <b-collapse is-nav id="nav_collapse">
 
       <b-navbar-nav>
-        <b-nav-item href="/featured">FEATURED</b-nav-item>
-        <b-nav-item href="/information">INFORMATION</b-nav-item>
-        <b-nav-item href="/archive">ARCHIVE</b-nav-item>
+        <b-nav-item href="/featured" :class='{"d-none": isCurrentPath("/featured"), "d-md-block": isCurrentPath("/featured")}'>FEATURED</b-nav-item>
+        <b-nav-item href="/information" :class='{"d-none": isCurrentPath("/information"), "d-md-block": isCurrentPath("/information")}'>INFORMATION</b-nav-item>
+        <b-nav-item href="/archive" :class='{"d-none": isCurrentPath("/archive"), "d-md-block": isCurrentPath("/archive")}'>ARCHIVE</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-text>DHARMA TAYLOR</b-nav-text>
+        <b-nav-item href="/">DHARMA TAYLOR</b-nav-item>
       </b-navbar-nav>
 
     </b-collapse>

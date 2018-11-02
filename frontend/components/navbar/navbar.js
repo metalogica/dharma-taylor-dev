@@ -9,5 +9,11 @@ module.exports = {
     brand: function () {
       return require((this.isHome ? '../../images/DTlogo-small-black.png' : '../../images/DTlogo-small-white.png'))
     }
+  },
+  methods: {
+    isCurrentPath: function (path) {
+      console.log(location.pathname === path)
+      return location.pathname === path
+    }
   }
 }

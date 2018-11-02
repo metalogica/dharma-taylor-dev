@@ -25,8 +25,8 @@ class CreateMetaTagsData < ActiveRecord::Migration[5.1]
     mt.save
 
     mt = MetaTag.find_by_page('/featured/') || MetaTag.new(page: '/featured')
-    mt.title = 'Work & Clients'
-    mt.keywords = 'Work, Clients, Where we are'
+    mt.title = 'Featured'
+    mt.keywords = 'Featured'
     mt.description = 'We design and develop web and mobile applications for the financial, telecoms, health, education, leisure, social, travel and ecommerce sectors'
     mt.save
 

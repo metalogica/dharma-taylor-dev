@@ -39,6 +39,7 @@ Image.create!([
   {project_id: 1, nature: "archive", url: "26-archive_v98m3j", format: "landscape"},
   {project_id: 1, nature: "archive", url: "27-archive_enhvbt", format: "landscape"},
   {project_id: 1, nature: "archive", url: "28-archive_zkebmb", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "29-archive_gqop6z", format: "landscape"},
   {project_id: 1, nature: "archive", url: "30-archive_alaoim", format: "landscape"},
   {project_id: 1, nature: "archive", url: "31-archive_lh03rv", format: "landscape"},
   {project_id: 1, nature: "archive", url: "32-archive_vxzwo3", format: "landscape"},
