@@ -73,7 +73,7 @@ class CreateMetaTagsData < ActiveRecord::Migration[5.1]
     mt.save
 
     mt = MetaTag.find_by_page('/featured') || MetaTag.new(page: '/featured')
-    mt.title = 'Work & Clients'
+    mt.title = 'Featured'
     mt.keywords = 'Work, Clients, Where we are'
     mt.description = 'Discover Dharma Taylor’s latest projects and browse the artistic brand\'s classics.'
     mt.save
