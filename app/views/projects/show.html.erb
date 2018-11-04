@@ -11,7 +11,7 @@
   <b-form-row>
     <%-@project.landscape_photos.each do |landscape_photo|%>
       <b-col sm="12" md="10" offset-md="1">
-        <b-img src="<%=cl_image_path landscape_photo.url%>" alt="<%="#{portrait_photo.url.split('_').first}"%>" fluid></b-img>
+        <b-img src="<%=cl_image_path landscape_photo.url%>" alt="<%="#{landscape_photo.url.split('_').first}"%>" fluid></b-img>
       </b-col>
     <%end%>
   </b-form-row>
