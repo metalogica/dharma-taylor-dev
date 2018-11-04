@@ -82,5 +82,5 @@ production:
   <<: *default
   database: dharma_tailor_production
   username: dharma_tailor
-  password: <%= ENV['DHARMA_TAILOR_DATABASE_PASSWORD'] %>
+  password: '123456'
   host: localhost
