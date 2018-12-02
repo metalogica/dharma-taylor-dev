@@ -36,10 +36,20 @@ body {
 
 .page-footer {
   font-family: 'lineto', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 300px;
+  min-height: 300px;
   background-color: #09090a;
   display: flex;
   align-items: center;
+}
+
+.page-footer .container {
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 576px) {
+    display: block;
+    text-align: center;
+  }
 }
 
 .page-footer ul {
@@ -52,10 +62,10 @@ body {
   }
 
   @media only screen and (max-width: 576px) {
-    display: inline-block !important;
+    margin: 40px 0;
   }
-}
 
+}
 .page {
   display: flex;
   flex-flow: column;
