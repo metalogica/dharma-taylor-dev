@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var animate = function () {
     if (obj) {
-      obj.rotation.z += 0.005;
+      // obj.rotation.z += 0.005;
     }
   	requestAnimationFrame( animate );
     renderer.render(scene, camera);
