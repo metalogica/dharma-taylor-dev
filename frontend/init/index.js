@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var light = new THREE.AmbientLight( 0xffffff ); // soft white light
   scene.add( light );
 
-  var axesHelper = new THREE.AxesHelper( 5 );
-  scene.add( axesHelper );
+  var obj = null;
 
   var mtlLoader = new THREE.MTLLoader();
   mtlLoader.setTexturePath('/vendor/three/assets/');
@@ -69,17 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/vendor/three/assets/');
-    objLoader.load('model4.obj', function (object) {
+    objLoader.load('model5.obj', function (object) {
 
-        scene.add(object);
+      obj = object;
 
-        camera.position.x = 0;
-        camera.position.y = 0;
-        camera.position.z = 250;
+      scene.add(object);
+
+      camera.position.x = 0;
+      camera.position.y = 0;
+      camera.position.z = 250;
+
     });
   });
 
   var animate = function () {
+    if (obj) {
+      obj.rotation.z += 0.005;
+    }
   	requestAnimationFrame( animate );
     renderer.render(scene, camera);
   };
