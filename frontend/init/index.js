@@ -10,7 +10,6 @@ import Modal from '../components/modal/modal.vue'
 import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 
 // Layouts import
-import '../layouts/home'
 import '../layouts/projects'
 import '../layouts/information'
 import '../layouts/archive'
@@ -44,60 +43,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Three js
 
-  // var scene = new THREE.Scene();
-  //
-  // var container = document.getElementsByClassName("page-content")[0];
-  //
-  // var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-  // camera.position.z = 200;
-  //
-  // var renderer = new THREE.WebGLRenderer();
-  // renderer.setSize( window.innerWidth, window.innerHeight );
-  // container.appendChild(renderer.domElement);
-  //
-  // var controls = new THREE.OrbitControls(camera, renderer.domElement);
-  // controls.enableDamping = true;
-  // controls.dampingFactor = 0.25;
-  // controls.enableZoom = true;
-  //
-  // var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-  // keyLight.position.set(-100, 0, 100);
-  //
-  // var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-  // fillLight.position.set(100, 0, 100);
-  //
-  // var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-  // backLight.position.set(100, 0, -100).normalize();
-  //
-  // scene.add(keyLight);
-  // scene.add(fillLight);
-  // scene.add(backLight);
-  //
-  // var mtlLoader = new THREE.MTLLoader();
-  // mtlLoader.setTexturePath('/vendor/three/assets/');
-  // mtlLoader.setPath('/vendor/three/assets/');
-  // mtlLoader.load('dharma_red_green.mtl', function (materials) {
-  //
-  //     materials.preload();
-  //
-  //     var objLoader = new THREE.OBJLoader();
-  //     objLoader.setMaterials(materials);
-  //     objLoader.setPath('/vendor/three/assets/');
-  //     objLoader.load('dharma_red_green.obj', function (object) {
-  //
-  //         scene.add(object);
-  //         object.positionn.y -= 60;
-  //
-  //     });
-  //
-  // });
-  //
-  // var animate = function () {
-  // 	requestAnimationFrame( animate );
-  // 	controls.update();
-  // 	renderer.render(scene, camera);
-  // };
-  //
-  // animate();
+  var scene = new THREE.Scene();
+
+  var container = document.getElementById("3d-container");
+
+  var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 1, 2000 );
+
+  var renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerWidth, window.innerHeight );
+  container.appendChild(renderer.domElement);
+
+  var light = new THREE.AmbientLight( 0xffffff ); // soft white light
+  scene.add( light );
+
+  var axesHelper = new THREE.AxesHelper( 5 );
+  scene.add( axesHelper );
+
+  var mtlLoader = new THREE.MTLLoader();
+  mtlLoader.setTexturePath('/vendor/three/assets/');
+  mtlLoader.setPath('/vendor/three/assets/');
+  mtlLoader.load('newdharma4.mtl', function (materials) {
+
+    materials.preload();
+
+    var objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    objLoader.setPath('/vendor/three/assets/');
+    objLoader.load('model4.obj', function (object) {
+
+        scene.add(object);
+
+        camera.position.x = 0;
+        camera.position.y = 0;
+        camera.position.z = 250;
+    });
+  });
+
+  var animate = function () {
+  	requestAnimationFrame( animate );
+    renderer.render(scene, camera);
+  };
+
+  animate();
 
 });
