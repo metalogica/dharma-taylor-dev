@@ -9,8 +9,6 @@ class DashboardController < ApplicationController
   end
 
   def information
-    @projects = Project.ordered
-    set_title
   end
 
   def footer
