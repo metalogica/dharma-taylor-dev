@@ -1,3 +1,5 @@
+User.create!(email: 'rjarram@me.com', password: 'catnip123')
+
 Project.create!([
   {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
   {name: "'Untitled'", description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
