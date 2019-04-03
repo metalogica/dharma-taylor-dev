@@ -4,7 +4,18 @@ class ApplicationController < ActionController::Base
 
   before_action :load_page_meta_tag, except: :internal_ip
 
+  # Renders layout for Devise authentication page
+  layout :layout_by_resource
+
   private
+
+  def layout_by_resource
+    if devise_controller?
+      "authentication"
+    else
+      "application"
+    end
+  end
 
   def load_page_meta_tag
     page_path = request.path

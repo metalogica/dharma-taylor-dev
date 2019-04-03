@@ -71,6 +71,11 @@ body {
   flex-flow: column;
   min-height: 100vh;
   width: 100%;
+  .dashboard-style {
+    background-color: white !important;
+    font-family: 'Circular';
+    color: black;
+  }
 }
 
 .page .page-content {

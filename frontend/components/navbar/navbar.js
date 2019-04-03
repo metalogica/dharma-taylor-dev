@@ -13,6 +13,6 @@ module.exports = {
   methods: {
     isCurrentPath: function (path) {
       return location.pathname === path
-    }
+    },
   }
 }

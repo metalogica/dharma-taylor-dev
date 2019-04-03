@@ -8,17 +8,24 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from '../components/navbar/navbar.vue'
 import Modal from '../components/modal/modal.vue'
 import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
+import Dashboard from '../components/dashboard/dashboard.vue'
+import Controller from '../components/controller/controller.vue'
+import Searchbar from '../components/searchbar/searchbar.vue'
 
 // Layouts import
 import '../layouts/projects'
 import '../layouts/information'
 import '../layouts/archive'
+import '../layouts/dashboard'
 
 // Main css import
 import "./index.scss";
 
 Vue.use(BootstrapVue);
 Vue.component('breadcrumb', Breadcrumb);
+Vue.component('dashboard', Dashboard);
+Vue.component('controller', Controller);
+Vue.component('searchbar', Searchbar);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
