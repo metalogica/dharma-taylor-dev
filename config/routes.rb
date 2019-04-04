@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'projects#admin_projects_index', as: 'admin_projects_index'
 
   # Devise routes for user authentication
-  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
+  devise_for :users, controllers: { registrations: "registrations" }
 
   # Archives Controller
   # resources :archives, only: [:index, :show, :edit, :update, :destroy]
