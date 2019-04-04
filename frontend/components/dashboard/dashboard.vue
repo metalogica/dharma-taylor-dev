@@ -7,7 +7,7 @@
     <ul>
       <li><a href="/admin">Projects</a></li>
       <li><a href="/archives">Archive</a></li>
-      <li><a href="/information/edit">Information</a></li>
+      <li><a href="/information/1/edit">Information</a></li>
       <li><a href="/footer/edit">Footer</a></li>
     </ul>
     <span id="text-logout">LOGOUT</span>

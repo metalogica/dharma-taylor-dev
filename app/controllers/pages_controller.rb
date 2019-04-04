@@ -4,12 +4,11 @@ class PagesController < ApplicationController
 
   def index
     set_title
-  end
-
-  def show
+    @biography = Biography.first
   end
 
   def edit
+    @biography = Biography.first
   end
 
   def update
