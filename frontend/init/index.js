@@ -16,7 +16,6 @@ import Searchbar from '../components/searchbar/searchbar.vue'
 import '../layouts/projects'
 import '../layouts/biography'
 import '../layouts/archive'
-import '../layouts/dashboard'
 
 // Main css import
 import "./index.scss";
