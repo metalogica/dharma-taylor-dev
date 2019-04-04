@@ -5,10 +5,10 @@
       <span>ADMIN VIEW</span>
     </div>
     <ul>
-      <li v-link="{path : '/admin', activeClass: 'active', exact: true}"><a href="/admin">Featured</a></li>
-      <li><a href="/dashboard/archive">Archive</a></li>
-      <li><a href="/dashboard/information">Information</a></li>
-      <li><a href="/dashboard/footer">Footer</a></li>
+      <li><a href="/admin">Projects</a></li>
+      <li><a href="/archives">Archive</a></li>
+      <li><a href="/information/edit">Information</a></li>
+      <li><a href="/footer/edit">Footer</a></li>
     </ul>
     <span id="text-logout">LOGOUT</span>
   </div>
