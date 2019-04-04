@@ -1,13 +1,16 @@
 class ArchivesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
-  before_action :set_layout
+  before_action :authenticate_user!, except: :archives_list
+  before_action :set_layout, except: :archives_list
+
+  def archives_list
+    @archive = Image.archive.order(url: 'desc')
+    set_title
+  end
 
   def index
   end
 
   def show
-    @archive = Image.archive.order(url: 'desc')
-    set_title
   end
 
   def edit

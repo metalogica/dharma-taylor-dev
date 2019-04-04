@@ -1,18 +1,20 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :new, :create, :destroy]
-  before_action :set_layout, only: [:admin_projects_index, :edit, :update, :new, :create, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_layout, except: [:index, :show]
 
   def index
     @projects = Project.ordered
     set_title
   end
 
-  def admin_projects_index
-    set_layout
-  end
-
   def show
     @project = Project.friendly.find(params[:id])
+  end
+
+  def admin_projects_index
+  end
+
+  def admin_projects_show
   end
 
   def edit
