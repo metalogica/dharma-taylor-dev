@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :create, :destroy]
-  before_action :set_layout, only: [:admin_projects_index, :show, :edit, :update, :new, :create, :destroy]
+  before_action :set_layout, only: [:admin_projects_index, :edit, :update, :new, :create, :destroy]
 
   def index
     @projects = Project.ordered

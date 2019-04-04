@@ -1,5 +1,5 @@
 class ArchivesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
   before_action :set_layout
 
   def index
@@ -26,6 +26,6 @@ class ArchivesController < ApplicationController
   end
 
   def set_layout
-    render layout: 'layouts/dashboard' if current_user.admin == true
+    render layout: 'layouts/dashboard'
   end
 end

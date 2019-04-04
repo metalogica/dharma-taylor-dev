@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Fontawesome Links -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Google Analytics -->
+    <script>
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-49026503-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <meta name="google-site-verification" content="m6SIurjhMppO8efH6qJ1_zMGe-gvh0rlL_n90ivY11I" /> <meta charset="UTF-8">
+    <!-- End Google Analytics -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/97/three.min.js"></script>
+    <script src="/vendor/three/assets/OrbitControls.js"></script>
+    <script src="/vendor/three/assets/OBJLoader.js"></script>
+    <script src="/vendor/three/assets/MTLLoader.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= display_meta_tags :site => 'Dharma Taylor' %>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'application' %>
+  </head>
+  <body class= "<%= controller.controller_path %> <%= controller.action_name %>">
+    <div id="app">
+      <div class="page">
+        <div class="page-header">
+          <dashboard>
+          <modal :modal-data="modalData" @close="modalData.show = false"></modal>
+        </div>
+        <div class="page-content dashboard-style">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>

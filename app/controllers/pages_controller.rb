@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update]
-  before_action :set_layout
+  before_action :set_layout, except: [:index]
 
   def index
     set_title
@@ -22,6 +22,6 @@ class PagesController < ApplicationController
   end
 
   def set_layout
-    render layout: 'layouts/dashboard' if current_user.admin == true
+    render layout: 'layouts/dashboard'
   end
 end
