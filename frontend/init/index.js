@@ -14,7 +14,7 @@ import Searchbar from '../components/searchbar/searchbar.vue'
 
 // Layouts import
 import '../layouts/projects'
-import '../layouts/information'
+import '../layouts/biography'
 import '../layouts/archive'
 import '../layouts/dashboard'
 
