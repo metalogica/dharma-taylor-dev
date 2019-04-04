@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_layout, except: [:index, :show]
+  layout "dashboard", except: [:index, :show]
 
   def index
     @projects = Project.ordered
@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def admin_projects_index
+    @projects = Project.all
   end
 
   def admin_projects_show
@@ -37,10 +38,6 @@ class ProjectsController < ApplicationController
   def set_title
     @title = "| Featured" if @projects.present?
     @title = "| #{@project.name}" if @project.present?
-  end
-
-  def set_layout
-    render layout: 'layouts/dashboard'
   end
 end
 
