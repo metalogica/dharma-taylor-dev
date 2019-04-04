@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :archives, only: [:index, :edit, :update, :destroy]
 
   # Pages (information) controller
-  resources :pages, only: [:index, :edit, :update], path: "information"
+  resources :biography, only: [:index, :edit, :update], path: "information"
 
   # Footer Content Controller
   resource :footer, only: [:edit, :update]

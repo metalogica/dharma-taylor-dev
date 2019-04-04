@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class BiographyController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   layout "dashboard", except: [:index]
 
