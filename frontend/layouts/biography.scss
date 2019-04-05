@@ -5,4 +5,14 @@ body.biography.index {
 }
 
 body.biography.edit {
+  .btn-form-bio {
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    &:hover {
+      color: black;
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+  }
 }

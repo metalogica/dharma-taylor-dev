@@ -1,9 +1,13 @@
+<controller></controller>
 <b container fluid>
   <b row>
     <b-col cols="10" offset="1">
       <%= simple_form_for(@biography) do |f| %>
-        <%= f.input :information, as: :text, input_html: {rows: 20}%>
-        <%= f.button :submit %>
+        <%= f.input :information, as: :text, input_html: { rows: 20 }, class: "form-border-bio" %>
+        <%= link_to("/information/1/edit") do %>
+          <button class="btn btn-form-bio">Cancel</button>
+        <% end %>
+        <%= f.button :submit, "Save Changes" %>
       <% end %>
     </b-col>
   </b>
