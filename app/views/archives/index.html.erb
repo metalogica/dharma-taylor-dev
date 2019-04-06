@@ -1,1 +1,21 @@
-<p>admin archives index</p>
+<% @projects.select {|proj| proj.visibility == false}.reverse_each do |proj|  %>
+  <div class="project-card">
+    <div class="img-wrapper">
+      <div class="img-overlay">
+        <div class="card-controller">
+          <%= link_to edit_project_path(proj) do %>
+            <i class="far fa-edit"><span>Edit</span></i>
+          <% end %>
+          <%= link_to archiver_path(proj) do %>
+            <i class="fas fa-archive"><span>Archive</span></i>
+          <% end %>
+          <%= link_to project_path(proj), method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash"><span>Delete</span></i>
+          <% end %>
+        </div>
+      </div>
+<!--       <%= image_tag("https://res.cloudinary.com/ortsac/image/upload/#{proj.images[0].url}") if proj.images.present?%> -->
+    </div>
+    <div class="proj-name"><%= proj.name %></div>
+  </div>
+<% end %>

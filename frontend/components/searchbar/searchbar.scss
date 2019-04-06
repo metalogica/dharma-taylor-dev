@@ -1,5 +1,15 @@
-.searchbar-container {
+.searchbar-wrapper {
   width: 100%;
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar-container {
+  width: 80%;
   position: absolute;
   color: black;
   border-bottom: 1px solid rgba(0,0,0,0.1);

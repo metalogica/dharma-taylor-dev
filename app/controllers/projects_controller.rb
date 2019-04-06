@@ -30,7 +30,23 @@ class ProjectsController < ApplicationController
   def create
   end
 
+  def archiver
+    @project = Project.find_by(id: params[:id])
+    @project.visibility = false
+    if @project.save!
+      redirect_to(admin_projects_index_path)
+    else
+      p "error"
+    end
+  end
+
   def destroy
+    @project = Project.find_by(id: params[:id])
+    if @project.destroy
+      redirect_to(admin_projects_index_path)
+    else
+      p "error"
+    end
   end
 
   private

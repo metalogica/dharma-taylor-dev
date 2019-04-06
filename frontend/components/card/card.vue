@@ -1,0 +1,35 @@
+<template>
+  <div class="project-card">
+    <div class="img-wrapper">
+      <div class="img-overlay">
+        <div class="card-controller">
+
+          <!-- Edit Request -->
+          <a href="featured/1/edit"><i class="far fa-edit"><span>Edit</span></i></a>
+
+          <!-- Archive Request -->
+          <a v-bind:href="makeArchiveUrl"><i class="fas fa-archive"><span>Archive</span></i></a>
+
+          <!-- Delete Request -->
+          <form v-bind:action="makePostUrl" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="_method" value="delete">
+            <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
+            <i class="fas fa-trash">
+              <input class="hidden-button" type="submit">
+              <span>Delete</span>
+            </i>
+          </form>
+
+        </div>
+      </div>
+      <img v-bind:src="imageurl" />
+    </div>
+    <div class="proj-name">{{name}}</div>
+  </div>
+</template>
+<script src="./card.js"></script>
+<style lang="scss" src="./card.scss"></style>
+
+
+
+

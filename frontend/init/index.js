@@ -11,6 +11,8 @@ import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 import Dashboard from '../components/dashboard/dashboard.vue'
 import Controller from '../components/controller/controller.vue'
 import Searchbar from '../components/searchbar/searchbar.vue'
+import Card from '../components/card/card.vue'
+import List from '../components/list/list.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -25,6 +27,8 @@ Vue.component('breadcrumb', Breadcrumb);
 Vue.component('dashboard', Dashboard);
 Vue.component('controller', Controller);
 Vue.component('searchbar', Searchbar);
+Vue.component('card', Card);
+Vue.component('list', List);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {

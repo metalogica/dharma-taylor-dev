@@ -31,7 +31,7 @@ body {
 .page-content a:hover,
 .page-footer a:hover{
   color: #fff;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .page-footer {
@@ -90,4 +90,8 @@ body {
 
 .form-row > .col, .form-row > [class*="col-"] {
     padding-bottom: 15px;
+}
+
+.hidden {
+  display: none;
 }

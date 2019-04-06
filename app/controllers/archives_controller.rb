@@ -1,6 +1,6 @@
 class ArchivesController < ApplicationController
   before_action :authenticate_user!, except: :archives_list
-  before_action :set_layout, except: :archives_list
+  layout "layouts/dashboard", except: :archives_list
 
   def archives_list
     @archive = Image.archive.order(url: 'desc')
@@ -8,6 +8,7 @@ class ArchivesController < ApplicationController
   end
 
   def index
+    @projects = Project.all
   end
 
   def show
@@ -26,9 +27,5 @@ class ArchivesController < ApplicationController
 
   def set_title
     @title="| Archive"
-  end
-
-  def set_layout
-    render layout: 'layouts/dashboard'
   end
 end
