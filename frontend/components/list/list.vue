@@ -17,22 +17,27 @@
         </a>
       </div>
       <div
-        class="controller-link archive">
-        <!-- Put Back in Portfolio -->
+        class="controller-link archive"
+        v-on:mouseover="isHoveringArchive = true"
+        v-on:mouseout="isHoveringArchive = false">
+        <!-- Put into archive -->
         <a v-bind:href="makeArchiveUrl">
           <i class="fas fa-archive">
-            <span >Archive</span>
+            <span v-bind:class="{noshowarchive: !isHoveringArchive}">Archive</span>
           </i>
         </a>
       </div>
-      <div class="controller-link delete">
+      <div
+        class="controller-link delete"
+        v-on:mouseover="isHoveringDelete = true"
+        v-on:mouseout="isHoveringDelete = false">
         <!-- Delete Request -->
         <form v-bind:action="makePostUrl" method="post" accept-charset="UTF-8">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
         <i class="fas fa-trash">
           <input class="hidden-button" type="submit">
-          <span>Delete</span>
+        <span v-bind:class="{noshowdelete: !isHoveringDelete}">Delete</span>
         </i>
         </form>
       </div>

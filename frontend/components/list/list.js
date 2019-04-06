@@ -6,6 +6,7 @@ module.exports = {
     posturl: String,
     slug: String,
     id: String,
+    currentpage: String,
     datecreate: String,
     dateupdate: String
   },
