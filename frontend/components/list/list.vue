@@ -7,12 +7,12 @@
     <div class="list-controller">
       <div
         class="controller-link edit"
-        v-on:mouseover="isHovering = true"
-        v-on:mouseout="isHovering = false">
+        v-on:mouseover="isHoveringEdit = true"
+        v-on:mouseout="isHoveringEdit = false">
         <!-- Edit Request -->
         <a href="featured/1/edit">
           <i class="fas fa-edit">
-            <span v-bind:class="{noshow: !isHovering}">Edit</span>
+            <span v-bind:class="{noshowedit: !isHoveringEdit}">Edit</span>
           </i>
         </a>
       </div>

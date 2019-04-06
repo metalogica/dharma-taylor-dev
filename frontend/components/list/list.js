@@ -12,7 +12,7 @@ module.exports = {
   data: function(){
     return {
       urlImageStub: "https://res.cloudinary.com/ortsac/image/upload/",
-      isHovering: false,
+      isHoveringEdit: false,
       isHoveringArchive: false,
       isHoveringDelete: false
     }
