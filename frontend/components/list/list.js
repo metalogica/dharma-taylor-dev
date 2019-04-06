@@ -5,12 +5,16 @@ module.exports = {
     mycsrf: String,
     posturl: String,
     slug: String,
-    id: String
+    id: String,
+    datecreate: String,
+    dateupdate: String
   },
   data: function(){
     return {
       urlImageStub: "https://res.cloudinary.com/ortsac/image/upload/",
-      test: tester
+      isHovering: false,
+      isHoveringArchive: false,
+      isHoveringDelete: false
     }
   },
   computed: {

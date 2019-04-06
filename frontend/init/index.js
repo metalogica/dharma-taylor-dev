@@ -13,6 +13,7 @@ import Controller from '../components/controller/controller.vue'
 import Searchbar from '../components/searchbar/searchbar.vue'
 import Card from '../components/card/card.vue'
 import List from '../components/list/list.vue'
+import Minilinks from '../components/minilinks/minilinks.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -29,6 +30,7 @@ Vue.component('controller', Controller);
 Vue.component('searchbar', Searchbar);
 Vue.component('card', Card);
 Vue.component('list', List);
+Vue.component('minilinks', Minilinks);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
