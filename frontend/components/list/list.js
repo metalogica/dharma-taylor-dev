@@ -15,7 +15,8 @@ module.exports = {
       urlImageStub: "https://res.cloudinary.com/ortsac/image/upload/",
       isHoveringEdit: false,
       isHoveringArchive: false,
-      isHoveringDelete: false
+      isHoveringDelete: false,
+      isHoveringUnarchive: false
     }
   },
   computed: {
@@ -29,9 +30,19 @@ module.exports = {
         return this.posturl + '/' + this.id
       }
     },
+    makeEditUrl: {
+      get: function() {
+        return this.posturl + '/' + this.id + '/edit'
+      }
+    },
     makeArchiveUrl: {
       get: function() {
         return this.posturl + '/archiver/' + this.id
+      }
+    },
+    makeUnarchiverUrl: {
+      get: function() {
+        return '/archives/unarchiver/' + this.id
       }
     }
   }

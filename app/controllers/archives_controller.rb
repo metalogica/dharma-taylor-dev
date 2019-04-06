@@ -23,6 +23,16 @@ class ArchivesController < ApplicationController
   def destroy
   end
 
+  def unarchiver
+    @project = Project.find_by(id: params[:id])
+    @project.visibility = true
+    if @project.save!
+      redirect_to(archives_path)
+    else
+      p "error"
+    end
+  end
+
   private
 
   def set_title

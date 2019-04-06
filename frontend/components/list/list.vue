@@ -10,14 +10,14 @@
         v-on:mouseover="isHoveringEdit = true"
         v-on:mouseout="isHoveringEdit = false">
         <!-- Edit Request -->
-        <a href="featured/1/edit">
+        <a v-bind:href="makeEditUrl">
           <i class="fas fa-edit">
             <span v-bind:class="{noshowedit: !isHoveringEdit}">Edit</span>
           </i>
         </a>
       </div>
       <div
-        class="controller-link archive"
+        class="controller-link archive hidden"
         v-on:mouseover="isHoveringArchive = true"
         v-on:mouseout="isHoveringArchive = false">
         <!-- Put into archive -->
@@ -27,6 +27,19 @@
           </i>
         </a>
       </div>
+
+      <div
+        class="controller-link portfolio"
+        v-on:mouseover="isHoveringUnarchive = true"
+        v-on:mouseout="isHoveringUnarchive = false">
+        <!-- Put into Portfolio -->
+        <a v-bind:href="makeUnarchiverUrl">
+          <i class="fas fa-redo-alt">
+            <span v-bind:class="{noshowunarchive: !isHoveringUnarchive}">Un-archive</span>
+          </i>
+        </a>
+      </div>
+
       <div
         class="controller-link delete"
         v-on:mouseover="isHoveringDelete = true"
