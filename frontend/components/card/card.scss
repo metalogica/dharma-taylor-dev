@@ -92,5 +92,36 @@
 }
 
 .card-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid red;
+
+  .modal-buttons {
+    padding: 5px;
+  }
+
+  .modal-confirm {
+
+  }
+  .modal-cancel {
+
+  }
+
+  i {
+    font-size: 40px;
+    color: white;
+  }
+
+  button, input {
+    color: white;
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+  }
 }

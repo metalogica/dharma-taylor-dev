@@ -7,7 +7,7 @@
       <div
         class="img-overlay"
         v-bind:class="{hidden: !isHovering}">
-        <div class="card-controller">
+        <div class="card-controller hidden">
 
           <!-- Edit Request -->
           <a v-bind:href="makeEditUrl"><i class="far fa-edit"><span>Edit</span></i></a>
@@ -25,12 +25,15 @@
             </i>
           </form>
 
-          <!-- Card Modal -->
-          <div class="card-modal">
-            <button>Delete</button>
-            <button>Don't Delete</button>
-          </div>
+        </div>
 
+        <!-- Card Modal -->
+        <div class="card-modal">
+          <i class="fas fa-exclamation-circle"></i>
+          <div class="modal-buttons">
+            <button class="modal-confirm">Delete</button>
+            <button class="modal-cancel">Don't Delete</button>
+          </div>
         </div>
       </div>
       <img v-bind:src="imageurl" />
