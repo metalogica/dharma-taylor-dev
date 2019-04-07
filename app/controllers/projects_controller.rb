@@ -19,9 +19,17 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find_by(id: params[:id])
   end
 
   def update
+    project = Project.find_by(id: params[:id])
+    project.update(project_params)
+    if project.save!
+      redirect_to(admin_projects_index_path)
+    else
+      render "edit"
+    end
   end
 
   def new
@@ -29,6 +37,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    project = Project.new(project_params)
+    if project.save!
+      redirect_to(admin_projects_index_path)
+    else
+      render "new"
+    end
   end
 
   def archiver
@@ -51,6 +65,10 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def project_params
+    params.require(:project).permit(:name, :description)
+  end
 
   def set_title
     @title = "| Featured" if @projects.present?

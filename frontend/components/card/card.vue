@@ -1,11 +1,16 @@
 <template>
   <div class="project-card">
-    <div class="img-wrapper">
-      <div class="img-overlay">
+    <div
+      class="img-wrapper"
+      v-on:mouseover="isHovering=true"
+      v-on:mouseout="isHovering = false">
+      <div
+        class="img-overlay"
+        v-bind:class="{hidden: !isHovering}">
         <div class="card-controller">
 
           <!-- Edit Request -->
-          <a href="featured/1/edit"><i class="far fa-edit"><span>Edit</span></i></a>
+          <a v-bind:href="makeEditUrl"><i class="far fa-edit"><span>Edit</span></i></a>
 
           <!-- Archive Request -->
           <a v-bind:href="makeArchiveUrl"><i class="fas fa-archive"><span>Archive</span></i></a>
