@@ -30,6 +30,11 @@
       <img v-bind:src="imageurl" />
     </div>
     <div class="proj-name">{{name}}</div>
+
+    <div class="card-modal">
+      <button>Delete</button>
+      <button>Don't Delete</button>
+    </div>
   </div>
 </template>
 <script src="./card.js"></script>
