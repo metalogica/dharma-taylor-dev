@@ -55,27 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
-
-  // Controller toggle card/list view script
-  var toggleView = function(elem) {
-    var event = new CustomEvent('customEvent');
-    elem.dispatchEvent(event);
-  };
-
-  var gridIcon = document.querySelector('#grid-icon');
-  toggleView(gridIcon);
-
-  gridIcon.addEventListener('customEvent', function(elem) {
-    console.log('it definitely worked');
-    console.log(elem)
-  }, false);
-
-  gridIcon.addEventListener('click', function() {
-    console.log('works');
-  })
-
-
-
   // Three js
   var scene = new THREE.Scene();
 

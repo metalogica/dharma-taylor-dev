@@ -13,6 +13,7 @@ module.exports = {
       isHovering: false,
       isClicked: false,
       showModal: false,
+      visibility: true
     }
   },
   computed: {
@@ -43,6 +44,10 @@ module.exports = {
     },
     hideModal: function() {
       this.showModal = false
+    },
+    setVisibility: function(boolean) {
+      this.visibility = boolean
+      console.log('the other component listend to the event')
     }
   }
 }

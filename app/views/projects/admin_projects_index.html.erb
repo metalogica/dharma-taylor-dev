@@ -7,6 +7,7 @@
 <div class="card-container">
   <% @projects.select {|proj| proj.visibility == true}.reverse_each do |proj|  %>
     <card
+      v-on:changeVisibility="setVisibility"
       name="<%= proj.name %>"
       id="<%= proj.id %>"
       img="<%= proj.images[0].url if proj.images.present? %>"
@@ -17,3 +18,24 @@
   <% end %>
 </div>
 
+<div class="list-container">
+  <div class="project-list-item-header">
+    <span id="title-text">Title</span>
+    <span>Date Created</span>
+    <span>Date Modified</span>
+    <span>Controls</span>
+  </div>
+  <% @projects.select {|proj| proj.visibility == false}.reverse_each do |proj|  %>
+    <list
+      name="<%= proj.name %>"
+      id="<%= proj.id %>"
+      img="<%= proj.images[0].url if proj.images.present? %>"
+      mycsrf="<%= form_authenticity_token %>"
+      posturl="featured"
+      currentpage="<%= request.url %>"
+      slug="<%= proj.slug %>"
+      datecreate="<%= proj.created_at.strftime("%d-%b-%Y at %I:%M%p") %>"
+      dateupdate="<%= proj.updated_at.strftime("%d-%b-%Y at %I:%M%p") %>">
+    </list>
+  <% end %>
+</div>
