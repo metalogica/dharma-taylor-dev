@@ -5,29 +5,29 @@
     <span class="list-date">{{ datecreate }}</span>
     <span class="list-date">{{ dateupdate }}</span>
     <div class="list-controller">
+      <!-- Edit Post -->
       <div
         class="controller-link edit"
         v-on:mouseover="isHoveringEdit = true"
         v-on:mouseout="isHoveringEdit = false">
-        <!-- Edit Request -->
         <a v-bind:href="makeEditUrl">
           <i class="fas fa-edit">
             <span v-bind:class="{noshowedit: !isHoveringEdit}">Edit</span>
           </i>
         </a>
       </div>
+      <!-- Put post into archive -->
       <div
         class="controller-link archive hidden"
         v-on:mouseover="isHoveringArchive = true"
         v-on:mouseout="isHoveringArchive = false">
-        <!-- Put into archive -->
         <a v-bind:href="makeArchiveUrl">
           <i class="fas fa-archive">
             <span v-bind:class="{noshowarchive: !isHoveringArchive}">Archive</span>
           </i>
         </a>
       </div>
-
+      <!-- Put post into portfolio -->
       <div
         class="controller-link portfolio"
         v-on:mouseover="isHoveringUnarchive = true"
@@ -39,22 +39,34 @@
           </i>
         </a>
       </div>
-
+      <!-- Delete post -->
       <div
         class="controller-link delete"
         v-on:mouseover="isHoveringDelete = true"
         v-on:mouseout="isHoveringDelete = false">
         <!-- Delete Request -->
-        <form v-bind:action="makePostUrl" method="post" accept-charset="UTF-8">
-        <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
-        <i class="fas fa-trash">
+        <i class="fas fa-trash"
+          v-on:click="toggleModal">
           <input class="hidden-button" type="submit">
         <span v-bind:class="{noshowdelete: !isHoveringDelete}">Delete</span>
         </i>
-        </form>
       </div>
     </div>
+
+    <!-- List Modal -->
+    <div class="list-modal" v-if="showModal">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>Are you sure you wan't to permanently delete this item?</p>
+      <div class="modal-buttons">
+        <form v-bind:action="makePostUrl" method="post" accept-charset="UTF-8">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
+          <input class="modal-confirm" type="submit" value="Delete">
+        </form>
+        <button v-on:click="toggleModal" class="modal-cancel">Cancel</button>
+      </div>
+    </div>
+
   </div>
 </template>
 <script src="./list.js"></script>

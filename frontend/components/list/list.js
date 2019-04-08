@@ -16,7 +16,8 @@ module.exports = {
       isHoveringEdit: false,
       isHoveringArchive: false,
       isHoveringDelete: false,
-      isHoveringUnarchive: false
+      isHoveringUnarchive: false,
+      showModal: false
     }
   },
   computed: {
@@ -44,6 +45,14 @@ module.exports = {
       get: function() {
         return '/archives/unarchiver/' + this.id
       }
+    }
+  },
+  methods: {
+    toggleModal: function() {
+      this.showModal = !this.showModal
+    },
+    hideModal: function() {
+      this.showModal = false
     }
   }
 }
