@@ -1,10 +1,3 @@
-const modal = () => {
-  if (confirm("Are you sure you want to delete this project?")) {
-    console.log('delete');
-  } else
-    console.log('dont delete')
-}
-
 module.exports = {
   props: {
     name: String,
@@ -18,7 +11,8 @@ module.exports = {
     return {
       urlImageStub: "https://res.cloudinary.com/ortsac/image/upload/",
       isHovering: false,
-      isClicked: false
+      isClicked: false,
+      showModal: false,
     }
   },
   computed: {
@@ -44,11 +38,11 @@ module.exports = {
     }
   },
   methods: {
-    modalActivate: function() {
-
+    toggleModal: function() {
+      this.showModal = !this.showModal
     },
-    modalReset: function() {
-
+    hideModal: function() {
+      this.showModal = false
     }
   }
 }
