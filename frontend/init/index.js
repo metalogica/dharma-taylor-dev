@@ -33,20 +33,6 @@ Vue.component('card', Card);
 Vue.component('list', List);
 Vue.component('formproject', Formproject);
 
-// Controller toggle card/list view script
-var toggleView = function(elem) {
-  var event = new CustomEvent('customEvent');
-  elem.dispatchEvent(event);
-};
-
-var gridIcon = document.querySelector('#grid-icon');
-toggleView(gridIcon);
-
-gridIcon.addEventListener('customEvent', function(elem) {
-  console.log('it definitely worked');
-  console.log(elem)
-}, false);
-
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
@@ -68,8 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Three js
 
+
+  // Controller toggle card/list view script
+  var toggleView = function(elem) {
+    var event = new CustomEvent('customEvent');
+    elem.dispatchEvent(event);
+  };
+
+  var gridIcon = document.querySelector('#grid-icon');
+  toggleView(gridIcon);
+
+  gridIcon.addEventListener('customEvent', function(elem) {
+    console.log('it definitely worked');
+    console.log(elem)
+  }, false);
+
+  gridIcon.addEventListener('click', function() {
+    console.log('works');
+  })
+
+
+
+  // Three js
   var scene = new THREE.Scene();
 
   var container = document.getElementById("3d-container");
