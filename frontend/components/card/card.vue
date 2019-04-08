@@ -32,7 +32,6 @@
             <form v-bind:action="makePostUrl" method="post" accept-charset="UTF-8">
               <input type="hidden" name="_method" value="delete">
               <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
-              <input class="hidden-button" type="submit">
               <input class="modal-confirm" type="submit" value="Delete">
             </form>
             <button v-on:click="toggleModal" class="modal-cancel">Cancel</button>
