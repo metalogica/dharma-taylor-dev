@@ -1,5 +1,6 @@
 <template>
-  <div class="project-list-item">
+  <div class="project-list-item"
+       v-if="listView">
     <img v-bind:src="imageurl" />
     <span class="list-title">{{name}}</span>
     <span class="list-date">{{ datecreate }}</span>

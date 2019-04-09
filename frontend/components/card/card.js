@@ -35,6 +35,11 @@ module.exports = {
       get: function() {
         return this.posturl + '/' + this.id + '/edit'
       }
+    },
+    cardView: {
+      get: function() {
+        return this.$store.state.cardView
+      }
     }
   },
   methods: {

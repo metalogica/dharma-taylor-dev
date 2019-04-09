@@ -13,7 +13,7 @@ module.exports = {
         return this.$store.state.cardView
       },
       set: function() {
-        this.$store.commit('toggleCardView')
+        this.$store.commit('toggleView')
       }
     }
   },
@@ -22,7 +22,7 @@ module.exports = {
       this.$store.commit('increment')
     },
     toggleCardView: function() {
-      this.$store.commit('toggleCardView')
+      this.$store.commit('toggleView')
     }
   }
 }

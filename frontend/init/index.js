@@ -43,14 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = new Vuex.Store({
     state: {
       count: 0,
-      cardView: true
+      cardView: true,
+      listView: false
     },
     mutations: {
       increment: function(state) {
         state.count++
       },
-      toggleCardView: function(state) {
+      toggleView: function(state) {
         state.cardView = !state.cardView
+        state.listView = !state.listView
       }
     }
   })

@@ -45,6 +45,11 @@ module.exports = {
       get: function() {
         return '/archives/unarchiver/' + this.id
       }
+    },
+    listView: {
+      get: function() {
+        return this.$store.state.listView
+      }
     }
   },
   methods: {
