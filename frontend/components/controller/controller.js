@@ -1,11 +1,28 @@
 module.exports = {
-  data: function() {
-    return {
-      cardVisibility: true,
+  computed: {
+    count: {
+      get: function() {
+        return this.$store.state.count
+      },
+      set: function() {
+        this.$store.commit('increment')
+      }
+    },
+    cardView: {
+      get: function() {
+        return this.$store.state.cardView
+      },
+      set: function() {
+        this.$store.commit('toggleCardView')
+      }
     }
   },
   methods: {
-    toggleVisibility: function() {
+    incrementer: function() {
+      this.$store.commit('increment')
+    },
+    toggleCardView: function() {
+      this.$store.commit('toggleCardView')
     }
   }
 }

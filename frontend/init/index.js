@@ -5,17 +5,6 @@ import Vuex from 'vuex';
 Vue.use(Vuex)
 import { mapState, mapStore, mapActions, mapGetters } from 'vuex';
 
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-})
-
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -50,9 +39,26 @@ Vue.component('formproject', Formproject);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
+  // Vuex
+  const store = new Vuex.Store({
+    state: {
+      count: 0,
+      cardView: true
+    },
+    mutations: {
+      increment: function(state) {
+        state.count++
+      },
+      toggleCardView: function(state) {
+        state.cardView = !state.cardView
+      }
+    }
+  })
+
   var app = new Vue({
     el: '#app',
-    components: { Navbar, Modal},
+    store,
+    components: { Navbar, Modal, Controller, Card, List, Formproject, Dashboard, Searchbar},
     data: function () {
       return {
         modalData: {
@@ -68,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   })
-
 
   // Three js
   var scene = new THREE.Scene();
