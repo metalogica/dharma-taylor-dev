@@ -88,6 +88,8 @@
 }
 
 .project-list-item {
+
+
   &:hover {
     background-color: rgba(0,0,0,0.05);
     border-radius: 15px;
@@ -116,9 +118,8 @@
   width: 40vw;
   height: 40vh;
   position: absolute;
-  align-self: center;
-  margin-top: 70px;
-  background-color: rgba(0,0,0,0.65);
+  margin-top: 25px;
+  background-color: rgba(0,0,0,0.75);
   border-radius: 10px;
 
   .modal-buttons {
