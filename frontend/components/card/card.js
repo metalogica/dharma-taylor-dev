@@ -12,8 +12,7 @@ module.exports = {
       urlImageStub: "https://res.cloudinary.com/ortsac/image/upload/",
       isHovering: false,
       isClicked: false,
-      showModal: false,
-      visibility: true
+      showModal: false
     }
   },
   computed: {
@@ -44,10 +43,6 @@ module.exports = {
     },
     hideModal: function() {
       this.showModal = false
-    },
-    setVisibility: function(boolean) {
-      this.visibility = boolean
-      console.log('the other component listend to the event')
     }
   }
 }

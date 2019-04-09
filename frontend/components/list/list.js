@@ -17,8 +17,7 @@ module.exports = {
       isHoveringArchive: false,
       isHoveringDelete: false,
       isHoveringUnarchive: false,
-      showModal: false,
-      visibility: false
+      showModal: false
     }
   },
   computed: {

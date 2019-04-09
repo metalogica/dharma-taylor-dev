@@ -1,5 +1,20 @@
 // Vue import
 import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex)
+import { mapState, mapStore, mapActions, mapGetters } from 'vuex';
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
