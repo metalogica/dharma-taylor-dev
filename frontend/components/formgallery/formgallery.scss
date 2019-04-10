@@ -1,0 +1,33 @@
+.form-picture-container {
+  float: left;
+  width: 50%;
+  height: 75vh;
+  margin-left: 20px;
+  overflow-y: auto;
+  position: absolute;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  border: 1px solid red;
+}
+.form-picture {
+  width: 230px;
+  margin: 10px;
+
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  min-height: 0px;
+
+  border: 1px solid blue;
+
+  span {
+    font-size: 14px;
+  }
+}

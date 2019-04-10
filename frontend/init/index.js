@@ -18,10 +18,10 @@ import Searchbar from '../components/searchbar/searchbar.vue'
 import Card from '../components/card/card.vue'
 import List from '../components/list/list.vue'
 import Formproject from '../components/formproject/formproject.vue'
+import Formgallery from '../components/formgallery/formgallery.vue'
 
 // Layouts import
 import '../layouts/projects'
-import '../layouts/projects-edit'
 import '../layouts/biography'
 import '../layouts/archive'
 
@@ -36,6 +36,7 @@ Vue.component('searchbar', Searchbar);
 Vue.component('card', Card);
 Vue.component('list', List);
 Vue.component('formproject', Formproject);
+Vue.component('formgallery', Formgallery);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
