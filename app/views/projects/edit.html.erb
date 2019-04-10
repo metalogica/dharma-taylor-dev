@@ -18,8 +18,14 @@
   <% end %>
 </div>
 
+<% project_images_array = @project.images.map(&:url) %>
+<% project_name = @project.name %>
+<% project_description = @project.description %>
 <formproject
   mycsrf="<%= form_authenticity_token %>"
   pageurl="<%= request.original_fullpath %>"
-  id="<%= @project.id %>">
+  id="<%= @project.id %>"
+  projectimages="<%= project_images_array %>"
+  projectname="<%= project_name %>"
+  projectdescription="<%= project_description %>">
 </formproject>

@@ -8,12 +8,12 @@
 
       <div class="form-line">
         <label for="">Project Name</label>
-        <input type="text" name="project[name]">
+        <input type="text" name="project[name]" :value="projectname">
       </div>
 
       <div class="form-line">
       <label for="">Description</label>
-        <input type="textarea" name="project[description]" cols="15" rows="10">
+        <input type="textarea" name="project[description]" cols="15" rows="10" :value="projectdescription">
       </div>
 
       <div class="form-line">

@@ -5,6 +5,9 @@ module.exports = {
     mycsrf: String,
     pageurl: String,
     id: String,
+    projectimages: Array,
+    projectname: String,
+    projectdescription: String
   },
   computed: {
     pagestub: {
