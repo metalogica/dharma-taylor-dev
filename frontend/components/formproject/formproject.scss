@@ -39,11 +39,18 @@
   }
 }
 
+$form-container-height: 35px;
+$form-input-height: 35px;
+$form-text-area-height: 260px;
+
 .form-line {
-  margin: 20px;
+  // height: calc($form-container-height + $form-input-height);
+  height: 70px;
+  margin: 10px;
   width: 90%;
-  height: 65px;
   padding: 10px;
+  overflow: auto;
+  flex-grow: 2;
 
   display: flex;
   justify-content: flex-start;
@@ -53,16 +60,24 @@
     flex: 0 0 20%;
   }
 
+  input, textarea {
+    flex: 0 0 80% ;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 15px;
+  }
+
   textarea {
-    flex: 0 0 80%;
+    height: $form-text-area-height;
   }
 
   input {
-    flex: 0 0 80% ;
-
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 15px;
-    height: 35px;
-    padding: 15px;
+    height: $form-input-height;
   }
 }
+
+.form-text-area {
+  // height: calc($form-container-height + $form-text-area-height);
+  height: 260px;
+}
+

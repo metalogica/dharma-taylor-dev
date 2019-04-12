@@ -11,9 +11,9 @@
         <input type="text" name="project[name]" :value="projectname">
       </div>
 
-      <div class="form-line">
+      <div class="form-line form-text-area">
       <label for="">Description</label>
-        <input type="textarea" name="project[description]" cols="15" rows="10" :value="projectdescription">
+        <textarea name="project[description]" :value="projectdescription"></textarea>
       </div>
 
       <div class="form-line">
@@ -35,7 +35,3 @@
 </template>
 <script src="./formproject.js"></script>
 <style lang="scss" src="./formproject.scss"></style>
-
-
-
-
