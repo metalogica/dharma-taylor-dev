@@ -24,9 +24,16 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: params[:id])
-    project.update(project_params)
+    project.name = project_params[:name]
+    project.description = project_params[:description]
     if project.save!
-      redirect_to(admin_projects_index_path)
+      image = project.images.find(project_params[:coverimage])
+      image.coverimage = true
+      if image.save!
+        redirect_to(admin_projects_index_path)
+      else
+        render "edit"
+      end
     else
       render "edit"
     end
