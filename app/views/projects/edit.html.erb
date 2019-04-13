@@ -19,6 +19,7 @@
 </div>
 
 <% project_images_array = @project.images.map(&:url) %>
+<% project_image_id_array = @project.images.map(&:id) %>
 <% project_name = @project.name %>
 <% project_description = @project.description %>
 <formproject
@@ -26,6 +27,7 @@
   pageurl="<%= request.original_fullpath %>"
   id="<%= @project.id %>"
   projectimages="<%= project_images_array %>"
+  projectimagesid="<%= project_image_id_array %>"
   projectname="<%= project_name %>"
   projectdescription="<%= project_description %>">
 </formproject>

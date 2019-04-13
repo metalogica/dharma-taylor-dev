@@ -18,7 +18,9 @@
 
       <div class="form-line">
         <label for="">Cover Image</label>
-        <input type="select" name="project[coverimage]">
+        <select name="project[coverimage]" id="">
+          <option v-for="option in this.selectCoverImage" :value="option.id">{{ option.text }}</option>
+        </select>
       </div>
 
       <div class="form-line">

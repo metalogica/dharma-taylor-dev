@@ -5,11 +5,41 @@ module.exports = {
     mycsrf: String,
     pageurl: String,
     id: String,
-    projectimages: Array,
+    projectimages: String,
     projectname: String,
-    projectdescription: String
+    projectdescription: String,
+    projectimagesid: String
   },
   computed: {
+    selectCoverImage: {
+      get: function() {
+        idImageArr = [];
+        idArray = this.imgId;
+        nameArray = this.imgName;
+        idArray.forEach((key, value) => {
+          var obj = {};
+          obj.id = key;
+          obj.text = nameArray[value];
+          idImageArr.push(obj);
+        });
+        return idImageArr;
+      }
+    },
+    imgName: {
+      get: function() {
+        imageArray = [];
+        match = this.projectimages.match(/".*"/gi).pop().split(',');
+        match.forEach((img) => {imageArray.push(img.trim().replace(/"/gi,''))});
+        return imageArray;
+      }
+    },
+    imgId: {
+      get: function() {
+        idArray = [];
+        this.projectimagesid.split(',').forEach((e) => {idArray.push(Number(e.replace(/\D/g, '')))});
+        return idArray
+      }
+    },
     pagestub: {
       get: function() {
         return this.pageurl.split("/").pop()
