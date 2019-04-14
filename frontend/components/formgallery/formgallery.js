@@ -3,11 +3,15 @@ module.exports = {
     imgurlstub: String,
     imgformat: String,
     imgFilename: String,
+    mycsrf: String,
+    pageurl: String,
+    id: String
   },
   data: function() {
     return {
       imgUrlBase: 'https://res.cloudinary.com/ortsac/image/upload/',
-      showDelete: false
+      showDelete: false,
+      showModal: false
     }
   },
   computed: {
@@ -26,16 +30,22 @@ module.exports = {
         }
       }
     },
+    makePostUrl: {
+      get: function() {
+        return this.posturl + '/' + this.id
+      }
+    }
   },
   methods: {
     toggleDelete: function() {
       return this.showDelete = !this.showDelete
     },
-    deactivateDelete: function() {
-      return this.showDelete = false
+    toggleModal: function() {
+      return this.showModal = !this.showModal
     },
-    activateDelete: function() {
-      return this.showDelete = true
+    clickDelete: function() {
+      this.showDelete = false
+      this.showModal = true
     }
   }
 }

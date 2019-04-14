@@ -12,8 +12,8 @@
   justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
-
 }
+
 .form-picture {
   width: 230px;
   margin: 10px;
@@ -22,7 +22,7 @@
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
   min-height: 0px;
@@ -43,9 +43,77 @@
     &:hover {
       opacity: 1;
     }
+    .fa-times {
+      color: white;
+      font-size: 18px;
+    }
   }
 
   span {
     font-size: 14px;
+  }
+
+  img {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+.card-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.6);
+
+  width: 260px;
+  height: 260px;
+
+  .modal-buttons {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+
+  .modal-confirm {
+    color: #c63c1d;
+    padding: 8px;
+    &:hover {
+      border: 1px solid #c63c1d;
+      border-radius: 15px;
+    }
+  }
+  .modal-cancel {
+    padding: 8px;
+    &:hover {
+      border: 1px solid white;
+      border-radius: 15px;
+    }
+  }
+
+  i {
+    font-size: 40px;
+    color: white;
+  }
+
+  p {
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding: 3px;
+    margin: 3px;
+  }
+
+  button, input {
+    color: white;
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 3px;
+    margin: 3px;
   }
 }
