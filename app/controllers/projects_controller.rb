@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     save_images if project_params[:images].present?
     save_cover_image(project) if project_params[:coverimage].present?
     if project.save!
-      redirect_to(admin_projects_index_path)
+      redirect_to(edit_project_path(project_params[:id].to_i))
     else
       p "error"
     end

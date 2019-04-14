@@ -25,7 +25,7 @@
 
       <div class="form-line">
         <label for="">Upload Image</label>
-        <input class="form-button-inverted" type="submit" value="Select File">
+        <input class="form-button-inverted" multiple="multiple" type="file" name="project[images][]" />
       </div>
 
       <div class="form-button-container">

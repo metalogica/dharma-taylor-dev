@@ -1,7 +1,7 @@
 <div class="back-button-container">
   <a href="" class="back-button"><-</a>
   <span class="back-button-header">
-    <% if @project.name.blank? %>
+    <% if @project.name %>
       Edit Mode: Unnamed Project
     <% else %>
       Edit Mode: <%= @project.name %>
