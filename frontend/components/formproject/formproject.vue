@@ -5,6 +5,7 @@
           method="post">
       <input type="hidden" name="_method" v-bind:value="httpverb">
       <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
+      <input type="hidden" name="project[id]" :value="Number(this.id)">
 
       <div class="form-line">
         <label for="">Project Name</label>
@@ -25,7 +26,7 @@
 
       <div class="form-line">
         <label for="">Upload Image</label>
-        <input class="form-button-inverted" multiple="multiple" type="file" name="project[images][]" />
+        <input class="form-button-inverted" multiple="multiple" type="file" name="project[user_upload][]" />
       </div>
 
       <div class="form-button-container">

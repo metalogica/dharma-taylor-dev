@@ -24,6 +24,7 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: project_params[:id])
+    binding.pry
     project.update(name: project_params[:name], description: project_params[:description])
     save_images if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?
@@ -58,7 +59,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find_by(id: params[:id])
+    @project = Project.find_by(id: params[:id] || params[:id])
     if @project.destroy
       redirect_to(admin_projects_index_path)
     else
