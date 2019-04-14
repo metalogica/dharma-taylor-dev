@@ -11,6 +11,9 @@ class Project < ApplicationRecord
   has_many :prints, -> {printable}, class_name: "Image"
   has_many :videostills, -> {videostill}, class_name: "Image"
 
+  # Admin upload photo capability
+  mount_uploaders :images, ImageUploader
+
   def next
     self.class.ordered.where("project_order > ? AND visibility = true", project_order).first
   end
