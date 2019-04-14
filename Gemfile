@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.4.2"
+# Carrier Wave for photo uploading
+gem 'carrierwave', '~> 1.2'
 # Simple form
 gem 'simple_form'
 # Devise for user authentication
