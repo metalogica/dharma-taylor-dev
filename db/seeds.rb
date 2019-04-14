@@ -110,7 +110,22 @@ Image.create!([
   {project_id: 2, nature: "photo", url: "08-UntitledCollection-Cool-Ruler_ybxpqr", format: "portrait"}
 ])
 
-Biography.create(information:
+
+
+bio = Biography.new(
+  telephone_contact: "+44 (0) 754 713 68 08",
+  email_primary: "studio@dharmataylor.com",
+  email_contact: "dharmataylorcontact@gmail.com",
+  location: "London, UK",
+  social_media: {
+    "ig/" => "https://www.instagram.com/dharmataylor/?hl=en",
+    "tb/" => "https://dharma-taylor.tumblr.com/"
+  }
+)
+
+bio.save!
+
+bio.update!(information:
 "London-born Dharma Taylor graduated from the London College of Fashion with a Masters in Fashion Design Technology - Menswear, in 2010.
 
 Since graduating from Rochester University in 2008 and completing her Masters in menswear she has worked on various artistic fashion projects. They’ve been shown by a variety of national and international organisations and galleries including the Benaki Museum in Athens, the V&A and Tate Britain. The concept driven collections are inspired by literary figures such as Franz Kafka and ideas of Hyper-reality.
@@ -146,3 +161,5 @@ There’s a lot of vibrations rattling around the city good and bad, sometimes t
 
 
 Interview by Mairi Hare")
+
+puts "\n\nSeeded successfully!\n\n"
