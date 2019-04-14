@@ -49,6 +49,10 @@ body.projects.show {
 }
 
 body.projects.edit, body.projects.new {
+  .upload-image-container {
+    position: absolute;
+  }
+
   .back-button-header {
     color: black;
     margin-top: 30px;
