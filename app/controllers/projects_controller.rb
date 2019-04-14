@@ -23,16 +23,22 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    project = Project.find_by(id: params[:id])
+    project = Project.find_by(id: project_params[:id])
     project.name = project_params[:name]
     project.description = project_params[:description]
     if project.save!
-      image = project.images.find(project_params[:coverimage])
-      image.coverimage = true
-      if image.save!
-        redirect_to(admin_projects_index_path)
-      else
-        render "edit"
+      if project_params[:coverimage].present?
+        project.images.each do |img|
+          img.coverimage = false
+          img.save!
+        end
+        image = project.images.find(project_params[:coverimage])
+        image.coverimage = true
+        if image.save!
+          redirect_to(admin_projects_index_path)
+        else
+          render "edit"
+        end
       end
     else
       render "edit"
@@ -74,7 +80,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :coverimage, :images)
+    params.require(:project).permit(:id, :name, :description, :coverimage, :images)
   end
 
   def set_title
