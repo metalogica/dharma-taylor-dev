@@ -13,7 +13,7 @@
   <%= f.input :id, as: :hidden %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.file_field :images, multiple: true %>
+  <%= f.file_field :user_upload, multiple: true %>
   <%= f.submit %>
 <% end %>
 
@@ -21,7 +21,8 @@
   <% @project.images.each do |img| %>
     <formgallery
       imgurlstub="<%= img.url %>"
-      imgformat="<%= img.format %>">
+      imgformat="<%= img.format %>"
+      img-filename="<%= img.filename unless img.filename.nil? %>">
     </formgallery>
   <% end %>
 </div>

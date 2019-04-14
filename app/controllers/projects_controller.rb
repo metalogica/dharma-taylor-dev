@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
   def update
     project = Project.find_by(id: project_params[:id])
     project.update(name: project_params[:name], description: project_params[:description])
-    save_images if project_params[:images].present?
+    save_images if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?
     if project.save!
       redirect_to(edit_project_path(project_params[:id].to_i))
@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:id, :name, :description, :coverimage, {images: []})
+    params.require(:project).permit(:id, :name, :description, :coverimage, {user_upload: []})
   end
 
   def save_cover_image(project)
@@ -83,12 +83,13 @@ class ProjectsController < ApplicationController
   end
 
   def save_images
-    project_params[:images].each do |cloud_img|
+    project_params[:user_upload].each do |cloud_img|
       callback = Cloudinary::Uploader.upload(cloud_img)
       puts "CALLBACK: #{callback}"
       local_image = Image.new
       local_image.project_id = project_params[:id]
       local_image.url = callback["secure_url"]
+      local_image.filename = callback["original_filename"]
       local_image.save!
     end
   end

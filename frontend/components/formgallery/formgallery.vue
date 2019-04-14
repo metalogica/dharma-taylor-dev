@@ -1,7 +1,7 @@
 <template>
   <div class="form-picture">
     <img :src="imgUrlFull" width="260" height="260">
-    <span><strong>Name:</strong> {{this.imgurlstub}}</span>
+    <span><strong>Name:</strong> {{this.imgName}}</span>
     <span><strong>Format:</strong> {{this.imgformat}}</span>
   </div>
 </template>
