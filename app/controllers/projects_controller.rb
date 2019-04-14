@@ -24,24 +24,13 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: project_params[:id])
-    project.name = project_params[:name]
-    project.description = project_params[:description]
+    project.update(name: project_params[:name], description: project_params[:description])
+    save_images if project_params[:images].present?
+    save_cover_image(project) if project_params[:coverimage].present?
     if project.save!
-      if project_params[:coverimage].present?
-        project.images.each do |img|
-          img.coverimage = false
-          img.save!
-        end
-        image = project.images.find(project_params[:coverimage])
-        image.coverimage = true
-        if image.save!
-          redirect_to(admin_projects_index_path)
-        else
-          render "edit"
-        end
-      end
+      redirect_to(admin_projects_index_path)
     else
-      render "edit"
+      p "error"
     end
   end
 
@@ -80,7 +69,28 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:id, :name, :description, :coverimage, :images)
+    params.require(:project).permit(:id, :name, :description, :coverimage, {images: []})
+  end
+
+  def save_cover_image(project)
+    project.images.each do |img|
+      img.coverimage = false
+      img.save!
+    end
+    cover_image = project.images.find(project_params[:coverimage])
+    cover_image.coverimage = true
+    cover_image.save!
+  end
+
+  def save_images
+    project_params[:images].each do |cloud_img|
+      callback = Cloudinary::Uploader.upload(cloud_img)
+      puts callback
+      local_image = Image.new
+      local_image.project_id = project_params[:id]
+      local_image.url = callback["secure_url"]
+      local_image.save!
+    end
   end
 
   def set_title
