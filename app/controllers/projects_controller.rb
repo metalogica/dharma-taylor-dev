@@ -85,7 +85,7 @@ class ProjectsController < ApplicationController
   def save_images
     project_params[:images].each do |cloud_img|
       callback = Cloudinary::Uploader.upload(cloud_img)
-      puts callback
+      puts "CALLBACK: #{callback}"
       local_image = Image.new
       local_image.project_id = project_params[:id]
       local_image.url = callback["secure_url"]

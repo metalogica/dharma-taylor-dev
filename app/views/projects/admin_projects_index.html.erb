@@ -6,6 +6,7 @@
 
 <div class="card-container">
   <% @projects.select {|proj| proj.visibility == true}.reverse_each do |proj|  %>
+    <% raise %>
     <card
       name="<%= proj.name %>"
       id="<%= proj.id %>"
