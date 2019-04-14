@@ -9,6 +9,11 @@
   </span>
 </div>
 
+<%= simple_form_for(@project) do |f| %>
+  <%= f.file_field :images, multiple: true %>
+  <%= f.submit %>
+<% end %>
+
 <div class="form-picture-container">
   <% @project.images.each do |img| %>
     <formgallery
@@ -17,6 +22,8 @@
     </formgallery>
   <% end %>
 </div>
+
+
 
 <% project_images_array = @project.images.map(&:url) %>
 <% project_image_id_array = @project.images.map(&:id) %>

@@ -74,7 +74,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :coverimage)
+    params.require(:project).permit(:name, :description, :coverimage, :images)
   end
 
   def set_title
