@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.4.2"
+# DotEnv Gem
+gem 'dotenv-rails', groups: [:development, :test]
 # Carrier Wave for photo uploading
 gem 'carrierwave', '~> 1.2'
 # Simple form
