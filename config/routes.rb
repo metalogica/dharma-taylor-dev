@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show, :edit, :update, :destroy, :new, :create], path: "featured"
   get '/admin', to: 'projects#admin_projects_index', as: 'admin_projects_index'
   get 'featured/archiver/:id', to: 'projects#archiver', as: 'archiver'
+  delete '/featured/:id/edit/delete_image', to: 'image#delete', as: 'delete_image'
 
   # Devise routes for user authentication
   devise_for :users, controllers: { registrations: "registrations" }

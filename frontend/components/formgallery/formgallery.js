@@ -32,7 +32,7 @@ module.exports = {
     },
     makePostUrl: {
       get: function() {
-        return this.posturl + '/' + this.id
+        return '/featured/' + this.id + '/edit/delete_image'
       }
     }
   },

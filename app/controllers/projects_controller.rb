@@ -24,11 +24,19 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: project_params[:id])
-    binding.pry
     project.update(name: project_params[:name], description: project_params[:description])
     save_images if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?
     if project.save!
+      redirect_to(edit_project_path(project_params[:id].to_i))
+    else
+      p "error"
+    end
+  end
+
+  def delete_image
+    image = Image.find(params[:id])
+    if image.destroy!
       redirect_to(edit_project_path(project_params[:id].to_i))
     else
       p "error"
