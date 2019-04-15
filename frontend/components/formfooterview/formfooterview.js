@@ -22,10 +22,6 @@ module.exports = {
         this.socialmediaurl.split(',').forEach((e) => {
           arr.push(e.replace(pattern, '').trim());
         });
-        while(arr.length < 5) {
-          var obj = {"undefined": "undefined"};
-          arr.push(obj)
-        };
         return arr;
       }
     },
@@ -36,10 +32,6 @@ module.exports = {
         this.socialmedianame.split(',').forEach((e) => {
           arr.push(e.replace(pattern, '').trim());
         });
-        while(arr.length < 5) {
-          var obj = {"undefined": "undefined"};
-          arr.push(obj)
-        };
         return arr;
       }
     },
@@ -53,7 +45,12 @@ module.exports = {
           obj.url = this.socialMediaUrlArray[handle];
           array.push(obj);
         })
-        console.log(array);
+        while(array.length < 5) {
+          var obj = {}
+          obj.title = " ";
+          obj.url = " ";
+          array.push(obj)
+        };
         return array;
       }
     }

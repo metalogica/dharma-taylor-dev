@@ -6,57 +6,57 @@
       <input type="hidden" name="form-id" :value="id">
 
       <label for="">Telephone</label>
-      <input type="text" name="footer[telephone]" :value="telephone">
+      <input type="text" name="footer[telephone_contact]" :value="telephone">
 
       <label for="">Primary Email</label>
-      <input type="text" name="footer[primary-email]" :value="primaryemail">
+      <input type="text" name="footer[email_primary]" :value="primaryemail">
 
       <label for="">Contact Email</label>
-      <input type="text" name="footer[contact-email]" :value="contactemail">
+      <input type="text" name="footer[email_contact]" :value="contactemail">
 
       <label for="">Address</label>
-      <input type="text" name="footer[address]" :value="location">
+      <input type="text" name="footer[location]" :value="location">
 
       <div class="social-media-forms">
         <div>
           <p>Social Media 1</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[0].title">
+          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[0].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-ur;][]" :value="socialMediaArray[0].url">
+          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[0].url">
         </div>
         <div>
           <p>Social Media 2</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[1].title">
+          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[1].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[1].url">
+          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[1].url">
         </div>
         <div>
           <p>Social Media 3</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[2].title">
+          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[2].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[2].url">
+          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[2].url">
         </div>
         <div>
           <p>Social Media 4</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[3].title">
+          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[3].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[3].url">
+          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[3].url">
         </div>
         <div>
           <p>Social Media 5</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[4].title">
+          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[4].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[4].url">
+          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[4].url">
         </div>
       </div>
 
