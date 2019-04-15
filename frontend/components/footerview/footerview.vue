@@ -5,9 +5,9 @@
       <li>All rights reserved.</li>
     </ul>
     <ul>
-      <li>+44 (0) 754 713 68 08</li>
-      <li>studio@dharmataylor.com</li>
-      <li>London, UK</li>
+      <li>{{ this.telephone }}</li>
+      <li>{{ this.primaryemail }}</li>
+      <li>{{ this.location }}</li>
     </ul>
     <ul>
       <li>
@@ -17,15 +17,12 @@
         <a href="/information">information</a>
       </li>
       <li>
-        <a href="mailto:dharmataylorcontact@gmail.com">contact</a>
+        <a :href="`mailto:${this.contactemail}`" >contact</a>
       </li>
     </ul>
     <ul>
-      <li>
-        <a href="https://www.instagram.com/dharmataylor/?hl=en" target="_blank" >ig/</a>
-      </li>
-      <li>
-        <a href="https://dharma-taylor.tumblr.com/" target="_blank" >tb/</a>
+      <li v-for="media in socialMediaArray">
+        <a :href="media.url">{{ media.title }}</a>
       </li>
     </ul>
   </div>

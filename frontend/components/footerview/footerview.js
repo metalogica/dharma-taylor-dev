@@ -17,7 +17,7 @@ module.exports = {
         var arr = [];
         var pattern = /{|}|"|'|\[|\]/gi
         this.socialmediaurl.split(',').forEach((e) => {
-          arr.push(e.replace(pattern, ''));
+          arr.push(e.replace(pattern, '').trim());
         });
         return arr;
       }
@@ -25,8 +25,10 @@ module.exports = {
     socialMediaNameArray: {
       get: function() {
         var arr = [];
-        var pattern = /[^\]\['"{}]\w+/gi
-        this.socialmedianame.split(',').forEach((e) => {arr.push(e.match(pattern).join(''))});
+        var pattern = /{|}|"|'|\[|\]/gi
+        this.socialmedianame.split(',').forEach((e) => {
+          arr.push(e.replace(pattern, '').trim());
+        });
         return arr;
       }
     },
@@ -43,6 +45,11 @@ module.exports = {
         console.log(array);
         return array;
       }
+    }
+  },
+  methods: {
+    sendEmail: function() {
+      return `mailto:${this.contactemail}`
     }
   }
 }
