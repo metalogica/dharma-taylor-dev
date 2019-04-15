@@ -1,0 +1,34 @@
+<template>
+  <div class="footer-container">
+    <ul>
+      <li>© 2019 DHARMA TAYLOR</li>
+      <li>All rights reserved.</li>
+    </ul>
+    <ul>
+      <li>+44 (0) 754 713 68 08</li>
+      <li>studio@dharmataylor.com</li>
+      <li>London, UK</li>
+    </ul>
+    <ul>
+      <li>
+        <a href="/archives_list">archive</a>
+      </li>
+      <li>
+        <a href="/information">information</a>
+      </li>
+      <li>
+        <a href="mailto:dharmataylorcontact@gmail.com">contact</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="https://www.instagram.com/dharmataylor/?hl=en" target="_blank" >ig/</a>
+      </li>
+      <li>
+        <a href="https://dharma-taylor.tumblr.com/" target="_blank" >tb/</a>
+      </li>
+    </ul>
+  </div>
+</template>
+<script src="./footerview.js"></script>
+<style lang="scss" src="./footerview.scss"></style>

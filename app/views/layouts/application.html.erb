@@ -39,7 +39,14 @@
           <%= yield %>
         </div>
         <div class="page-footer">
-          <%=render 'shared/footer'%>
+          <footerview
+            telephone="<%= @biography.telephone_contact %>"
+            primaryemail="<%= @biography.email_primary %>"
+            contactemail="<%= @biography.email_contact %>"
+            location="<%= @biography.location %>"
+            socialmedianame="<%= @sm_name %>"
+            socialmediaurl="<%= @sm_url %>">
+          </footerview>
         </div>
       </div>
     </div>
