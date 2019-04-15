@@ -1,17 +1,19 @@
 class FootersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_layout
+  layout "dashboard"
 
   def edit
+    @biography = Biography.first
   end
 
   def update
+    binding.pry
   end
 
   private
 
-  def set_layout
-    render layout: 'layouts/dashboard'
+  def footer_params
+    # params.require(:footer).permit(:)
   end
 
 end

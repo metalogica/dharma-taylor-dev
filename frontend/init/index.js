@@ -20,6 +20,7 @@ import List from '../components/list/list.vue'
 import Formproject from '../components/formproject/formproject.vue'
 import Formgallery from '../components/formgallery/formgallery.vue'
 import Footerview from '../components/footerview/footerview.vue'
+import FormFooterview from '../components/formfooterview/formfooterview.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -39,6 +40,7 @@ Vue.component('list', List);
 Vue.component('formproject', Formproject);
 Vue.component('formgallery', Formgallery);
 Vue.component('footerview', Footerview);
+Vue.component('formfooterview', FormFooterview);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
