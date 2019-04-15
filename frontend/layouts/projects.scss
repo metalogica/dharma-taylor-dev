@@ -52,48 +52,4 @@ body.projects.edit, body.projects.new {
   .upload-image-container {
     position: absolute;
   }
-
-  .back-button-header {
-    color: black;
-    margin-top: 30px;
-  }
-
-  .back-button-container {
-    height: 30px;
-    margin: 5px;
-    margin-bottom: 45px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .back-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: black;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
-    margin: 20px;
-    margin-top: 50px;
-    margin-left: 20px;
-    padding: 5px;
-    text-decoration: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      color: black;
-      background-color: white;
-      border: 1px solid rgba(0,0,0,0.1);
-      text-decoration: none;
-    }
-    a:hover {
-      color: black;
-      text-decoration: none;
-    }
-  }
 }

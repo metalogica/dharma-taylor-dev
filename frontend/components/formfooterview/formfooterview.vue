@@ -18,14 +18,45 @@
       <input type="text" name="footer[address]" :value="location">
 
       <div class="social-media-forms">
-        <p>Social Media</p>
-        <div class="social-media-input"
-              v-for="media in this.socialMediaArray">
+        <div>
+          <p>Social Media 1</p>
           <label for="">Name</label>
-          <input type="text" name="footer[social-media-name][]" :value="media.title">
+          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[0].title">
 
           <label for="">URL</label>
-          <input type="text" name="footer[social-media-ur;][]" :value="media.url">
+          <input type="text" name="footer[social-media-ur;][]" :value="socialMediaArray[0].url">
+        </div>
+        <div>
+          <p>Social Media 2</p>
+          <label for="">Name</label>
+          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[1].title">
+
+          <label for="">URL</label>
+          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[1].url">
+        </div>
+        <div>
+          <p>Social Media 3</p>
+          <label for="">Name</label>
+          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[2].title">
+
+          <label for="">URL</label>
+          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[2].url">
+        </div>
+        <div>
+          <p>Social Media 4</p>
+          <label for="">Name</label>
+          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[3].title">
+
+          <label for="">URL</label>
+          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[3].url">
+        </div>
+        <div>
+          <p>Social Media 5</p>
+          <label for="">Name</label>
+          <input type="text" name="footer[social-media-name][]" :value="socialMediaArray[4].title">
+
+          <label for="">URL</label>
+          <input type="text" name="footer[social-media-url][]" :value="socialMediaArray[4].url">
         </div>
       </div>
 
