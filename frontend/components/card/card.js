@@ -38,11 +38,6 @@ module.exports = {
         }
       }
     },
-    getChildren: {
-      get: function() {
-        console.log(this.$children)
-      }
-    },
     imageurl: {
       get: function() {
         return this.urlImageStub + this.img

@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let filterCards = function(card) { return card.hideCard === false };
         var visibleCards = cardArray.filter(filterCards).length
         this.$store.commit('cardsCounted', visibleCards);
+      },
+      countChildrenList: function () {
+        var cardArray = this.$children.filter(child => child.constructor.options.name.match(/list/gim));
+        let filterCards = function(card) { return card.hideListItem === false };
+        var visibleCards = cardArray.filter(filterCards).length
+        this.$store.commit('cardsCounted', visibleCards);
       }
     }
   })

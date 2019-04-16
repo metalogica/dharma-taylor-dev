@@ -1,6 +1,8 @@
 <template>
   <div class="list-container"
-       v-if="listView">
+       :class="{hidden: hideListItem || !listView}"
+       @keydown="currentQuery"
+       @keydown.enter="currentQuery">
     <div class="project-list-item-header">
       <span id="title-text">Title</span>
       <span>Date Created</span>

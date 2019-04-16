@@ -1,6 +1,6 @@
 <template>
   <div class="project-card"
-      :class="{hidden: hideCard}"
+      :class="{hidden: hideCard || !cardView}"
        v-if="cardView"
        @keydown="currentQuery"
        @keydown.enter="currentQuery">

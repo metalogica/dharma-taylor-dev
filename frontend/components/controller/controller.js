@@ -29,6 +29,7 @@ module.exports = {
     },
     toggleView: function() {
       this.$store.commit('toggleView')
+      this.$root.countChildrenList()
     },
     toggleCreate: function() {
       this.createIsHover = !this.createIsHover

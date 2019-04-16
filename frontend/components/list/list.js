@@ -1,6 +1,7 @@
 module.exports = {
   props: {
     name: String,
+    description: String,
     img: String,
     mycsrf: String,
     posturl: String,
@@ -17,10 +18,31 @@ module.exports = {
       isHoveringArchive: false,
       isHoveringDelete: false,
       isHoveringUnarchive: false,
-      showModal: false
+      showModal: false,
+      hideListItem: false
     }
   },
   computed: {
+    currentQuery: {
+      get: function() {
+        var query = this.$store.state.searchbarQuery;
+        if (query.length < 1) {
+          this.hideListItem = false;
+          this.$root.countChildrenList()
+          return "no query";
+        };
+        var pattern = new RegExp(query, 'gim');
+        if (this.name.match(pattern) != null || this.description.match(pattern) != null) {
+          this.hideListIem = false;
+          this.$root.countChildrenList()
+          return query;
+        } else {
+          this.hideListItem = true;
+          this.$root.countChildrenList()
+          return query;
+        }
+      }
+    },
     imageurl: {
       get: function() {
         return this.urlImageStub + this.img
