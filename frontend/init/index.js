@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     state: {
       count: 0,
       cardView: true,
-      listView: false
+      listView: false,
+      searchbarQuery: ""
     },
     mutations: {
       increment: function(state) {
@@ -58,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleView: function(state) {
         state.cardView = !state.cardView
         state.listView = !state.listView
+      },
+      updateSearchbarQuery: function(state, query) {
+        state.searchbarQuery = query
       }
     }
   })
@@ -65,7 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     store,
-    components: { Navbar, Modal, Controller, Card, List, Formproject, Dashboard, Searchbar},
+    components: {
+      Navbar,
+      Modal,
+      Controller,
+      Card,
+      List,
+      Formproject,
+      Formgallery,
+      Dashboard,
+      Searchbar,
+      Footerview,
+      FormFooterview
+    },
     data: function () {
       return {
         modalData: {

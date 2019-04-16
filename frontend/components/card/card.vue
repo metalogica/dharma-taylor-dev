@@ -1,6 +1,6 @@
 <template>
   <div class="project-card"
-       v-if="cardView">
+       v-if="cardView && !hideCard">
     <div
       class="img-wrapper"
       v-on:mouseover="isHovering = true"
