@@ -20,7 +20,6 @@ module.exports = {
   computed: {
     currentQuery: {
       get: function() {
-        console.log('initiated');
         var query = this.$store.state.searchbarQuery;
         if (query.length < 1) {
           this.hideCard = false;

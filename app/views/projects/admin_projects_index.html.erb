@@ -1,7 +1,9 @@
 <controller></controller>
 
 <div class="searchbar-wrapper">
-  <searchbar></searchbar>
+  <searchbar
+      cards="<%= @projects.count %>">
+  </searchbar>
 </div>
 
 <div class="card-container">

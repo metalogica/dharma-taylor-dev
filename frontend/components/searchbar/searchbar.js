@@ -1,7 +1,17 @@
 module.exports = {
+  props: {
+    cards: String
+  },
   data: function() {
     return {
       txtInput: ""
+    }
+  },
+  computed: {
+    totalCards: {
+      get: function() {
+      return Number(this.cards)
+      }
     }
   },
   methods: {

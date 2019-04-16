@@ -9,14 +9,6 @@ module.exports = {
     }
   },
   computed: {
-    count: {
-      get: function() {
-        return this.$store.state.count
-      },
-      set: function() {
-        this.$store.commit('increment')
-      }
-    },
     cardView: {
       get: function() {
         return this.$store.state.cardView

@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Vuex
   const store = new Vuex.Store({
     state: {
-      count: 0,
+      cards: 0,
       cardView: true,
       listView: false,
-      searchbarQuery: ""
+      searchbarQuery: "",
     },
     mutations: {
       increment: function(state) {
@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       updateSearchbarQuery: function(state, query) {
         state.searchbarQuery = query
+      },
+      countCards: function(state, card) {
+
       }
     },
     getters: {
