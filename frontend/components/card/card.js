@@ -23,16 +23,24 @@ module.exports = {
         var query = this.$store.state.searchbarQuery;
         if (query.length < 1) {
           this.hideCard = false;
+          this.$root.countChildren()
           return "no query";
         };
         var pattern = new RegExp(query, 'gim');
         if (this.name.match(pattern) != null || this.description.match(pattern) != null) {
           this.hideCard = false;
+          this.$root.countChildren()
           return query;
         } else {
           this.hideCard = true;
+          this.$root.countChildren()
           return query;
         }
+      }
+    },
+    getChildren: {
+      get: function() {
+        console.log(this.$children)
       }
     },
     imageurl: {

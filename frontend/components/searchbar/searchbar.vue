@@ -9,7 +9,7 @@
         @keyup="genQuery"
         @keydown="genQuery"
         @keyup.enter="genQuery">
-    <span>0 search results</span>
+    <span>{{ showNumberOfCards }}</span>
   </div>
 </template>
 <script src="./searchbar.js"></script>

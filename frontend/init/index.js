@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
       searchbarQuery: "",
     },
     mutations: {
-      increment: function(state) {
-        state.count++
+      cardsCounted: function(state, cards) {
+        state.cards = cards
       },
       toggleView: function(state) {
         state.cardView = !state.cardView
@@ -63,13 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSearchbarQuery: function(state, query) {
         state.searchbarQuery = query
       },
-      countCards: function(state, card) {
-
-      }
-    },
-    getters: {
-      matchQuery: function() {
-      }
     }
   })
 
@@ -101,6 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
       showModal: function(e) {
         this.modalData.image_url=e.srcElement.currentSrc;
         this.modalData.show=true;
+      },
+      countChildren: function() {
+        var cardArray = this.$children.filter(child => child.constructor.options.name.match(/card/gim));
+        let filterCards = function(card) { return card.hideCard === false };
+        var visibleCards = cardArray.filter(filterCards).length
+        this.$store.commit('cardsCounted', visibleCards);
       }
     }
   })

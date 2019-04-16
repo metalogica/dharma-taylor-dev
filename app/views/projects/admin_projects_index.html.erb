@@ -2,7 +2,7 @@
 
 <div class="searchbar-wrapper">
   <searchbar
-      cards="<%= @projects.count %>">
+      cards="<%= @projects.select {|proj| proj.visibility == true}.count %>">
   </searchbar>
 </div>
 
