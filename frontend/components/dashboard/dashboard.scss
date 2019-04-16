@@ -26,7 +26,13 @@
   }
 
   a:hover {
-    background-color: gray;
+    background-color: white;
+    color: black;
+  }
+
+  .active {
+    background-color: white;
+    color: black;
   }
 
   .dashboard-logo {
@@ -40,6 +46,12 @@
     position: absolute;
     right: 0;
     margin-right: 20px;
+    &:hover {
+      font-weight: 900;
+      text-decoration: underline;
+      background-color: black;
+      color: white;
+    }
   }
 }
 

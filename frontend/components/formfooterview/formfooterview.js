@@ -38,7 +38,6 @@ module.exports = {
     socialMediaArray: {
       get: function() {
         var array = [];
-        console.log(array)
         this.socialMediaNameArray.forEach((name, handle) => {
           var obj ={};
           obj.title = name;

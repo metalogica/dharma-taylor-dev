@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to:'projects#index'
+  get '/sign_me_out', to: 'application#sign_me_out'
 
   # Projects controller
   # resources :projects, only: [:index, :edit, :update, :destroy], path: "featured"

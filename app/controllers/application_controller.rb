@@ -7,6 +7,15 @@ class ApplicationController < ActionController::Base
   # Renders layout for Devise authentication page
   layout :layout_by_resource
 
+  def sign_me_out
+    @user = User.first
+    if sign_out(@user)
+      redirect_to('/')
+    else
+      p "error"
+    end
+  end
+
   private
 
   def render_footer_content
