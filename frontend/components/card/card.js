@@ -20,12 +20,19 @@ module.exports = {
   computed: {
     currentQuery: {
       get: function() {
+        console.log('initiated');
         var query = this.$store.state.searchbarQuery;
+        if (query.length < 1) {
+          this.hideCard = false;
+          return "no query";
+        };
         var pattern = new RegExp(query, 'gim');
         if (this.name.match(pattern) != null || this.description.match(pattern) != null) {
-          this.hideCard = false
+          this.hideCard = false;
+          return query;
         } else {
-          this.hideCard = true
+          this.hideCard = true;
+          return query;
         }
       }
     },

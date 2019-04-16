@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSearchbarQuery: function(state, query) {
         state.searchbarQuery = query
       }
+    },
+    getters: {
+      matchQuery: function() {
+      }
     }
   })
 

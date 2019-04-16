@@ -1,6 +1,9 @@
 <template>
   <div class="project-card"
-       v-if="cardView && !hideCard">
+      :class="{hidden: hideCard}"
+       v-if="cardView"
+       @keydown="currentQuery"
+       @keydown.enter="currentQuery">
     <div
       class="img-wrapper"
       v-on:mouseover="isHovering = true"
