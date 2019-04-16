@@ -30,21 +30,23 @@
           v-if="listView"
           :class="{nowshow2: cardIsHover}">Card View</span>
     <!-- Button 3: Sort by date -->
-    <span class="controller-button"
-          href=""
+    <a class="controller-button"
+          href="https://analytics.google.com/"
+          target="_blank"
           @mouseover="toggleSort"
           @mouseout="toggleSort">
-      <i class="fas fa-sort-numeric-down"></i>
-    </span>
+      <i class="far fa-chart-bar"></i>
+    </a>
     <span class="highlight-text"
-          :class="{noshow: !sortIsHover}">Sort By Date</span>
+          :class="{noshow: !sortIsHover}">Analytics</span>
     <!-- Button 4: Preview  -->
-    <span class="controller-button"
-          href=""
+    <a class="controller-button"
+          href="http://www.dharmataylor.com"
+          target="_blank"
           @mouseover="togglePreview"
           @mouseout="togglePreview">
       <i class="fab fa-safari"></i>
-    </span>
+    </a>
     <span class="highlight-text"
           :class="{noshow: !previewIsHover}">Preview Site</span>
   </div>
