@@ -21,6 +21,7 @@ import Formproject from '../components/formproject/formproject.vue'
 import Formgallery from '../components/formgallery/formgallery.vue'
 import Footerview from '../components/footerview/footerview.vue'
 import FormFooterview from '../components/formfooterview/formfooterview.vue'
+import Backbutton from '../components/backbutton/backbutton.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -41,6 +42,7 @@ Vue.component('formproject', Formproject);
 Vue.component('formgallery', Formgallery);
 Vue.component('footerview', Footerview);
 Vue.component('formfooterview', FormFooterview);
+Vue.component('backbutton', Backbutton);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       Dashboard,
       Searchbar,
       Footerview,
-      FormFooterview
+      FormFooterview,
+      Backbutton
     },
     data: function () {
       return {

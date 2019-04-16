@@ -1,13 +1,6 @@
-<div class="back-button-container">
-  <a href="" class="back-button"><-</a>
-  <span class="back-button-header">
-    <% if @project.name %>
-      Edit Mode: Unnamed Project
-    <% else %>
-      Edit Mode: <%= @project.name %>
-    <% end %>
-  </span>
-</div>
+<backbutton
+    route="<%= request.referrer %>">
+</backbutton>
 
 <div class="form-picture-container">
   <% @project.images.each do |img| %>

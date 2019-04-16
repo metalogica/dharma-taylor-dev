@@ -1,7 +1,6 @@
-<div class="back-button-container">
-  <a href="" class="back-button"><-</a>
-  <p>new project page</p>
-</div>
+<backbutton
+    route="<%= request.referrer %>">
+</backbutton>
 
 <div class="edit-picture-container">
   <% @project.images.each do |img| %>
