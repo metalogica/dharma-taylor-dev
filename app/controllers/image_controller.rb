@@ -1,10 +1,10 @@
 class ImageController < ApplicationController
   def delete
     image = Image.find(params[:id])
-    redirect_data = image.project.id
+    project = image.project
     if image.destroy!
-      choose_next_cover_image
-      redirect_to(edit_project_path(redirect_data))
+      choose_next_cover_image(project)
+      redirect_to(edit_project_path(project.id))
       puts "\n\nCRUD: #{image} deleted successfully.\n\n"
     else
       p "error"
@@ -30,11 +30,8 @@ class ImageController < ApplicationController
 
   private
 
-  def choose_next_cover_image
-    image = Image.find(params[:id])
-    project = image.project
+  def choose_next_cover_image(project)
     new_cover = project.images.first
-    new_cover.coverimage = true
-    new_cover.save!
+    new_cover.update!(coverimage: true)
   end
 end

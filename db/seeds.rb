@@ -112,7 +112,7 @@ Image.create!([
 
 projects = Project.all
 projects.each.each do |project|
-  cover = project.images.first
+  cover = project.images.last
   cover.coverimage = true
   cover.save!
 end
