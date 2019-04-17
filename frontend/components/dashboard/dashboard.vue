@@ -5,13 +5,13 @@
       <span>ADMIN VIEW</span>
     </div>
     <ul v-if="this.formView">
-      <li><a class="active" href="/admin">Projects</a></li>
-      <li><a href="/archives">Archives</a></li>
+      <li><a :class="{active: routedFromAdmin}" href="/admin">Projects</a></li>
+      <li><a :class="{active: !routedFromAdmin}" href="/archives">Archives</a></li>
       <li><a href="/information/1/edit">Information</a></li>
       <li><a href="/footer/edit">Footer</a></li>
     </ul>
-    <ul v-else v-for="link in this.links">
-      <li>
+    <ul v-else >
+      <li v-for="link in this.links">
         <a :href="link.url" :class="{active: link.url === currentPage}">{{link.name}}</a>
       </li>
     </ul>

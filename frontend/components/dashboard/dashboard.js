@@ -29,6 +29,13 @@ module.exports = {
         var pattern = new RegExp('featured|new', 'gim');
         return pattern.test(this.currentPage)
       }
+    },
+    routedFromAdmin: {
+      get: function() {
+        var previousPage = document.referrer;
+        var pattern = new RegExp('admin', 'gim');
+        return pattern.test(previousPage) ? true : false;
+      }
     }
   },
   methods: {
