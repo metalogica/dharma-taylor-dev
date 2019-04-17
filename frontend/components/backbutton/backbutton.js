@@ -1,6 +1,7 @@
 module.exports = {
   props: {
     route: String,
+    name: String
   },
   data: function() {
     return {
