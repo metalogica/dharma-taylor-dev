@@ -1,8 +1,4 @@
-User.create!(email: 'rjarram@me.com', password: 'catnip123', admin: true)
-
-Image.destroy_all!
-Project.destroy_all!
-Biography.destroy_all!
+User.create!(email: 'rjarram@me.com', password: 'catnip123', admin: true) unless User.first.present?
 
 Project.create!([
   {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
@@ -114,11 +110,10 @@ Image.create!([
   {project_id: 2, nature: "photo", url: "08-UntitledCollection-Cool-Ruler_ybxpqr", format: "portrait"}
 ])
 
-
 projects = Project.all
-project.each.each do |project|
+projects.each.each do |project|
   cover = project.images.first
-  cover.coverimage= true
+  cover.coverimage = true
   cover.save!
 end
 

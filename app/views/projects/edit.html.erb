@@ -3,7 +3,7 @@
 </backbutton>
 
 <div class="form-picture-container">
-  <% @project.images.reverse_each do |img| %>
+  <% @project.images.each do |img| %>
     <formgallery
       coverimage="<%= img.coverimage %>"
       new="false"
