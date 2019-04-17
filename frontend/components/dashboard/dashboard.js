@@ -23,6 +23,12 @@ module.exports = {
           if (item.url === item.currentpage) { item.active = true}
         })
       }
+    },
+    formView: {
+      get: function() {
+        var pattern = new RegExp('featured|new', 'gim');
+        return pattern.test(this.currentPage)
+      }
     }
   },
   methods: {
