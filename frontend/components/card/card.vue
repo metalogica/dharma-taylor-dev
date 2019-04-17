@@ -29,6 +29,7 @@
         <!-- Card Modal -->
         <div
            class="card-modal"
+           id="list-modal"
            v-if="showModal">
           <i class="fas fa-exclamation-circle"></i>
           <p>Are you sure you wan't to permanently delete this item?</p>

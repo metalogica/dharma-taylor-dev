@@ -37,7 +37,7 @@
 
     <!-- Card Modal -->
     <div
-       class="card-modal"
+       class="form-gallery-card-modal"
        v-if="showModal"
        @mouseleave="showModal = false">
       <i class="fas fa-exclamation-circle"></i>
