@@ -18,18 +18,6 @@
         <textarea name="project[description]" :value="projectdescription"></textarea>
       </div>
 
-      <div v-if="this.newProject"class="form-line">
-        <label for="">Cover Image</label>
-        <span>No Images Uploaded</span>
-        <input type="hidden" name="project[coverimage]" value="1">
-      </div>
-      <div v-else class="form-line">
-        <label for="">Cover Image</label>
-        <select name="project[coverimage]" id="">
-          <option v-for="option in this.selectCoverImage" :value="option.id">{{ option.text }}</option>
-        </select>
-      </div>
-
       <div class="form-upload-button-container">
         <label for="">Upload Images</label>
         <input multiple="multiple" type="file" name="project[user_upload][]"/>
