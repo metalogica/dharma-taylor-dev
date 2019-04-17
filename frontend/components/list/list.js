@@ -9,7 +9,8 @@ module.exports = {
     id: String,
     currentpage: String,
     datecreate: String,
-    dateupdate: String
+    dateupdate: String,
+    imagecount: String
   },
   data: function(){
     return {
@@ -71,6 +72,11 @@ module.exports = {
     listView: {
       get: function() {
         return this.$store.state.listView
+      }
+    },
+    dateCreated: {
+      get: function() {
+        return this.datecreate === "0" ? 'Today' : `Created ${this.datecreate} days ago`
       }
     }
   },

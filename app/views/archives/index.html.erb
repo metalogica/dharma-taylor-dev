@@ -12,7 +12,7 @@
       name="<%= proj.name %>"
       description="<%= proj.description %>"
       id="<%= proj.id %>"
-      img="<%= proj.images[0].url if proj.images.present? %>"
+      img="<%= proj.images.select { |img| img.coverimage }.first.url if proj.images.present? %>"
       mycsrf="<%= form_authenticity_token %>"
       posturl="featured"
       slug="<%= proj.slug %>">
@@ -20,10 +20,11 @@
   <% end %>
 </div>
 
-<div class="list-container">
+<div>
   <% @projects.select {|proj| proj.visibility == false}.reverse_each do |proj|  %>
     <list
       name="<%= proj.name %>"
+      imagecount="<%= proj.images.count %>"
       description="<%= proj.description %>"
       id="<%= proj.id %>"
       img="<%= proj.images[0].url if proj.images.present? %>"
@@ -31,7 +32,7 @@
       posturl="featured"
       currentpage="<%= request.url %>"
       slug="<%= proj.slug %>"
-      datecreate="<%= proj.created_at.strftime("%d-%b-%Y at %I:%M%p") %>"
+      datecreate="<%= (Date.today - Date.parse(proj.created_at.strftime("%d-%b-%Y at %I:%M%p"))).to_i %>"
       dateupdate="<%= proj.updated_at.strftime("%d-%b-%Y at %I:%M%p") %>">
     </list>
   <% end %>

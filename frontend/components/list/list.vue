@@ -3,17 +3,19 @@
        :class="{hidden: hideListItem || !listView}"
        @keydown="currentQuery"
        @keydown.enter="currentQuery">
-    <div class="project-list-item-header">
-      <span id="title-text">Title</span>
-      <span>Date Created</span>
-      <span>Date Modified</span>
-      <span>Controls</span>
-    </div>
     <div class="project-list-item">
-      <img v-bind:src="imageurl" />
-      <span class="list-title">{{name}}</span>
-      <span class="list-date">{{ datecreate }}</span>
-      <span class="list-date">{{ dateupdate }}</span>
+      <div class="list-image">
+        <img v-bind:src="imageurl" />
+      </div>
+      <div class="list-title">
+        <span >{{name}}</span>
+      </div>
+      <div class="list-date">
+        <span class="list-date"><strong>Created: </strong>{{ dateCreated }}</span>
+      </div>
+      <div class="list-date">
+        <span class="list-date"><strong>Images: </strong>{{ this.imagecount }}</span>
+      </div>
       <div class="list-controller">
         <!-- Edit Post -->
         <div
