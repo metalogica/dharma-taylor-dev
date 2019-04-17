@@ -13,6 +13,9 @@
 .form-upload-button-container {
   align-self: flex-start;
   margin: 20px;
+  input {
+    margin-left: 5px;
+  }
 }
 
 .form-button {

@@ -1,5 +1,9 @@
 User.create!(email: 'rjarram@me.com', password: 'catnip123', admin: true)
 
+Image.destroy_all!
+Project.destroy_all!
+Biography.destroy_all!
+
 Project.create!([
   {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
   {name: "'Untitled'", description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
@@ -111,6 +115,12 @@ Image.create!([
 ])
 
 
+projects = Project.all
+project.each.each do |project|
+  cover = project.images.first
+  cover.coverimage= true
+  cover.save!
+end
 
 bio = Biography.new(
   telephone_contact: "+44 (0) 754 713 68 08",
