@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'projects#admin_projects_index', as: 'admin_projects_index'
   get 'featured/archiver/:id', to: 'projects#archiver', as: 'archiver'
   delete '/featured/:id/edit/delete_image', to: 'image#delete', as: 'delete_image'
+  get '/featured/:id/edit/set_cover', to: 'image#set_cover', as: 'set_cover'
 
   # Devise routes for user authentication
   devise_for :users, controllers: { registrations: "registrations" }

@@ -6,16 +6,22 @@ module.exports = {
     imgFilename: String,
     mycsrf: String,
     pageurl: String,
-    id: String
+    id: String,
+    coverimage: String
   },
   data: function() {
     return {
       imgUrlBase: 'https://res.cloudinary.com/ortsac/image/upload/',
       showDelete: false,
-      showModal: false
+      showModal: false,
     }
   },
   computed: {
+    coverImage: {
+      get: function() {
+        return this.coverimage === "true" ? true : false
+      }
+    },
     newProject: {
       get: function() {
         return (this.new === "true") ? true : false
@@ -39,6 +45,11 @@ module.exports = {
     makePostUrl: {
       get: function() {
         return '/featured/' + this.id + '/edit/delete_image'
+      }
+    },
+    makeCoverUrl: {
+      get: function() {
+        return '/featured/' + this.id + '/edit/set_cover'
       }
     }
   },
