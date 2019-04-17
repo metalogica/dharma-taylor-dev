@@ -10,10 +10,15 @@
   justify-content: center;
 }
 
+.form-upload-button-container {
+  align-self: flex-start;
+  margin: 20px;
+}
+
 .form-button {
   margin: 15px;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 35px;
 
   color: white;
   background-color: black;
@@ -80,4 +85,3 @@ $form-text-area-height: 260px;
   // height: calc($form-container-height + $form-text-area-height);
   height: 280px;
 }
-

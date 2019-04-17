@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
   def update
     project = Project.find_by(id: project_params[:id])
     project.update(name: project_params[:name], description: project_params[:description])
+    project.save!
     save_images if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?
     if project.save!
@@ -95,7 +96,6 @@ class ProjectsController < ApplicationController
   end
 
   def save_images
-    return if project_params[:user_upload][0].empty? #problematic
     project_params[:user_upload].each do |cloud_img|
       callback = Cloudinary::Uploader.upload(cloud_img)
       puts "CALLBACK: #{callback}"

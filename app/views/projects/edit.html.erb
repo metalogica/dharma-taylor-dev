@@ -16,17 +16,6 @@
   <% end %>
 </div>
 
-<div class="upload-image-container">
-  <!-- This is the code for the multiple image upload -->
-  <%= simple_form_for(@project) do |f| %>
-    <%= f.input :id, as: :hidden %>
-    <%= f.input :name, as: :hidden %>
-    <%= f.input :description, as: :hidden%>
-    <%= f.file_field :user_upload, multiple: true %>
-    <%= f.submit "Upload Photos" %>
-  <% end %>
-</div>
-
 <% project_images_array = @project.images.map(&:url) %>
 <% project_image_id_array = @project.images.map(&:id) %>
 <% project_name = @project.name %>

@@ -2,7 +2,8 @@
   <div class="form-container">
     <form class="form"
           v-bind:action="httpaction"
-          method="post">
+          method="post"
+          enctype="multipart/form-data">
       <input type="hidden" name="_method" v-bind:value="httpverb">
       <input type="hidden" name="authenticity_token" v-bind:value="mycsrf">
       <input type="hidden" name="project[id]" :value="Number(this.id)">
@@ -19,9 +20,8 @@
 
       <div v-if="this.newProject"class="form-line">
         <label for="">Cover Image</label>
-        <select name="project[coverimage]" id="">
-          <option value="">No Images Uploaded</option>
-        </select>
+        <span>No Images Uploaded</span>
+        <input type="hidden" name="project[coverimage]" value="1">
       </div>
       <div v-else class="form-line">
         <label for="">Cover Image</label>
@@ -30,9 +30,9 @@
         </select>
       </div>
 
-      <div class="form-line">
-        <label for="">Upload Image</label>
-        <input class="form-button-inverted" multiple="multiple" type="file" name="project[user_upload][]" />
+      <div class="form-upload-button-container">
+        <label for="">Upload Images</label>
+        <input multiple="multiple" type="file" name="project[user_upload][]"/>
       </div>
 
       <div class="form-button-container">
