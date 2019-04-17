@@ -30,7 +30,8 @@
         </div>
         <!-- Put post into archive -->
         <div
-          class="controller-link archive hidden"
+          class="controller-link archive"
+          v-if="showArchiveIcon"
           v-on:mouseover="isHoveringArchive = true"
           v-on:mouseout="isHoveringArchive = false">
           <a v-bind:href="makeArchiveUrl">
@@ -42,6 +43,7 @@
         <!-- Put post into portfolio -->
         <div
           class="controller-link portfolio"
+          v-if="!showArchiveIcon"
           v-on:mouseover="isHoveringUnarchive = true"
           v-on:mouseout="isHoveringUnarchive = false">
           <!-- Put into Portfolio -->

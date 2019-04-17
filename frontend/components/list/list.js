@@ -78,6 +78,13 @@ module.exports = {
       get: function() {
         return this.datecreate === "0" ? 'Today' : `Created ${this.datecreate} days ago`
       }
+    },
+    showArchiveIcon: {
+      get: function() {
+        var pageName = window.location.pathname;
+        var pattern = new RegExp('admin', 'gim');
+        return pattern.test(pageName) ? true : false;
+      }
     }
   },
   methods: {
