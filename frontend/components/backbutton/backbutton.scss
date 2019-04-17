@@ -1,13 +1,19 @@
 .back-button-container {
-  height: 100px;
-  width: 112px;
-  margin: 5px;
-  margin-bottom: 45px;
-
+  height: 120px;
+  padding: 5px;
+  color: black;
+  position: absolute;
+  float: left;
+  margin-left: 15px;
+  position: fixed;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+
+  span {
+    font-size: 12px !important;
+  }
 }
 
 .back-button {
@@ -17,8 +23,7 @@
   background-color: black;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
   margin: 20px;
-  margin-top: 50px;
-  margin-left: 20px;
+  margin-bottom: 0px;
   padding: 5px;
   text-decoration: none;
 
