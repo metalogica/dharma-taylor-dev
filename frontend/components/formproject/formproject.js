@@ -2,6 +2,7 @@ const myCsrf = document.querySelector('meta[name="csrf-token"]');
 
 module.exports = {
   props: {
+    new: String,
     mycsrf: String,
     pageurl: String,
     id: String,
@@ -11,6 +12,11 @@ module.exports = {
     projectimagesid: String
   },
   computed: {
+    newProject: {
+      get: function() {
+        return (this.new === "true") ? true : false
+      }
+    },
     selectCoverImage: {
       get: function() {
         idImageArr = [];
@@ -27,6 +33,7 @@ module.exports = {
     },
     imgName: {
       get: function() {
+        if (this.projectimages.match(/".*"/gi) === null) {return "new project"};
         imageArray = [];
         match = this.projectimages.match(/".*"/gi).pop().split(',');
         match.forEach((img) => {imageArray.push(img.trim().replace(/"/gi,''))});

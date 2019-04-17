@@ -1,5 +1,10 @@
 <template>
-  <div class="form-picture"
+  <!-- New project -->
+  <div v-if="this.newProject" id="no-photos-container">
+    <p>No Photos Uploaded</p>
+  </div>
+  <!-- Edit Form -->
+  <div v-else class="form-picture"
         @mouseleave="showDelete = false">
     <img :src="imgUrlFull"
         @mouseover="showDelete = true">

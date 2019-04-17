@@ -5,6 +5,7 @@
 <div class="form-picture-container">
   <% @project.images.each do |img| %>
     <formgallery
+      new="false"
       imgurlstub="<%= img.url %>"
       imgformat="<%= img.format %>"
       img-filename="<%= img.filename unless img.filename.nil? %>"

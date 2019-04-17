@@ -2,19 +2,41 @@
     route="<%= request.referrer %>">
 </backbutton>
 
-<div class="edit-picture-container">
-  <% @project.images.each do |img| %>
-    <div class="edit-picture">
-      <%= cl_image_tag(img.url, width: 260, height: 260) unless img.url.blank? %>
-      <span><strong>Name:</strong> <%= img.url %></span>
-      <span><strong>Format:</strong> <%= img.format %></span>
-    </div>
+<% new_project = @project.id.nil? ? true : false %>
+<div class="form-picture-container">
+  <formgallery
+    new="<%= new_project %>"
+    imgurlstub=""
+    imgformat=""
+    img-filename=""
+    mycsrf="<%= form_authenticity_token %>"
+    pageurl="<%= request.original_fullpath %>"
+    id="">
+  </formgallery>
+</div>
+
+<div class="upload-image-container">
+  <!-- This is the code for the multiple image upload -->
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :id, as: :hidden %>
+    <%= f.input :name, as: :hidden %>
+    <%= f.input :description, as: :hidden%>
+    <%= f.file_field :user_upload, multiple: true %>
+    <%= f.submit "Upload Photos" %>
   <% end %>
 </div>
 
+<% project_images_array = @project.images.map(&:url) %>
+<% project_image_id_array = @project.images.map(&:id) %>
+<% project_name = @project.name %>
+<% project_description = @project.description %>
 <formproject
+  new="<%= new_project %>"
   mycsrf="<%= form_authenticity_token %>"
   pageurl="<%= request.original_fullpath %>"
-  id="<%= @project.id %>">
+  id="<%= @project.id %>"
+  projectimages="<%= project_images_array %>"
+  projectimagesid="<%= project_image_id_array %>"
+  projectname="<%= project_name %>"
+  projectdescription="<%= project_description %>">
 </formproject>
-

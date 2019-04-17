@@ -1,5 +1,6 @@
 module.exports = {
   props: {
+    new: String,
     imgurlstub: String,
     imgformat: String,
     imgFilename: String,
@@ -15,6 +16,11 @@ module.exports = {
     }
   },
   computed: {
+    newProject: {
+      get: function() {
+        return (this.new === "true") ? true : false
+      }
+    },
     imgUrlFull: {
       get: function() {
         return this.imgUrlBase + this.imgurlstub

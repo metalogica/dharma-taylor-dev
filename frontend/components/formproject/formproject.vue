@@ -17,7 +17,13 @@
         <textarea name="project[description]" :value="projectdescription"></textarea>
       </div>
 
-      <div class="form-line">
+      <div v-if="this.newProject"class="form-line">
+        <label for="">Cover Image</label>
+        <select name="project[coverimage]" id="">
+          <option value="">No Images Uploaded</option>
+        </select>
+      </div>
+      <div v-else class="form-line">
         <label for="">Cover Image</label>
         <select name="project[coverimage]" id="">
           <option v-for="option in this.selectCoverImage" :value="option.id">{{ option.text }}</option>

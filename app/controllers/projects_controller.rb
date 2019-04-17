@@ -48,7 +48,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    project = Project.new(project_params)
+    project = Project.new(
+      name: project_params[:name],
+      description: project_params[:description]
+    )
     if project.save!
       redirect_to(admin_projects_index_path)
     else
@@ -92,6 +95,7 @@ class ProjectsController < ApplicationController
   end
 
   def save_images
+    return if project_params[:user_upload][0].empty? #problematic
     project_params[:user_upload].each do |cloud_img|
       callback = Cloudinary::Uploader.upload(cloud_img)
       puts "CALLBACK: #{callback}"
