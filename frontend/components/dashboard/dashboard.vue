@@ -5,12 +5,10 @@
       <span>ADMIN VIEW</span>
     </div>
     <ul v-if="this.formView">
-      <li>
-        <a class="active" href="/admin">Projects</a>
-        <a href="/archives">Archives</a>
-        <a href="/information/1/edit">Information</a>
-        <a href="/footer/edit">Footer</a>
-      </li>
+      <li><a class="active" href="/admin">Projects</a></li>
+      <li><a href="/archives">Archives</a></li>
+      <li><a href="/information/1/edit">Information</a></li>
+      <li><a href="/footer/edit">Footer</a></li>
     </ul>
     <ul v-else v-for="link in this.links">
       <li>
