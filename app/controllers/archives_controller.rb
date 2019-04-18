@@ -3,7 +3,7 @@ class ArchivesController < ApplicationController
   layout "layouts/dashboard", except: :archives_list
 
   def archives_list
-    @archive = Image.archive.order(url: 'desc')
+    @archives = Project.all.select(&:visibility)
     set_title
   end
 

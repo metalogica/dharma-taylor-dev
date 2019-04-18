@@ -1,5 +1,9 @@
+<% @images = [] %>
+<% @archives.each do |proj|%>
+  <% proj.images.each { |img| @images << img} %>
+<% end %>
 <b-container fluid>
-  <%-@archive.each_slice(6) do |group| %>
+  <%-@images.each_slice(6) do |group| %>
     <b-form-row>
       <%-group.each do |photo|%>
         <b-col cols="4" sm="4" lg="2">
