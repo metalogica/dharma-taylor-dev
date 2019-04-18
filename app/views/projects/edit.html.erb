@@ -24,6 +24,7 @@
 <% project_image_id_array = @project.images.map(&:id) %>
 <% project_name = @project.name %>
 <% project_description = @project.description %>
+<% project_blurb = @project.blurb %>
 <formproject
   mycsrf="<%= form_authenticity_token %>"
   pageurl="<%= request.original_fullpath %>"
@@ -31,5 +32,6 @@
   projectimages="<%= project_images_array %>"
   projectimagesid="<%= project_image_id_array %>"
   projectname="<%= project_name %>"
-  projectdescription="<%= project_description %>">
+  projectdescription="<%= project_description %>"
+  projectblurb="<%= project_blurb %>">
 </formproject>

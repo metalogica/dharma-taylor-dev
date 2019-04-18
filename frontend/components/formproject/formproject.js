@@ -9,7 +9,8 @@ module.exports = {
     projectimages: String,
     projectname: String,
     projectdescription: String,
-    projectimagesid: String
+    projectimagesid: String,
+    projectblurb: String
   },
   computed: {
     newProject: {

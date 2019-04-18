@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: project_params[:id])
-    project.update(name: project_params[:name], description: project_params[:description])
+    project.update(name: project_params[:name], description: project_params[:description], blurb: project_params[:blurb])
     project.save!
     save_images(project) if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?
@@ -52,15 +52,15 @@ class ProjectsController < ApplicationController
   def create
     project = Project.new(
       name: project_params[:name],
-      description: project_params[:description]
-
+      description: project_params[:description],
+      blurb: project_params[:blurb]
     )
     if project.save!
       save_images(project) if project_params[:user_upload].present?
       cover = project.images.first
       cover.coverimage = true
       cover.save!
-      redirect_to(admin_projects_index_path)
+      redirect_to(edit_project_path(project.id))
     else
       render "new"
     end
@@ -88,7 +88,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:id, :name, :description, :coverimage, {user_upload: []})
+    params.require(:project).permit(:id, :name, :description, :coverimage, :blurb, {user_upload: []})
   end
 
   def save_cover_image(project)

@@ -13,6 +13,11 @@
         <input type="text" name="project[name]" :value="projectname">
       </div>
 
+      <div class="form-line">
+      <label for="">Blurb</label>
+        <input name="project[blurb]" :value="projectblurb"></input>
+      </div>
+
       <div class="form-line form-text-area">
       <label for="">Description</label>
         <textarea name="project[description]" :value="projectdescription"></textarea>
