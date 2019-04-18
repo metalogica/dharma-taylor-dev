@@ -1,5 +1,12 @@
-body.archives.show {
+body.archives.archives_list {
   img:hover {
     cursor: pointer;
+  }
+
+  .archive-image-card {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
   }
 }
