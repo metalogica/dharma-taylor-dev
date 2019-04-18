@@ -1,7 +1,7 @@
-User.create!(email: 'rjarram@me.com', password: 'catnip123', admin: true) unless User.first.present?
+User.create!(email: 'rjarram@me.com', password: 'wetfish777', admin: true) unless User.first.present?
 
 Project.create!([
-  {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
+  {name: "Archive", blurb: "", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
   {name: "'Untitled'", blurb: "CAPSULE COLLECTION 07",description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
   {name: "Tate Britain", blurb: "DUVEEN GALLERIES COMMISSION'", description: "Production of animation video work as part of the Late at Tate series - \nIn response to Rasheed Araeen’s 1969 sculpture.\nProjected within the Duveen Galleries in and amongst a solo led garment making workshop.", visibility: true, highlight: false, slug: "tate", project_order: 3},
   {name: "Helmet - Like", blurb: "CAPSULE COLLECTION 05", description: "Photography by Richard and Hayley\nHair and Grooming by Olivia Davey \nModel - Todd Jennings \nFootwear - Reebok Classics UK", visibility: true, highlight: false, slug: "helmet-like", project_order: 4},
