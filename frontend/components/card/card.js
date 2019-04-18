@@ -53,6 +53,11 @@ module.exports = {
         return this.posturl + '/archiver/' + this.id
       }
     },
+    makeUnarchiverUrl: {
+      get: function() {
+        return '/archives/unarchiver/' + this.id
+      }
+    },
     makeEditUrl: {
       get: function() {
         return this.posturl + '/' + this.id + '/edit'
@@ -61,6 +66,13 @@ module.exports = {
     cardView: {
       get: function() {
         return this.$store.state.cardView
+      }
+    },
+    displayArchiveIcon: {
+      get: function() {
+        var pageName = window.location.pathname;
+        var pattern = new RegExp('admin', 'gim');
+        return pattern.test(pageName) ? true : false;
       }
     }
   },

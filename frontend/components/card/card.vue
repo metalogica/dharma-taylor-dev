@@ -17,7 +17,14 @@
           <a v-bind:href="makeEditUrl"><i class="far fa-edit"><span>Edit</span></i></a>
 
           <!-- Archive Request -->
-          <a v-bind:href="makeArchiveUrl"><i class="fas fa-archive"><span>Archive</span></i></a>
+          <a v-if="displayArchiveIcon" v-bind:href="makeArchiveUrl"><i class="fas fa-archive"><span>Archive</span></i></a>
+
+          <!-- Put Back in Portfolio -->
+          <a v-else v-bind:href="makeUnarchiverUrl">
+            <i class="fas fa-redo-alt">
+              <span>Un-archive</span>
+            </i>
+          </a>
 
           <!-- Delete Request -->
           <i v-on:click="toggleModal" class="fas fa-trash">
