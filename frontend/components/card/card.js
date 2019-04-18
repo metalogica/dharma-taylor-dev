@@ -40,7 +40,7 @@ module.exports = {
     },
     imageurl: {
       get: function() {
-        return this.urlImageStub + this.img
+        return this.img
       }
     },
     makePostUrl: {

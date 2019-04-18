@@ -46,7 +46,7 @@ module.exports = {
     },
     imageurl: {
       get: function() {
-        return this.urlImageStub + this.img
+        return this.img
       }
     },
     makePostUrl: {
@@ -76,7 +76,7 @@ module.exports = {
     },
     dateCreated: {
       get: function() {
-        return this.datecreate === "0" ? 'Today' : `Created ${this.datecreate} days ago`
+        return this.datecreate === "0" ? 'Today' : `${this.datecreate} days ago`
       }
     },
     showArchiveIcon: {
