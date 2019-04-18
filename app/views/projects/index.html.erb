@@ -1,98 +1,20 @@
 <div id="3d-container"></div>
 <b-container >
-  <b-row>
-    <b-col sm="12" >
-      <%=link_to '/featured/untitled' do %>
-        <b-img src="<%=cl_image_path "UNTITLED_CAPSULE_COLLECTION_07_jojed1"%>" alt="UNTITLED_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">UNTITLED</span>
-        <span class="description">CAPSULE COLLECTION 07</span>
-      </div>
-    </b-col>
-  </b-row>
 
+<% @projects.each do |project| %>
   <b-row class="pt-4">
     <b-col sm="12" >
-      <%=link_to '/featured/trailblazing' do %>
-        <b-img src="<%=cl_image_path "TRAILBLAZING_CAPSULE_COLLECTION_06_mf7x0z"%>" alt="TRAILBLAZING_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">TRAILBLAZING</span>
-        <span class="description">CAPSULE COLLECTION 06</span>
+      <div class="client-featured-card">
+        <%=link_to(project_path(project.id.to_i)) do %>
+          <img src="<%= project.images.select(&:coverimage).first.url %>"/>
+        <% end %>
+        <div class="project-info">
+          <span class="name"><%= project.name.upcase %></span>
+          <span class="description">CAPSULE COLLECTION 06</span>
+        </div>
       </div>
     </b-col>
   </b-row>
+<% end %>
 
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/tate' do %>
-        <b-img src="<%=cl_image_path "TATE_BRITAIN_DUVEEN_GALLERIES_COMMISSION_16_yvq0p4"%>" alt="TATE_BRITAIN_DUVEEN_GALLERIES_COMMISSION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">TATE BRITAIN</span>
-        <span class="description">DUVEEN GALLERIES COMMISSION'</span>
-      </div>
-    </b-col>
-  </b-row>
-
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/helmet-like' do %>
-        <b-img src="<%=cl_image_path "HELMET_-_LIKE_CAPSULE_COLLECTION_05_w8twcl"%>" alt="HELMET_-_LIKE_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">HELMET-LIKE</span>
-        <span class="description">CAPSULE COLLECTION 05</span>
-      </div>
-    </b-col>
-  </b-row>
-
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/one-three-eight-trek' do %>
-        <b-img src="<%=cl_image_path "ONE_THREE_EIGHT_-_TREK_CAPSULE_COLLECTION_04_guilc4"%>" alt="ONE_THREE_EIGHT_-_TREK_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">ONE THREE EIGHT-TREK</span>
-        <span class="description">CAPSULE COLLECTION 04</span>
-      </div>
-    </b-col>
-  </b-row>
-
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/london-parallel' do %>
-        <b-img src="<%=cl_image_path "LONDON_-_PARALLEL_CAPSULE_COLLECTION_03_vfs7nw"%>" alt="LONDON_-_PARALLEL_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">LONDON-PARALLEL</span>
-        <span class="description">CAPSULE COLLECTION 03</span>
-      </div>
-    </b-col>
-  </b-row>
-
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/knockout' do %>
-        <b-img src="<%=cl_image_path "K.O_CAPSULE_COLLECTION_02_mqdjp7"%>" alt="K.O_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">K.O</span>
-        <span class="description">CAPSULE COLLECTION 02</span>
-      </div>
-    </b-col>
-  </b-row>
-
-  <b-row class="pt-4">
-    <b-col sm="12" >
-      <%=link_to '/featured/insectbite' do %>
-        <b-img src="<%=cl_image_path "INSECTBITE_CAPSULE_COLLECTION_01_eqmmsc"%>" alt="INSECTBITE_CAPSULE_COLLECTION" fluid></b-img>
-      <%end%>
-      <div class="project-info">
-        <span class="name">INSECTBITE</span>
-        <span class="description">CAPSULE COLLECTION 01</span>
-      </div>
-    </b-col>
-  </b-row>
 </b-container>

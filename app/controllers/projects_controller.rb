@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   layout "dashboard", except: [:index, :show]
 
   def index
-    @projects = Project.ordered
+    @projects = Project.all.reverse_each
     set_title
   end
 

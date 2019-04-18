@@ -110,6 +110,11 @@ Image.create!([
   {project_id: 2, nature: "photo", url: "08-UntitledCollection-Cool-Ruler_ybxpqr", format: "portrait"}
 ])
 
+Image.all.each do |img|
+  url = "https://res.cloudinary.com/ortsac/image/upload/" + img.url
+  img.update!(url: url)
+end
+
 projects = Project.all
 projects.each.each do |project|
   cover = project.images.last

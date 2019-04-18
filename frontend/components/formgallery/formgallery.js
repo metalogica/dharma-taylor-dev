@@ -29,7 +29,12 @@ module.exports = {
     },
     imgUrlFull: {
       get: function() {
-        return this.imgUrlBase + this.imgurlstub
+        var pattern = new RegExp('http', 'gim');
+        if (pattern.test(this.imgurlstub)) {
+          return this.imgurlstub;
+        } else {
+          return this.imgUrlBase + this.imgurlstub
+        }
       }
     },
     imgName: {

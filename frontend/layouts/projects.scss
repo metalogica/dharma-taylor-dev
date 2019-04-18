@@ -5,7 +5,7 @@ body.projects.index {
     right: 9%;
 
     .name {
-      font-size: 1.375em;
+      font-size: 1.575em;
 
       @media only screen and (max-width: 768px) {
         font-size: 0.6875em;
@@ -16,13 +16,30 @@ body.projects.index {
     .description {
       display: block;
       font-family: "Lineto" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 0.4em;
+      font-size: 0.75em;
       text-align: right;
 
       @media only screen and (max-width: 768px) {
         font-size: 0.25em;
         line-height: 0.25em;
       }
+    }
+  }
+
+  .client-featured-card {
+    width: 100%;
+    height: 100%;
+
+    a {
+      width: 800px;
+      height: 600px;
+    }
+
+    a img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: top;
     }
   }
 }
