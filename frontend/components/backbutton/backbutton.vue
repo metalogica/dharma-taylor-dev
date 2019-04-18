@@ -1,6 +1,6 @@
 <template>
   <div class="back-button-container">
-    <a :href="this.route" class="back-button"
+    <a :href="this.setPath" class="back-button"
         @mouseover="toggleHover"
         @mouseout="toggleHover">
       <i id="back-arrow" class="fas fa-arrow-left"></i>
