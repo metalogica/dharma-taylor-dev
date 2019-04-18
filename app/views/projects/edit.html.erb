@@ -4,8 +4,9 @@
     unarchived="<%= @project.visibility%>">
 </backbutton>
 
+<% @images = @project.images.sort_by { |img| img.coverimage ? 0 : 1 } %>
 <div class="form-picture-container">
-  <% @project.images.reverse_each do |img| %>
+  <% @images.each do |img| %>
     <formgallery
       coverimage="<%= img.coverimage %>"
       new="false"
