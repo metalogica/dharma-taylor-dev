@@ -27,7 +27,7 @@
       imagecount="<%= proj.images.count %>"
       description="<%= proj.description %>"
       id="<%= proj.id %>"
-      img="<%= proj.images[0].url if proj.images.present? %>"
+      img="<%= proj.images.select { |img| img.coverimage }.first.url if proj.images.present? %>"
       mycsrf="<%= form_authenticity_token %>"
       posturl="featured"
       currentpage="<%= request.url %>"
