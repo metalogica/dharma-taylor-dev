@@ -1,7 +1,7 @@
 <b-container fluid>
   <b-row>
     <b-col sm="12" lg="10" offset-lg="1">
-      <%= simple_format @biography.information %>
+      <%= simple_format @biography.information.gsub(/\r\n\r\n/, "<br><br>") %>
     </b-col>
   </b-row>
 </b-container>
