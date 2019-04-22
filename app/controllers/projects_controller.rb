@@ -50,6 +50,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    binding.pry
     project = Project.new(
       name: project_params[:name],
       description: project_params[:description],
