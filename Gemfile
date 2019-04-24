@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.4.2"
+# Simpleform for Information page form
+gem 'simple_form'
+# Carrier WAve for multiple image upload
+gem 'carrierwave', '~> 1.2'
+# Devise for authentication
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
