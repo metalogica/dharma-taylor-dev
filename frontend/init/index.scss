@@ -31,7 +31,7 @@ body {
 .page-content a:hover,
 .page-footer a:hover{
   color: #fff;
-  // text-decoration: underline;
+  text-decoration: underline;
 }
 
 .page-footer {
@@ -71,11 +71,6 @@ body {
   flex-flow: column;
   min-height: 100vh;
   width: 100%;
-  .dashboard-style {
-    background-color: white !important;
-    font-family: 'Circular';
-    color: black;
-  }
 }
 
 .page .page-content {
@@ -92,10 +87,7 @@ body {
     padding-bottom: 15px;
 }
 
-.hidden {
-  display: none;
+#_3d-container{
+  height: 99vh;
 }
-
-
-
 

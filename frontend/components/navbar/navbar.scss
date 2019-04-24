@@ -12,20 +12,6 @@
   }
 }
 
-.navbar-light.home .navbar-text {
-  color: #000;
-}
-
-.navbar-light.home .navbar-nav .nav-link {
-  color: #000;
-}
-
-.navbar-light.home .navbar-nav .nav-link {
-  &:hover {
-    color: #000;
-  }
-}
-
 .navbar-light .navbar-toggler-icon {
   background-image: url(../../images/toggle.png);
 }
@@ -34,4 +20,14 @@
 .navbar-light .navbar-toggler {
   color: transparent;
   border-color: transparent;
+  padding:.25rem 0;
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar-light a.navbar-brand{
+    display:none;
+  }
+  .navbar-light.home a.navbar-brand{
+    display:inline-block;
+  }
 }

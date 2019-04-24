@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190418155519) do
+ActiveRecord::Schema.define(version: 20181013140241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "biographies", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "information"
-    t.string "telephone_contact"
-    t.string "email_primary"
-    t.string "email_contact"
-    t.string "location"
-    t.json "social_media"
-  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -45,8 +34,6 @@ ActiveRecord::Schema.define(version: 20190418155519) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "format", default: 0
-    t.boolean "coverimage"
-    t.string "filename"
     t.index ["project_id"], name: "index_images_on_project_id"
   end
 
@@ -66,21 +53,6 @@ ActiveRecord::Schema.define(version: 20190418155519) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.integer "project_order"
-    t.json "user_upload"
-    t.string "blurb"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "admin"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

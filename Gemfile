@@ -6,14 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.4.2"
-# DotEnv Gem
-gem 'dotenv-rails', groups: [:development, :test]
-# Carrier Wave for photo uploading
-gem 'carrierwave', '~> 1.2'
-# Simple form
-gem 'simple_form'
-# Devise for user authentication
-gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -53,8 +45,6 @@ group :development, :test do
 end
 
 group :development do
-  # byebug
-  gem 'pry-byebug'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

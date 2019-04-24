@@ -1,2 +1,0 @@
-class Biography < ApplicationRecord
-end

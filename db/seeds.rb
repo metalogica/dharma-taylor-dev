@@ -1,15 +1,13 @@
-User.create!(email: 'rjarram@me.com', password: 'wetfish777', admin: true) unless User.first.present?
-
 Project.create!([
-  {name: "Archive", blurb: "", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
-  {name: "'Untitled'", blurb: "CAPSULE COLLECTION 07",description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
-  {name: "Tate Britain", blurb: "DUVEEN GALLERIES COMMISSION'", description: "Production of animation video work as part of the Late at Tate series - \nIn response to Rasheed Araeen’s 1969 sculpture.\nProjected within the Duveen Galleries in and amongst a solo led garment making workshop.", visibility: true, highlight: false, slug: "tate", project_order: 3},
-  {name: "Helmet - Like", blurb: "CAPSULE COLLECTION 05", description: "Photography by Richard and Hayley\nHair and Grooming by Olivia Davey \nModel - Todd Jennings \nFootwear - Reebok Classics UK", visibility: true, highlight: false, slug: "helmet-like", project_order: 4},
-  {name: "One Three Eight - Trek", blurb: "CAPSULE COLLECTION 04", description: "An amalgamation of boyhood fantasy and hi-tech warrior-ware through 3d constructed headpiece sculpted work designed and illustrated on architectural design software such as 3ds max and maya. Hues of reds and black run throughout One Three Eight Trek.", visibility: true, highlight: false, slug: "one-three-eight-trek", project_order: 5},
-  {name: "London - Parallel", blurb: "CAPSULE COLLECTION 03", description: "London Parallel - heavily influenced by digital culture. \nThis collection of handmade headpieces looks like a series of tribal masks from a geometric, colour-saturated future.\nThe headpieces are created using 3D software - a low polygon head shape is designed in 3ds Max, textures added in ZBrush, and then the wireframe design is put into a program that can read the facets as separate pattern pieces.\nUsing a screen printing technique in the hues of the RGB (Red, Green, Black) colour model.", visibility: true, highlight: false, slug: "london-parallel", project_order: 6},
-  {name: "K.O.", blurb: "CAPSULE COLLECTION 02", description: "Knock-Out collection as part of the ‘ARRRGH!’ Monsters in Fashion exhibit at the Benaki Museum in Athens.\nPublication “Not a Toy” Fashioning Radical Characters.\nEdited by Atopos cvc. Published by Pictoplasma, Berlin.", visibility: true, highlight: false, slug: "knockout", project_order: 7},
-  {name: "Trailblazing", blurb: "CAPSULE COLLECTION 06", description: "Photography by Nina Manandhar\nModel – Nimshi\nFootwear - Fila UK\nLeaves by Mother Nature", visibility: true, highlight: false, slug: "trailblazing", project_order: 2},
-  {name: "Insectbite", blurb: "CAPSULE COLLECTION 01", description: "Sleeveless Jacket by Komakino\nStyles by Jamie Bull\nPhotography by Kim Jakobsen To\nHair by Charlie le Mindu\nMake-up Artist - Thomas de Kluyver\n Video stills captured by Dharma Taylor", visibility: true, highlight: false, slug: "insectbite", project_order: 8}
+  {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
+  {name: "'Untitled'", description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
+  {name: "Tate", description: "Production of animation video work as part of the Late at Tate series - \nIn response to Rasheed Araeen’s 1969 sculpture.\nProjected within the Duveen Galleries in and amongst a solo led garment making workshop.", visibility: true, highlight: false, slug: "tate", project_order: 3},
+  {name: "Helmet - Like", description: "Photography by Richard and Hayley\nHair and Grooming by Olivia Davey \nModel - Todd Jennings \nFootwear - Reebok Classics UK", visibility: true, highlight: false, slug: "helmet-like", project_order: 4},
+  {name: "One Three Eight - Trek", description: "An amalgamation of boyhood fantasy and hi-tech warrior-ware through 3d constructed headpiece sculpted work designed and illustrated on architectural design software such as 3ds max and maya. Hues of reds and black run throughout One Three Eight Trek.", visibility: true, highlight: false, slug: "one-three-eight-trek", project_order: 5},
+  {name: "London - Parallel", description: "London Parallel - heavily influenced by digital culture. \nThis collection of handmade headpieces looks like a series of tribal masks from a geometric, colour-saturated future.\nThe headpieces are created using 3D software - a low polygon head shape is designed in 3ds Max, textures added in ZBrush, and then the wireframe design is put into a program that can read the facets as separate pattern pieces.\nUsing a screen printing technique in the hues of the RGB (Red, Green, Black) colour model.", visibility: true, highlight: false, slug: "london-parallel", project_order: 6},
+  {name: "Knockout", description: "Knock-Out collection as part of the ‘ARRRGH!’ Monsters in Fashion exhibit at the Benaki Museum in Athens.\nPublication “Not a Toy” Fashioning Radical Characters.\nEdited by Atopos cvc. Published by Pictoplasma, Berlin.", visibility: true, highlight: false, slug: "knockout", project_order: 7},
+  {name: "Trailblazing", description: "Photography by Nina Manandhar\nModel – Nimshi\nFootwear - Fila UK\nLeaves by Mother Nature", visibility: true, highlight: false, slug: "trailblazing", project_order: 2},
+  {name: "Insectbite", description: "Sleeveless Jacket by Komakino\nStyles by Jamie Bull\nPhotography by Kim Jakobsen To\nHair by Charlie le Mindu\nMake-up Artist - Thomas de Kluyver\n Video stills captured by Dharma Taylor", visibility: true, highlight: false, slug: "insectbite", project_order: 8}
 ])
 
 Image.create!([
@@ -109,67 +107,3 @@ Image.create!([
   {project_id: 2, nature: "photo", url: "07-UntitledCollection_ekais1", format: "portrait"},
   {project_id: 2, nature: "photo", url: "08-UntitledCollection-Cool-Ruler_ybxpqr", format: "portrait"}
 ])
-
-Image.all.each do |img|
-  url = "https://res.cloudinary.com/ortsac/image/upload/" + img.url
-  img.update!(url: url)
-end
-
-projects = Project.all
-projects.each.each do |project|
-  cover = project.images.last
-  cover.coverimage = true
-  cover.save!
-end
-
-bio = Biography.new(
-  telephone_contact: "+44 (0) 754 713 68 08",
-  email_primary: "studio@dharmataylor.com",
-  email_contact: "dharmataylorcontact@gmail.com",
-  location: "London, UK",
-  social_media: {
-    "ig/" => "https://www.instagram.com/dharmataylor/?hl=en",
-    "tb/" => "https://dharma-taylor.tumblr.com/"
-  }
-)
-
-bio.save!
-
-bio.update!(information:
-"London-born Dharma Taylor graduated from the London College of Fashion with a Masters in Fashion Design Technology - Menswear, in 2010.
-
-Since graduating from Rochester University in 2008 and completing her Masters in menswear she has worked on various artistic fashion projects. They’ve been shown by a variety of national and international organisations and galleries including the Benaki Museum in Athens, the V&A and Tate Britain. The concept driven collections are inspired by literary figures such as Franz Kafka and ideas of Hyper-reality.
-
-
-‘Knowing… Knowing that there’s a knowledge out there to be attained.
-
-Literary references in Fashion is always good, and something I do often but not obviously. I blend my own Graphic Design into it and progress this to motion graphics, which leads to film/video and print work for textiles.’
-
-
-What compelled you into becoming a designer?
-
-
-I’ve always felt a strong urge to create. I don’t know where it comes from. It’s like the one magic thing we can do; to make things. The reason for wanting to create is unknown to me. The more I think about what it is that compels me , the more it disappears and becomes harder to grasp. It’s just a natural thing.
-
-
-What are the key references you revisit in your work?
-
-
-One thing in particular that I always come back to is the notion of separate realities and parallel lands. I like to explore the possibility of this as best I can with the tools I have. I took time to study Baudrillard's theory Hyperreality and found that the concept of what is real and what is simulation is closely linked with the dream world; something which I integrate into the construction of my work. I try to translate this through the use of signs and symbols, aka semiotics. It’s a communicated language translated. Like patterns in a song. The sublime baseline rolls of the drums in a track, like the lines of an outfit., or the gradation of hue in a print, or a headpiece from the other side. I tend to think if I can merge real with simulation then it becomes poetry and almost transcendental.
-
-
-How do new technologies affect your work?
-
-
-Yeah, so there’s loads of new technologies now, but I guess there’ll always be new technologies - And I’m not totally sure we know what we’re doing with it, or trying to say with it. Never-the-less it’s an enhancement, an extra part in the mechanics of the hyper-reality thing. Although this digital age all seems very new and far away from the past ; I think it’s eventually going to bring us back to our original selves. Personally, new tech’s have changed the process of my work, for instance I don’t sketch any more with bare pen and paper, I tend to go straight to the computer and design on 3D platforms such as Autodesk for instance : 3DS Max and ZBrush. This is all very good, but I think what if this technology and programming is taken away from us? I’d like to get back to the primitive ways of doing things.
-
-
-What does it take to be a Londoner?
-
-
-There’s a lot of vibrations rattling around the city good and bad, sometimes they get trapped between the grey buildings and you pick them up unknowingly. They get passed around, bounce off the high-rises at Liverpool Street back down to the other side of the river… It takes an individual who behaves similar to water to be a Londoner. London as a city is forever pushing forward. Peter Ackroyd; the greatest living London chronicler once said something like there’s an atmospheric presence to London streets, like a whole history that ever was, that you’re joining and becoming a part of.
-
-
-Interview by Mairi Hare")
-
-puts "\n\nSeeded successfully!\n\n"

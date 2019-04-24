@@ -2,39 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   prepend_view_path Rails.root.join("frontend")
 
-  before_action :load_page_meta_tag, :render_footer_content, except: :internal_ip
-
-  # Renders layout for Devise authentication page
-  layout :layout_by_resource
-
-  def sign_me_out
-    @user = User.first
-    if sign_out(@user)
-      redirect_to('/')
-    else
-      p "error"
-    end
-  end
+  before_action :load_page_meta_tag, except: :internal_ip
 
   private
-
-  def render_footer_content
-    @biography = Biography.first
-    @sm_name = []
-    @sm_url = []
-    @biography.social_media.each do |sm_key, sm_value|
-      @sm_name << sm_key
-      @sm_url << sm_value
-    end
-  end
-
-  def layout_by_resource
-    if devise_controller?
-      "authentication"
-    else
-      "application"
-    end
-  end
 
   def load_page_meta_tag
     page_path = request.path

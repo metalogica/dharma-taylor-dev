@@ -32,22 +32,17 @@
     <div id="app">
       <div class="page">
         <div class="page-header">
-          <navbar :is-home="<%=false%>"></navbar>
+	  <navbar :is-home="<%=controller.action_name == 'index'%>"></navbar>
           <modal :modal-data="modalData" @close="modalData.show = false"></modal>
         </div>
         <div class="page-content">
           <%= yield %>
         </div>
-        <div class="page-footer">
-          <footerview
-            telephone="<%= @biography.telephone_contact %>"
-            primaryemail="<%= @biography.email_primary %>"
-            contactemail="<%= @biography.email_contact %>"
-            location="<%= @biography.location %>"
-            socialmedianame="<%= @sm_name %>"
-            socialmediaurl="<%= @sm_url %>">
-          </footerview>
-        </div>
+	<% if controller.action_name != 'index' %>
+          <div class="page-footer">
+            <%=render 'shared/footer'%>
+          </div>
+        <% end %>
       </div>
     </div>
     <%= javascript_pack_tag 'application' %>
