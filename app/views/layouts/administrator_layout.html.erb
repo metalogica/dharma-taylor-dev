@@ -1,13 +1,16 @@
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= display_meta_tags :site => 'Dharma Taylor' %>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_pack_tag 'application' %>
-</head>
-<body class="administrator-wrapper">
-  <div id="app">
-    <dashboard></dashboard>
-    <%= yield %>
-  </div>
-</body>
-<%= javascript_pack_tag 'application' %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= display_meta_tags :site => 'Dharma Taylor' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'application' %>
+  </head>
+  <body class="administrator-wrapper">
+    <div id="app">
+      <dashboard></dashboard>
+      <%= yield %>
+    </div>
+  </body>
+  <%= javascript_pack_tag 'application' %>
+</html>

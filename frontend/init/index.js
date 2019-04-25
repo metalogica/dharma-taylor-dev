@@ -16,6 +16,9 @@ import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 import Dashboard from '../components/dashboard/dashboard.vue'
 import Controller from '../components/controller/controller.vue'
 import Backbutton from '../components/backbutton/backbutton.vue'
+import Card from '../components/card/card.vue'
+import List from '../components/list/list.vue'
+import Searchbar from '../components/searchbar/searchbar.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -28,6 +31,11 @@ import "./index.scss";
 
 Vue.use(BootstrapVue);
 Vue.component('breadcrumb', Breadcrumb);
+Vue.component('dashboard', Dashboard);
+Vue.component('controller', Controller);
+Vue.component('card', Card);
+Vue.component('list', List);
+Vue.component('searchbar', Searchbar);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     store,
-    components: { Navbar, Modal, Dashboard, Controller, Backbutton },
+    components: { Navbar, Modal, Dashboard, Controller, Backbutton, Card, List, Searchbar },
     data: function () {
       return {
         modalData: {
@@ -65,6 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     methods: {
+      showModal: function(e) {
+        this.modalData.image_url=e.srcElement.currentSrc;
+        this.modalData.show=true;
+      },
+      countChildren: function() {
+        var cardArray = this.$children.filter(child => child.constructor.options.name.match(/card/gim));
+        let filterCards = function(card) { return card.hideCard === false };
+        var visibleCards = cardArray.filter(filterCards).length
+        this.$store.commit('cardsCounted', visibleCards);
+      },
+      countChildrenList: function () {
+        var cardArray = this.$children.filter(child => child.constructor.options.name.match(/list/gim));
+        let filterCards = function(card) { return card.hideListItem === false };
+        var visibleCards = cardArray.filter(filterCards).length
+        this.$store.commit('cardsCounted', visibleCards);
+      },
       showModal: function(e) {
         this.modalData.image_url=e.srcElement.currentSrc;
         this.modalData.show=true;
