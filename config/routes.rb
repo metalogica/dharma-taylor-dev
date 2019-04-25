@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root to:'projects#index'
   devise_for :users, controllers: { registrations: "registrations"}
+  get 'sign_me_out', to: 'application#sign_me_out'
 
   ## Admin control panel routes
   # Actions/routes concerning the Project model
-  get '/admin', to: 'administrator#projects' #Used as a shortcut for logging into the app
-  get '/admin/projects', to: 'administrator#projects', as: 'admin_projects'
-  get '/admin/archives', to: 'administrator#archives', as: 'admin_archives'
+  get '/admin', to: 'administrator#admin_projects_index' #Used as a shortcut for logging into the app
+  get '/admin/projects', to: 'administrator#admin_projects_index', as: 'admin_projects_index'
+  get '/admin/archives', to: 'administrator#admin_archives_index', as: 'admin_archives_index'
   get '/admin/projects/:id/edit', to: 'administrator#edit_project', as: 'edit_project'
   put '/admin/projects/:id', to: 'administrator#update_project', as: 'update_project'
   get '/admin/projects/new', to: 'administrator#new_project', as: 'new_project'

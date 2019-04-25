@@ -34,7 +34,7 @@ module DharmaTailor
 
     config.to_prepare do
       # Configure Devise layouts
-      Devise::SessionsController.layout "layouts/devise"
+      Devise::SessionsController.layout "layouts/login_screen_layout"
     end
   end
 end

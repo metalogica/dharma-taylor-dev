@@ -1,5 +1,10 @@
 // Vue import
 import Vue from 'vue';
+import Vuex from 'vuex';
+
+// Vuex import
+Vue.use(Vuex)
+import { mapState, mapStore, mapActions, mapGetters } from 'vuex';
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -8,12 +13,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from '../components/navbar/navbar.vue'
 import Modal from '../components/modal/modal.vue'
 import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
+import Dashboard from '../components/dashboard/dashboard.vue'
+import Controller from '../components/controller/controller.vue'
 
 // Layouts import
 import '../layouts/projects'
 import '../layouts/information'
 import '../layouts/archive'
-import '../layouts/devise'
+import '../layouts/login_screen_layout'
 
 // Main css import
 import "./index.scss";
@@ -23,9 +30,31 @@ Vue.component('breadcrumb', Breadcrumb);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
+  const store = new Vuex.Store({
+    state: {
+      cards: 0,
+      cardView: true,
+      listView: false,
+      searchbarQuery: "",
+    },
+    mutations: {
+      cardsCounted: function(state, cards) {
+        state.cards = cards
+      },
+      toggleView: function(state) {
+        state.cardView = !state.cardView
+        state.listView = !state.listView
+      },
+      updateSearchbarQuery: function(state, query) {
+        state.searchbarQuery = query
+      },
+    }
+  })
+
   var app = new Vue({
     el: '#app',
-    components: { Navbar, Modal},
+    store,
+    components: { Navbar, Modal, Dashboard, Controller },
     data: function () {
       return {
         modalData: {

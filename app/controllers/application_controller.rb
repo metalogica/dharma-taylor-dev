@@ -4,10 +4,20 @@ class ApplicationController < ActionController::Base
 
   before_action :load_page_meta_tag, except: :internal_ip
 
+  # Destroys current user session
+  def sign_me_out
+    @user = User.first
+    if sign_out(@user)
+      redirect_to('/')
+    else
+      p "error"
+    end
+  end
+
   private
 
   def after_sign_in_path_for(resource)
-    archive_path
+    admin_projects_index_path
   end
 
   def load_page_meta_tag
