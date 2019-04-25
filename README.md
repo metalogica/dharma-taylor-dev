@@ -16,7 +16,18 @@ I felt that the basic architecture of the site seemed slightly over-engineered f
 CONTEXT
 DEVELOPMENT ENVIRONMENT
 USER AUTHENTICATION
-I have used Devise for user authentication. However it does not sit nicely with the VueJs asset pipeline set up in this program. A fuller integratio would use Devise via. Axios to create a pure frontend authenticaiton system (https://stephenhowells.net/rails-5-user-registration-with-devise-vue-js-and-axios/). However this is beyond the scope of this particualr project, although it would be a welcome addition to the code.
+I have used Devise for user authentication. However it does not sit nicely with the VueJs asset pipeline set up in this program. A fuller integration would use Devise via. Axios to create a pure frontend authenticaiton system (https://stephenhowells.net/rails-5-user-registration-with-devise-vue-js-and-axios/). However this is beyond the scope of this particular project, although it would be a welcome addition to the code.
+
+Devise Core Structure:
+# /config/initializers/devise.rb
+This code sets a different CSS layout template for the Devise pages.
+# /views/layouts/devise.html.erb
+This is the partial used to render teh devise layout.
+# controllers/application_controller.rb
+Some devise methods, such as user redirect, are called here.
+# controllers/registration_controller.rb
+The app has been built for single user authentiation. This controller ensure that it is impossible to create more than 1 user at any point in time for the devise model.
+
 
 PRODUCTION ENVIRONMENT
 The server is hosted on an AWS instance and the site is deployed via Capistrano. Once the source code has been pushed to the master branch on the Bitbucket Repo, executing Capistrano will push these changes to the production environment.

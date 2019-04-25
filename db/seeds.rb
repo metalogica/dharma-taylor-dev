@@ -1,4 +1,4 @@
-User.create!(email: "rjarram@me.com", password: "wetfish777")
+User.create!(email: "rjarram@me.com", password: "wetfish777", admin: true)
 
 Project.create!([
   {name: "Archive", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
