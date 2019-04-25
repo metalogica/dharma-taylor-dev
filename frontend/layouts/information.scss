@@ -3,3 +3,30 @@ body.pages.information {
     font-family: "Lineto" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
+
+body.information.edit {
+  .form-group {
+    margin-top: 32px;
+  }
+  .form-group * {
+    border-color: rgba(0,0,0, 0.1) !important;
+  }
+  .form-btn-container {
+    display: flex;
+    justify-content: center;
+
+  }
+  .btn-form-bio {
+    margin: 15px;
+    width: 150px;
+
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    &:hover {
+      color: black;
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+}

@@ -19,12 +19,17 @@ import Backbutton from '../components/backbutton/backbutton.vue'
 import Card from '../components/card/card.vue'
 import List from '../components/list/list.vue'
 import Searchbar from '../components/searchbar/searchbar.vue'
+import Footerview from '../components/footerview/footerview.vue'
+import FormFooterview from '../components/formfooterview/formfooterview.vue'
+import Formproject from '../components/formproject/formproject.vue'
+import Formgallery from '../components/formgallery/formgallery.vue'
 
 // Layouts import
 import '../layouts/projects'
 import '../layouts/information'
 import '../layouts/archive'
 import '../layouts/login_screen_layout'
+import '../layouts/administrator_layout'
 
 // Main css import
 import "./index.scss";
@@ -36,6 +41,10 @@ Vue.component('controller', Controller);
 Vue.component('card', Card);
 Vue.component('list', List);
 Vue.component('searchbar', Searchbar);
+Vue.component('footerview', Footerview);
+Vue.component('formfooterview', FormFooterview);
+Vue.component('formproject', Formproject);
+Vue.component('formgallery', Formgallery);
 
 // Root element init
 document.addEventListener('DOMContentLoaded', () => {
@@ -63,7 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     store,
-    components: { Navbar, Modal, Dashboard, Controller, Backbutton, Card, List, Searchbar },
+    components: {
+      Navbar,
+      Modal,
+      Dashboard,
+      Controller,
+      Backbutton,
+      Card,
+      List,
+      Searchbar,
+      Footerview,
+      FormFooterview,
+      Formgallery,
+      Formproject
+    },
     data: function () {
       return {
         modalData: {

@@ -3,6 +3,7 @@
     <i class="fas fa-search"></i>
     <input
         class="search-form"
+        style="border-radius: 0;"
         type="text"
         placeholder="Search"
         v-model="txtInput"

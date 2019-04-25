@@ -1,0 +1,51 @@
+.administrator-wrapper {
+  a, span, p {
+    font-family: 'Circular';
+  }
+
+  // Style for the form on the Information_edit Page
+  .information-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+
+    form {
+      width: 1200px;
+      height: 480px;
+    }
+
+    textarea {
+      width: 99%;
+      height: 110%;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .form-group {
+      margin-top: 32px;
+    }
+    .form-group * {
+      border-color: rgba(0,0,0, 0.1) !important;
+    }
+    .form-btn-container {
+      display: flex;
+      justify-content: center;
+
+    }
+    .btn-form-bio {
+      margin: 15px;
+      width: 150px;
+
+      color: white;
+      background-color: black;
+      border-radius: 15px;
+      &:hover {
+        color: black;
+        background-color: white;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   <div class="dashboard-container">
     <div class="dashboard-logo">
       <img src="https://res.cloudinary.com/ortsac/image/upload/v1556158636/gy6tjkugkrdrwg8m1dke.png" alt="DT-logo" class="DTlogo" width="50">
-      <span>ADMIN VIEW</span>
+      <span style="font-family: 'Myfont'">ADMIN VIEW</span>
     </div>
     <ul v-if="this.formView">
       <li><a :class="{active: routedFromAdmin}" href="/admin">Projects</a></li>

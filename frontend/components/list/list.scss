@@ -1,8 +1,14 @@
+.list-wrapper {
+
+}
+
 .list-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: black;
+  font-family: 'Circular';
 }
 
 .project-list-item, .project-list-item-header {
@@ -44,6 +50,7 @@
       text-decoration: none;
       &:hover {
         text-decoration: none;
+        opacity: 1;
       }
     }
     i {
@@ -59,7 +66,7 @@
       position: relative;
       text-decoration: none;
       &:hover {
-        opacity: 0.6;
+        opacity: 1;
         text-decoration: none;
       }
     }

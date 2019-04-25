@@ -1,1 +1,10 @@
-<p>edit footer</p>
+<formfooterview
+  csrf="<%= form_authenticity_token %>"
+  id="<%= @footer.id %>"
+  telephone="<%= @footer.telephone_contact %>"
+  primaryemail="<%= @footer.email_primary %>"
+  contactemail="<%= @footer.email_contact %>"
+  location="<%= @footer.location %>"
+  socialmedianame="<%= @sm_name %>"
+  socialmediaurl="<%= @sm_url %>">
+</formfooterview>

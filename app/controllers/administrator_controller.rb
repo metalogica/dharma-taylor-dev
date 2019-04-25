@@ -115,7 +115,7 @@ class AdministratorController < ApplicationController
 
   def update_information
     @information = Information.find(params[:id])
-    @information.update(biography_params)
+    @information.update(information_params)
     if @information.save!
       redirect_to(edit_information_path(params[:id]))
     else
@@ -217,7 +217,7 @@ class AdministratorController < ApplicationController
 
   # Methods concerning the Information model
   def information_params
-    params.require(:biography).permit(:id, :information)
+    params.require(:information).permit(:id, :about)
   end
 
   # Methods concerning the Footer Model

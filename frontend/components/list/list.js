@@ -82,8 +82,8 @@ module.exports = {
     showArchiveIcon: {
       get: function() {
         var pageName = window.location.pathname;
-        var pattern = new RegExp('admin', 'gim');
-        return pattern.test(pageName) ? true : false;
+        var pattern = new RegExp('archives', 'gim');
+        return pattern.test(pageName) ? false : true;
       }
     }
   },

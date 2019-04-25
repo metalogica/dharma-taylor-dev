@@ -1,1 +1,15 @@
-<p>edit information</p>
+<div class="information-form-container">
+  <form action="/admin/information/1" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="form-id" value="<%= params[:id] %>">
+    <textarea rows="20" name="information[about]" class="form-border-bio" value=""><%= @information.about %></textarea>
+    <div class="form-btn-container">
+      <a href="/admin/information/1/edit" class="btn btn-form-bio">Cancel</a>
+      <input type="submit" value="Save Changes" class="btn btn-form-bio">
+    </div>
+  </form>
+</div>
+
+
+
