@@ -1,3 +1,6 @@
+//Image import
+import '../images/*'
+
 // Vue import
 import Vue from 'vue';
 
@@ -13,6 +16,7 @@ import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 import '../layouts/projects'
 import '../layouts/information'
 import '../layouts/archive'
+import '../layouts/devise'
 
 // Main css import
 import "./index.scss";
@@ -70,9 +74,9 @@ class Three3d {
     this.scene = new THREE.Scene();
     this.container = (options.hasOwnProperty('container') ? options.container : document.getElementById('_3d-container'));
     this.container.style.width = '100%';
-    this.renderer = new THREE.WebGLRenderer( { antialias: true } ); 
+    this.renderer = new THREE.WebGLRenderer( { antialias: true } );
     this.loader = new THREE.ObjectLoader();
-    this.light = new THREE.AmbientLight( 0xffffff ); 
+    this.light = new THREE.AmbientLight( 0xffffff );
     this.camera = new THREE.PerspectiveCamera( 45, this.container.offsetWidth/this.container.clientHeight, 1, 2000);
     this.controls = new THREE.OrbitControls( this.camera, this.renderer.domElement );
 
@@ -100,14 +104,14 @@ class Three3d {
     this.controls.maxDistance = 40;
     this.controls.minDistance = 8;
     this.controls.autoRotate = true;
-    
+
     this.scene.add(this.light);
     this.camera.position.set(
       this.options.cameraInitPos[0],
       this.options.cameraInitPos[1],
       this.options.cameraInitPos[2],
     );
-    
+
     this.renderer.setPixelRatio( window.devicePixelRatio );
     this.renderer.setSize( this.container.offsetWidth, this.container.clientHeight );
     this.container.appendChild(this.renderer.domElement);

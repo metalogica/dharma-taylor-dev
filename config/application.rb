@@ -31,5 +31,10 @@ module DharmaTailor
       g.helper          false
       g.channel         assets: false
     end
+
+    config.to_prepare do
+      # Configure Devise layouts
+      Devise::SessionsController.layout "layouts/devise"
+    end
   end
 end

@@ -1,0 +1,12 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= display_meta_tags :site => 'Dharma Taylor' %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_pack_tag 'application' %>
+</head>
+<body class="devise-wrapper">
+  <div class="devise-container">
+    <img src="https://res.cloudinary.com/ortsac/image/upload/v1556158636/gy6tjkugkrdrwg8m1dke.png" alt="DT-logo" class="devise-DTlogo">
+    <%= yield %>
+  </div>
+</body>
