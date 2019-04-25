@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource)
+    archive_path
+  end
+
   def load_page_meta_tag
     page_path = request.path
     # remove forward dash
