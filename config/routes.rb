@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to:'projects#index'
+  root to:'projects#animation'
   devise_for :users, controllers: { registrations: "registrations"}
   get 'sign_me_out', to: 'application#sign_me_out'
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   # Frontend routes
   get 'information', to: 'pages#information'
-  get 'featured', to: 'projects#show'
+  get 'featured', to: 'projects#index'
   resource :archive, only: [:show]
   resources :projects, only: [:index, :show], path: "featured"
 end
