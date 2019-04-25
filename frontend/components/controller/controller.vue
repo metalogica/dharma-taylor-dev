@@ -2,7 +2,7 @@
   <div class="controller-container">
     <!-- Button 1: Create new project -->
     <a class="controller-button"
-       href="/featured/new"
+       href="/admin/projects/new"
        @mouseover="toggleCreate"
        @mouseout="toggleCreate">+</a>
     <span class="highlight-text"

@@ -14,12 +14,12 @@ module.exports = {
       get: function() {
         var url = window.location.pathname;
         var pattern = new RegExp('featured', 'gim');
-        return (pattern.test(url)) ? '/admin' : 'archives'
+        return (pattern.test(url)) ? '/admin' : 'admin/archives'
       }
     },
     setPath: {
       get: function() {
-        return this.unarchived === "true" ? '/admin' : '/archives';
+        return this.unarchived === "true" ? '/admin' : '/admin/archives';
       }
     }
   },

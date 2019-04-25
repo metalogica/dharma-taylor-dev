@@ -9,6 +9,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  font-family: 'Circular';
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
   span {
     font-size: 12px !important;

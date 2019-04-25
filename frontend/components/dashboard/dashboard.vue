@@ -6,7 +6,7 @@
     </div>
     <ul v-if="this.formView">
       <li><a :class="{active: routedFromAdmin}" href="/admin">Projects</a></li>
-      <li><a :class="{active: !routedFromAdmin}" href="/archives">Archives</a></li>
+      <li><a :class="{active: !routedFromAdmin}" href="/admin/archives">Archives</a></li>
       <li><a href="/admin/information/1/edit">Information</a></li>
       <li><a href="/admin/footer/1/edit">Footer</a></li>
     </ul>

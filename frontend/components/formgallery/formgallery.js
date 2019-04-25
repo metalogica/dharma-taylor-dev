@@ -49,12 +49,12 @@ module.exports = {
     },
     makePostUrl: {
       get: function() {
-        return '/featured/' + this.id + '/edit/delete_image'
+        return '/admin/projects/' + this.id + '/edit/delete_image'
       }
     },
     makeCoverUrl: {
       get: function() {
-        return '/featured/' + this.id + '/edit/set_cover'
+        return '/admin/projects/' + this.id + '/edit/set_cover_image'
       }
     }
   },

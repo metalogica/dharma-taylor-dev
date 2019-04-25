@@ -1,4 +1,4 @@
-class AdministratorController < ApplicationController
+   class AdministratorController < ApplicationController
   before_action :authenticate_user!
   layout "administrator_layout"
 
@@ -40,9 +40,6 @@ class AdministratorController < ApplicationController
     )
     if project.save!
       save_images(project) if project_params[:user_upload].present?
-      cover = project.images.first
-      cover.coverimage = true
-      cover.save!
       redirect_to(edit_project_path(project.id))
     else
       render "new"
@@ -59,7 +56,7 @@ class AdministratorController < ApplicationController
     end
   end
 
-  def destroy_project
+  def delete_project
     @project = Project.find_by(id: params[:id] || params[:id])
     if @project.destroy
       redirect_to(admin_projects_index_path)
@@ -72,7 +69,7 @@ class AdministratorController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @project.visibility = true
     if @project.save!
-      redirect_to(archives_path)
+      redirect_to(admin_archives_index_path)
     else
       p "error"
     end
@@ -204,6 +201,9 @@ class AdministratorController < ApplicationController
       local_image.filename = callback["original_filename"]
       local_image.save!
     end
+    cover = project.images.first
+    cover.coverimage = true
+    cover.save!
   end
 
   def delete_image

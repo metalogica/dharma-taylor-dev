@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   get '/admin/archives/:id/unarchiver', to: 'administrator#unarchive_project', as: 'unarchive_project'
   delete '/admin/projects/:id', to: 'administrator#delete_project', as: 'delete_project'
   # Actions/routes concerning the Image model
-  get '/admin/projects/:id/edit/delete_image', to: 'administrator#delete_image', as: 'delete_image'
-  delete '/admin/projects/:id/edit/set_cover_image', to: 'administrator#set_cover_image', as: 'set_cover_image'
+  get '/admin/projects/:id/edit/set_cover_image', to: 'administrator#set_cover_image', as: 'set_cover_image'
+  delete '/admin/projects/:id/edit/delete_image', to: 'administrator#delete_image', as: 'delete_image'
   # Actions/routes concerning the Information model
   get '/admin/information/:id/edit', to: 'administrator#edit_information', as: 'edit_information'
   put '/admin/information/:id', to: 'administrator#update_information', as: 'update_information'

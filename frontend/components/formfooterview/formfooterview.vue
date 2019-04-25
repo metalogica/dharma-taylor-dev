@@ -1,6 +1,6 @@
 <template>
  <div class="form-footer-view-container">
-    <form action="/footer" method="post">
+    <form action="/admin/footer/1" method="post">
       <input type="hidden" name="_method" value="put">
       <input type="hidden" name="authenticity_token" :value="csrf">
       <input type="hidden" name="form-id" :value="id">

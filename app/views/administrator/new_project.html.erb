@@ -1,6 +1,31 @@
 <backbutton
-    route="<%= request.referrer %>"
-    name="<%= @project.name %>"
-    unarchived="<%= @project.visibility%>">
+    route="<%= request.referrer %>">
 </backbutton>
-<p>new project</p>
+
+<% new_project = @project.id.nil? ? true : false %>
+<div class="form-picture-container">
+  <formgallery
+    new="<%= new_project %>"
+    imgurlstub=""
+    imgformat=""
+    img-filename=""
+    mycsrf="<%= form_authenticity_token %>"
+    pageurl="<%= request.original_fullpath %>"
+    id="">
+  </formgallery>
+</div>
+
+<% project_images_array = @project.images.map(&:url) %>
+<% project_image_id_array = @project.images.map(&:id) %>
+<% project_name = @project.name %>
+<% project_description = @project.description %>
+<formproject
+  new="<%= new_project %>"
+  mycsrf="<%= form_authenticity_token %>"
+  pageurl="<%= request.original_fullpath %>"
+  id="<%= @project.id %>"
+  projectimages="<%= project_images_array %>"
+  projectimagesid="<%= project_image_id_array %>"
+  projectname="<%= project_name %>"
+  projectdescription="<%= project_description %>">
+</formproject>

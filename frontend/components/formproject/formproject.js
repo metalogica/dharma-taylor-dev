@@ -64,7 +64,7 @@ module.exports = {
     },
     posturl: {
       get: function() {
-        return '/' + this.pageurl.split('/')[1]
+        return '/admin/projects'
       }
     },
     patchurl: {

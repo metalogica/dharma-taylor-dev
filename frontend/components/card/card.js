@@ -45,22 +45,22 @@ module.exports = {
     },
     makePostUrl: {
       get: function() {
-        return this.posturl + '/' + this.id
+        return '/admin/projects/' + this.id
       }
     },
     makeArchiveUrl: {
       get: function() {
-        return this.posturl + '/archiver/' + this.id
+        return '/admin/projects/' + this.id + '/archiver'
       }
     },
     makeUnarchiverUrl: {
       get: function() {
-        return '/archives/unarchiver/' + this.id
+        return '/admin/archives/' + this.id + '/unarchiver'
       }
     },
     makeEditUrl: {
       get: function() {
-        return this.posturl + '/' + this.id + '/edit'
+        return '/admin/projects/' + this.id + '/edit'
       }
     },
     cardView: {
