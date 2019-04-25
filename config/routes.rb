@@ -30,6 +30,4 @@ Rails.application.routes.draw do
   get 'featured', to: 'projects#index'
   resource :archive, only: [:show]
   resources :projects, only: [:index, :show], path: "featured"
-
-  get '/test', to: 'projects#test'
 end

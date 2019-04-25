@@ -115,15 +115,6 @@ Image.all.each do |img|
   img.update!(url: url)
 end
 
-projects = Project.all
-projects.each do |project|
-  if project.images.select(&:coverimage).nil?
-    cover = project.images.last
-    cover.coverimage = true
-    cover.save!
-  end
-end
-
 footer = Footer.new(
   telephone_contact: "+44 (0) 754 713 68 08",
   email_primary: "studio@dharmataylor.com",
