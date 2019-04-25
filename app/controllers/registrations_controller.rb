@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def after_sign_in_for(resource)
-    admin_projects_index_path
+    redirect_to archive_path
   end
 
   protected

@@ -1,6 +1,3 @@
-//Image import
-import '../images/*'
-
 // Vue import
 import Vue from 'vue';
 
