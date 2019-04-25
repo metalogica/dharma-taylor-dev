@@ -13,7 +13,7 @@ Project.create!([
 ])
 
 Image.create!([
-  {project_id: 1, nature: "archive", url: "01-archive_nwde0h", format: "landscape"},
+  {project_id: 1, coverimage: true, nature: "archive", url: "01-archive_nwde0h", format: "landscape"},
   {project_id: 1, nature: "archive", url: "02-archive_yko12e", format: "landscape"},
   {project_id: 1, nature: "archive", url: "03-archive_mlhkhk", format: "landscape"},
   {project_id: 1, nature: "archive", url: "04-archive_qwsksy", format: "landscape"},
@@ -49,7 +49,7 @@ Image.create!([
   {project_id: 1, nature: "archive", url: "34-archive_opfc36", format: "landscape"},
   {project_id: 1, nature: "archive", url: "35-archive_qhlrss", format: "landscape"},
   {project_id: 1, nature: "archive", url: "36-archive_wmvw8a", format: "landscape"},
-  {project_id: 9, nature: "photo", url: "01-photo-Insectbite_pb3yrx", format: "portrait"},
+  {project_id: 9, coverimage: true, nature: "photo", url: "INSECTBITE_CAPSULE_COLLECTION_01_eqmmsc", format: "portrait"},
   {project_id: 9, nature: "photo", url: "02-photo-Insectbite_yq5nuk", format: "portrait"},
   {project_id: 5, nature: "photo", url: "05-photo-138trek_qdxwns", format: "landscape"},
   {project_id: 6, nature: "photo", url: "02-photo-London-Parallel_eayw3m", format: "landscape"},
@@ -59,14 +59,14 @@ Image.create!([
   {project_id: 4, nature: "photo", url: "07-photo-Helmet-like_se2lxb", format: "portrait"},
   {project_id: 4, nature: "photo", url: "06-photo-Helmet-like_pawztv", format: "portrait"},
   {project_id: 4, nature: "photo", url: "05-photo-Helmet-like_artxjq", format: "portrait"},
-  {project_id: 4, nature: "photo", url: "04-photo-Helmet-like_hnnyws", format: "portrait"},
+  {project_id: 4, coverimage: true, nature: "photo", url: "HELMET_-_LIKE_CAPSULE_COLLECTION_05_w8twcl", format: "portrait"},
   {project_id: 4, nature: "photo", url: "03-photo-Helmet-like_auogvm", format: "portrait"},
   {project_id: 4, nature: "photo", url: "02-photo-Helmet-like_vu0ecw", format: "portrait"},
   {project_id: 4, nature: "photo", url: "01-photo-Helmet-like_ez9ctm", format: "portrait"},
   {project_id: 8, nature: "photo", url: "04-photo-Trailblazing_ifcjtd", format: "portrait"},
   {project_id: 8, nature: "photo", url: "03-photo-Trailblazing_zzfyty", format: "portrait"},
   {project_id: 8, nature: "photo", url: "02-photo-Trailblazing_xf0ubc", format: "portrait"},
-  {project_id: 8, nature: "photo", url: "01-photo-Trailblazing_yz248z", format: "portrait"},
+  {project_id: 8, coverimage: true, nature: "photo", url: "TRAILBLAZING_CAPSULE_COLLECTION_06_mf7x0z", format: "portrait"},
   {project_id: 9, nature: "printable", url: "03-print-Insectbite_tt80gn", format: "landscape"},
   {project_id: 9, nature: "printable", url: "04-print-Insectbite_yssvih", format: "landscape"},
   {project_id: 7, nature: "printable", url: "07-print-Knockout_oacszw", format: "landscape"},
@@ -82,21 +82,21 @@ Image.create!([
   {project_id: 7, nature: "videostill", url: "05-videostill-Knockout_ph8jpl", format: "landscape"},
   {project_id: 7, nature: "videostill", url: "04-videostill-Knockout_j1pxke", format: "landscape"},
   {project_id: 7, nature: "videostill", url: "03-videostill-Knockout_ph9sg1", format: "landscape"},
-  {project_id: 7, nature: "videostill", url: "02-videostill-Knockout_xzakhd", format: "landscape"},
-  {project_id: 3, nature: "videostill", url: "08-videosill-tate_jn990x", format: "landscape"},
+  {project_id: 7, coverimage: true, nature: "videostill", url: "K.O_CAPSULE_COLLECTION_02_mqdjp7", format: "landscape"},
+  {project_id: 3, coverimage: true, nature: "videostill", url: "TATE_BRITAIN_DUVEEN_GALLERIES_COMMISSION_16_yvq0p4", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "07-videosill-tate_zpxcwi", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "06-videosill-tate_owm3jd", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "05-videosill-tate_tkjaok", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "04-videosill-tate_kq3vqv", format: "landscape"},
-  {project_id: 3, nature: "videostill", url: "03-videosill-tate_fteysa", format: "landscape"},
+  {project_id: 2, nature: "videostill", url: "03-videosill-tate_fteysa", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "02-videosill-tate_rajhbf", format: "landscape"},
   {project_id: 3, nature: "videostill", url: "01-videosill-tate_s3mptd", format: "landscape"},
   {project_id: 6, nature: "videostill", url: "07-videostill-London-Parallel_p0ko44", format: "landscape"},
   {project_id: 6, nature: "videostill", url: "06-videostill-London-Parallel_anx2ym", format: "landscape"},
   {project_id: 6, nature: "videostill", url: "05-videostill-London-Parallel_chbfke", format: "landscape"},
-  {project_id: 6, nature: "videostill", url: "04-videostill-London-Parallel_qvlqbq", format: "landscape"},
+  {project_id: 6, coverimage: true, nature: "videostill", url: "04-videostill-London-Parallel_qvlqbq", format: "landscape"},
   {project_id: 6, nature: "videostill", url: "03-videostill-London-Parallel_ao3fsb", format: "landscape"},
-  {project_id: 5, nature: "photo", url: "04-photo-138trek_tyxs3h", format: "landscape"},
+  {project_id: 5, coverimage: true, nature: "photo", url: "ONE_THREE_EIGHT_-_TREK_CAPSULE_COLLECTION_04_guilc4", format: "landscape"},
   {project_id: 5, nature: "photo", url: "03-photo-138trek_vejbta", format: "landscape"},
   {project_id: 5, nature: "photo", url: "02-photo-138trek_cafazz", format: "landscape"},
   {project_id: 5, nature: "photo", url: "01-photo-138trek_tviwem", format: "landscape"},
@@ -106,7 +106,7 @@ Image.create!([
   {project_id: 2, nature: "photo", url: "04-UntitledCollection_ytoul3", format: "portrait"},
   {project_id: 2, nature: "photo", url: "05-UntitledCollection_ro6lk0", format: "portrait"},
   {project_id: 2, nature: "photo", url: "06-UntitledCollection_ljtoyw", format: "portrait"},
-  {project_id: 2, nature: "photo", url: "07-UntitledCollection_ekais1", format: "portrait"},
+  {project_id: 2, coverimage: true, nature: "photo", url: "UNTITLED_CAPSULE_COLLECTION_07_jojed1", format: "portrait"},
   {project_id: 2, nature: "photo", url: "08-UntitledCollection-Cool-Ruler_ybxpqr", format: "portrait"}
 ])
 
@@ -116,10 +116,12 @@ Image.all.each do |img|
 end
 
 projects = Project.all
-projects.each.each do |project|
-  cover = project.images.last
-  cover.coverimage = true
-  cover.save!
+projects.each do |project|
+  if project.images.select(&:coverimage).nil?
+    cover = project.images.last
+    cover.coverimage = true
+    cover.save!
+  end
 end
 
 footer = Footer.new(
