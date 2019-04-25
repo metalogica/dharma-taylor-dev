@@ -15,6 +15,7 @@ import Modal from '../components/modal/modal.vue'
 import Breadcrumb from '../components/breadcrumb/breadcrumb.vue'
 import Dashboard from '../components/dashboard/dashboard.vue'
 import Controller from '../components/controller/controller.vue'
+import Backbutton from '../components/backbutton/backbutton.vue'
 
 // Layouts import
 import '../layouts/projects'
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     store,
-    components: { Navbar, Modal, Dashboard, Controller },
+    components: { Navbar, Modal, Dashboard, Controller, Backbutton },
     data: function () {
       return {
         modalData: {
