@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
+
   root to:'projects#index'
 
   get 'information', to: 'pages#information'
