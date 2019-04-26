@@ -40,7 +40,14 @@
         </div>
 	       <% if controller.action_name != 'animation' %>
           <div class="page-footer">
-            <%=render 'shared/footer'%>
+          <footerview
+            telephone="<%= @footer.telephone_contact %>"
+            primaryemail="<%= @footer.email_primary %>"
+            contactemail="<%= @footer.email_contact %>"
+            location="<%= @footer.location %>"
+            socialmedianame="<%= @sm_name %>"
+            socialmediaurl="<%= @sm_url %>">
+          </footerview>
           </div>
         <% end %>
       </div>

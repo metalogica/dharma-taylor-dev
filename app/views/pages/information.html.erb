@@ -1,56 +1,7 @@
 <b-container fluid>
   <b-row>
     <b-col sm="12" lg="10" offset-lg="1">
-      <p>
-        London-born Dharma Taylor graduated from the London College of Fashion with a Masters in Fashion Design Technology - Menswear, in 2010.
-      </p>
-      <p>
-        Since graduating from Rochester University in 2008 and completing her Masters in menswear she has worked on various artistic fashion projects. They’ve been shown by a variety of national and international organisations and galleries including the Benaki Museum in Athens, the V&A and Tate Britain. The concept driven collections are inspired by literary figures such as Franz Kafka and ideas of Hyper-reality.
-      </p>
-      <br/>
-      <p>
-        ‘Knowing… Knowing that there’s a knowledge out there to be attained.
-      </p>
-      <p>
-        Literary references in Fashion is always good, and something I do often but not obviously. I blend my own Graphic Design into it and progress this to motion graphics, which leads to film/video and print work for textiles.’
-      </p>
-      <br/>
-      <p>
-        What compelled you into becoming a designer?
-      </p>
-      <br/>
-      <p>
-        I’ve always felt a strong urge to create. I don’t know where it comes from. It’s like the one magic thing we can do; to make things. The reason for wanting to create is unknown to me. The more I think about what it is that compels me , the more it disappears and becomes harder to grasp. It’s just a natural thing.
-      </p>
-      <br/>
-      <p>
-        What are the key references you revisit in your work?
-      </p>
-      <br/>
-      <p>
-        One thing in particular that I always come back to is the notion of separate realities and parallel lands. I like to explore the possibility of this as best I can with the tools I have. I took time to study Baudrillard's  theory Hyperreality and found that the concept of what is real and what is simulation is closely linked with the dream world; something which I integrate into the construction of my work. I try to translate this through the use of signs and symbols, aka semiotics. It’s a communicated language translated. Like patterns in a song. The sublime baseline rolls of the drums in a track, like the lines of an outfit., or the gradation of hue in a print, or a headpiece from the other side. I tend to think if I can merge real with simulation then it becomes poetry and almost transcendental.
-      </p>
-      <br/>
-      <p>
-        How do new technologies affect your work?
-      </p>
-      <br/>
-      <p>
-        Yeah, so there’s loads of new technologies now, but I guess there’ll always be new technologies - And I’m not totally sure we know what we’re doing with it, or trying to say with it. Never-the-less it’s an enhancement, an extra part in the mechanics of the hyper-reality thing. Although this digital age all seems very new and far away from the past ; I think it’s eventually going to bring us back to our original selves. Personally, new tech’s have changed the process of my work, for instance I don’t sketch any more with bare pen and paper, I tend to go straight to the computer and design on 3D platforms such as Autodesk for instance : 3DS Max and ZBrush. This is all very good, but I think what if this technology and programming is taken away from us? I’d like to get back to the primitive ways of doing things.
-      </p>
-      <br/>
-      <p>
-        What does it take to be a Londoner?
-      </p>
-      <br/>
-      <p>
-        There’s a lot of vibrations rattling around the city good and bad, sometimes they get trapped between the grey buildings and you pick them up unknowingly. They get passed around, bounce off the high-rises at Liverpool Street back down to the other side of the river… It takes an individual who behaves similar to water to be a Londoner. London as a city is forever pushing forward. Peter Ackroyd; the greatest living London chronicler once said something like there’s an atmospheric presence to London streets, like a whole history that ever was, that you’re joining and becoming a part of.
-      </p>
-      <br/>
-      <p>
-        Interview by Mairi Hare
-      </p>
-      <p>Test text</p>
+      <%= simple_format(@information.about.gsub(/\r\n\r\n/, "<br><br>")) %>
     </b-col>
   </b-row>
 </b-container>

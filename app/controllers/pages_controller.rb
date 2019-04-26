@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def information
+    @information = Information.first
     set_title
   end
 
