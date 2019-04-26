@@ -1,4 +1,4 @@
-   class AdministratorController < ApplicationController
+class AdministratorController < ApplicationController
   before_action :authenticate_user!
   layout "administrator_layout"
 
@@ -76,7 +76,7 @@
   end
 
   # Actions/routes concerning the Image model
-  def delete_image
+  def delete_project_image
     image = Image.find(params[:id])
     project = image.project
     if image.destroy!
