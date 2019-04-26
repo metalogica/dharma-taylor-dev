@@ -8,7 +8,7 @@ end
 ruby "2.4.2"
 # Simpleform for Information page form
 gem 'simple_form'
-# Carrier WAve for multiple image upload
+# Carrier Wave for multiple image upload
 gem 'carrierwave', '~> 1.2'
 # Devise for authentication
 gem 'devise'
@@ -42,6 +42,7 @@ gem 'meta-tags', '~> 2.10'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  #Prye byebug
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

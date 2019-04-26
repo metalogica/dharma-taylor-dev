@@ -3,7 +3,7 @@
   <b-row class="pt-4">
     <b-col sm="12" >
       <div class="client-featured-card">
-        <%=link_to(project_path(project.id.to_i)) do %>
+        <%=link_to(project_path(project.slug)) do %>
           <img src="<%= project.images.select(&:coverimage).first.url %>">
         <% end %>
         <div class="project-info">

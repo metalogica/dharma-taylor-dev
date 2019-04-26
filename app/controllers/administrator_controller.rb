@@ -18,6 +18,7 @@ class AdministratorController < ApplicationController
   def update_project
     project = Project.find_by(id: project_params[:id])
     project.update(name: project_params[:name], description: project_params[:description], blurb: project_params[:blurb])
+    project.slug = nil # Updates slug to match changed name of projec
     project.save!
     save_images(project) if project_params[:user_upload].present?
     save_cover_image(project) if project_params[:coverimage].present?

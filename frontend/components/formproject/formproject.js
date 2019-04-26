@@ -69,7 +69,7 @@ module.exports = {
     },
     patchurl: {
       get: function() {
-        return '/' + this.pageurl.split('/')[1] + '/' + this.id
+        return '/admin/projects/' + this.id
       }
     },
     httpaction: {
