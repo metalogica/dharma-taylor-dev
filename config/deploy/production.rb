@@ -1,3 +1,8 @@
+# Devise key
+set :default_env, {
+  "DEVISE_SECRET_KEY" => ENV['DEVISE_SECRET_KEY'],
+}
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
