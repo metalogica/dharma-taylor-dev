@@ -29,7 +29,7 @@
       </div>
 
       <div class="form-button-container">
-        <input class="form-button" type="submit" href="/admin" value="Discard"></input>
+        <input class="form-button" href="/admin" value="Discard"></input>
         <input class="form-button" type="submit" value="Submit">
       </div>
     </form>
