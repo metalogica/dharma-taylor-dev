@@ -133,7 +133,8 @@ class AdministratorController < ApplicationController
       email_primary: footer_params[:email_primary],
       email_contact: footer_params[:email_contact],
       location: footer_params[:location],
-      social_media: parse_social_media_params
+      social_media: parse_social_media_params,
+      copyright: footer_params[:copyright]
       )
     if @footer.save!
       redirect_to(edit_footer_path)
@@ -223,7 +224,7 @@ class AdministratorController < ApplicationController
 
   # Methods concerning the Footer Model
   def footer_params
-    params.require(:footer).permit(:telephone_contact, :email_primary, :email_contact, :location, {social_media_name: []}, {social_media_url: []})
+    params.require(:footer).permit(:telephone_contact, :email_primary, :email_contact, :location, :copyright, {social_media_name: []}, {social_media_url: []})
   end
 
   def parse_social_media_params

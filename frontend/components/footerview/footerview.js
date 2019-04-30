@@ -5,7 +5,8 @@ module.exports = {
     contactemail: String,
     location: String,
     socialmedianame: String,
-    socialmediaurl: String
+    socialmediaurl: String,
+    copyright: String
   },
   data: function() {
     return {

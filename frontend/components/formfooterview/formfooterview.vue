@@ -16,7 +16,6 @@
           <input type="text" name="footer[email_primary]" :value="primaryemail">
         </div>
       </div>
-
       <div class="form-group-top">
         <div class="form-line">
           <label for="">Contact Email</label>
@@ -27,6 +26,11 @@
           <label for="">Address</label>
           <input type="text" name="footer[location]" :value="location">
         </div>
+      </div>
+
+      <div class="form-group-single">
+        <label for="">Copyright Year</label>
+        <input type="text" name="footer[copyright]" :value="copyright">
       </div>
 
       <div class="form-group-column">
@@ -58,13 +62,6 @@
 
           <label for="">URL</label>
           <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[3].url">
-        </div>
-        <div class="form-group-line">
-          <label for="">Name</label>
-          <input type="text" name="footer[social_media_name][]" :value="socialMediaArray[4].title">
-
-          <label for="">URL</label>
-          <input type="text" name="footer[social_media_url][]" :value="socialMediaArray[4].url">
         </div>
       </div>
 

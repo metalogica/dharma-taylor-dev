@@ -120,6 +120,7 @@ footer = Footer.new(
   email_primary: "studio@dharmataylor.com",
   email_contact: "dharmataylorcontact@gmail.com",
   location: "London, UK",
+  copyyright: "2019"
   social_media: {
     "ig/" => "https://www.instagram.com/dharmataylor/?hl=en",
     "tb/" => "https://dharma-taylor.tumblr.com/"

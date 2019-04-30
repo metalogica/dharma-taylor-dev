@@ -1,7 +1,7 @@
 <template>
   <div class="footer-container">
     <ul>
-      <li>© 2019 DHARMA TAYLOR</li>
+      <li>© {{ this.copyright }} DHARMA TAYLOR</li>
       <li>All rights reserved.</li>
     </ul>
     <ul>
