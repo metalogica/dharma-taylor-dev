@@ -4,7 +4,7 @@
     <b-col sm="12" >
       <div class="client-featured-card">
         <%=link_to(project_path(project.slug)) do %>
-          <img src="<%= project.images.select(&:coverimage).first.url %>">
+          <img src="<%= project.images.select(&:coverimage).first.url %>" alt="<%= project.name %>">
         <% end %>
         <div class="project-info">
           <span class="name"><%= project.name.upcase %></span>
