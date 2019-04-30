@@ -7,9 +7,7 @@ solo@lailo.io
 1. BACKGROUND
 Lailo was contracted by Dharma Taylor to develop a backend control panel for her website; the website was originally built by Heavy London and at the time was purely frontend (Feautured Page, Information Page, Archives page).
 
-I didn't inherit a readme file from Heavy London during the takeover for this project. Neither were any tests written into the environment. Moreover, the latest version of the repository master branch (dated Jan 6th 2019) was out of sync with the live website on the server; I discovered through independent forensic work that the website was updated via FTP in Feburary 2019 by a developer(s) who did not push their changes to the master branch. I manually integrated the master branch with the live site to resolve this inconsistency before merging my new code. As a final note I'd like to add that the production environment was buggy and required manually editing the secret key base from the Ubuntu ENV to ensure that the rails app loaded in the browser after deployment; I could not find a way to resolve this issue without damaging the deployment process.
-
-I felt that the basic architecture of the site seemed slightly over-engineered for Dharma Taylor's purposes. Neverthless I have decided to stay as consistent with the design principles of the site as the original author developed them. This has led to some inconsistencies in the code which I have not been able to completely resolve due to time constraints. When I've been guilty of 'unclean code' I've clearly commented it in the line. Moreover, I've summarised all excepetional cases in this document, together with their underlying logic, to make it easier for the the next developer to understand the site's structure.
+There was no readme in the inherited project. The information outlines the strcuture and deployment process of the website to th author's best knowledge.
 
 2. CONTEXT
 2.1 DEVELOPMENT ENVIRONMENT
