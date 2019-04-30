@@ -29,17 +29,7 @@
     <span class="highlight-text"
           v-if="listView"
           :class="{nowshow2: cardIsHover}">Card View</span>
-    <!-- Button 3: Sort by date -->
-    <a class="controller-button"
-          href="https://analytics.google.com/"
-          target="_blank"
-          @mouseover="toggleSort"
-          @mouseout="toggleSort">
-      <i class="far fa-chart-bar"></i>
-    </a>
-    <span class="highlight-text"
-          :class="{noshow: !sortIsHover}">Analytics</span>
-    <!-- Button 4: Preview  -->
+    <!-- Button 3: Preview  -->
     <a class="controller-button"
           href="http://www.dharmataylor.com"
           target="_blank"
