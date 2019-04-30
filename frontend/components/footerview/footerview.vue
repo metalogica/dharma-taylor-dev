@@ -22,7 +22,7 @@
     </ul>
     <ul>
       <li v-for="media in socialMediaArray">
-        <a :href="media.url">{{ media.title }}</a>
+        <a :href="media.url" target="_blank">{{ media.title }}</a>
       </li>
     </ul>
   </div>
