@@ -7,7 +7,7 @@ solo@lailo.io
 1. BACKGROUND
 Lailo was contracted by Dharma Taylor to develop a backend control panel for her website; the website was originally built by Heavy London and at the time was purely frontend (Feautured Page, Information Page, Archives page).
 
-There was no readme in the inherited project. The information outlines the strcuture and deployment process of the website to th author's best knowledge.
+There was no readme in the inherited project. This docuement outlines the environment and deployment process of the website to the author's best knowledge.
 
 2. CONTEXT
 2.1 DEVELOPMENT ENVIRONMENT
