@@ -2,7 +2,7 @@ User.create!(email: 'rjarram@me.com', password: 'wetfish777', admin: true) unles
 
 Project.create!([
   {name: "Archive", blurb: "", description: "", visibility: false, highlight: false, slug: "archive", project_order: nil},
-  {name: "'Untitled'", blurb: "CAPSULE COLLECTION 07",description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
+  {name: "Untitled", blurb: "CAPSULE COLLECTION 07",description: "Photography by Edek Goralski\nMake-up and Grooming by Bobana Parojcic\nHair stylist - Issac Poleon\nModel - Yusuf at Nii Agency\nFootwear - Suicoke", visibility: true, highlight: false, slug: "untitled", project_order: 1},
   {name: "Tate Britain", blurb: "DUVEEN GALLERIES COMMISSION'", description: "Production of animation video work as part of the Late at Tate series - \nIn response to Rasheed Araeen’s 1969 sculpture.\nProjected within the Duveen Galleries in and amongst a solo led garment making workshop.", visibility: true, highlight: false, slug: "tate", project_order: 3},
   {name: "Helmet - Like", blurb: "CAPSULE COLLECTION 05", description: "Photography by Richard and Hayley\nHair and Grooming by Olivia Davey \nModel - Todd Jennings \nFootwear - Reebok Classics UK", visibility: true, highlight: false, slug: "helmet-like", project_order: 4},
   {name: "One Three Eight - Trek", blurb: "CAPSULE COLLECTION 04", description: "An amalgamation of boyhood fantasy and hi-tech warrior-ware through 3d constructed headpiece sculpted work designed and illustrated on architectural design software such as 3ds max and maya. Hues of reds and black run throughout One Three Eight Trek.", visibility: true, highlight: false, slug: "one-three-eight-trek", project_order: 5},
@@ -13,7 +13,7 @@ Project.create!([
 ])
 
 Image.create!([
-  {project_id: 1, nature: "archive", url: "01-archive_nwde0h", format: "landscape"},
+  {project_id: 1, nature: "archive", url: "01-archive_nwde0h", format: "landscape", coverimage: true},
   {project_id: 1, nature: "archive", url: "02-archive_yko12e", format: "landscape"},
   {project_id: 1, nature: "archive", url: "03-archive_mlhkhk", format: "landscape"},
   {project_id: 1, nature: "archive", url: "04-archive_qwsksy", format: "landscape"},
@@ -111,20 +111,34 @@ Image.create!([
 ])
 
 Image.all.each do |img|
+  # Set filename for each image
+  img.filename = img.url
+  img.save!
+  # Set full Cloudinary url for each image
   url = "https://res.cloudinary.com/ortsac/image/upload/" + img.url
   img.update!(url: url)
 end
 
-Project.all.each do |proj|
-  img = proj.images.first
-  img.coverimage = true
-  img.save!
-end
+cover_image_array = [
+  {name: "Untitled", url: "https://res.cloudinary.com/ortsac/image/upload/UNTITLED_CAPSULE_COLLECTION_07_jojed1"},
+  {name: "Trailblazing", url: "https://res.cloudinary.com/ortsac/image/upload/TRAILBLAZING_CAPSULE_COLLECTION_06_mf7x0z"},
+  {name: "Tate Britain", url: "https://res.cloudinary.com/ortsac/image/upload/TATE_BRITAIN_DUVEEN_GALLERIES_COMMISSION_16_yvq0p4"},
+  {name: "Helmet - Like", url: "https://res.cloudinary.com/ortsac/image/upload/HELMET_-_LIKE_CAPSULE_COLLECTION_05_w8twcl"},
+  {name: "One Three Eight - Trek", url: "https://res.cloudinary.com/ortsac/image/upload/ONE_THREE_EIGHT_-_TREK_CAPSULE_COLLECTION_04_guilc4"},
+  {name: "London - Parallel", url: "https://res.cloudinary.com/ortsac/image/upload/LONDON_-_PARALLEL_CAPSULE_COLLECTION_03_vfs7nw"},
+  {name: "K.O.", url: "https://res.cloudinary.com/ortsac/image/upload/K.O_CAPSULE_COLLECTION_02_mqdjp7"},
+  {name: "Insectbite", url: "https://res.cloudinary.com/ortsac/image/upload/INSECTBITE_CAPSULE_COLLECTION_01_eqmmsc"},
+]
 
-# Add original image cover images
-Project.all.each do |proj|
-  proj.images.each do |img|
-  end
+cover_image_array.each do |cover_image_hash|
+  # Set coverimage name and url
+  image = Image.new(filename: cover_image_hash[:name], url: cover_image_hash[:url])
+  # Find cover image project
+  project = Project.find_by(name: cover_image_hash[:name])
+  image.project_id = project.id
+  # Set coverimage value to true so it renders in front end
+  image.coverimage = true
+  image.save!
 end
 
 footer = Footer.new(
@@ -138,7 +152,6 @@ footer = Footer.new(
     "tb/" => "https://dharma-taylor.tumblr.com/"
   }
 )
-
 footer.save!
 
 about = Information.new

@@ -4,7 +4,6 @@
     unarchived="<%= @project.visibility%>">
 </backbutton>
 
-<% @images = @project.images.sort_by { |img| img.coverimage ? 0 : 1 } %>
 <div class="form-picture-container">
   <% @images.each do |img| %>
     <formgallery

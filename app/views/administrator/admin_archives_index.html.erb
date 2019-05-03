@@ -7,7 +7,7 @@
 </div>
 
 <div class="card-container">
-  <% @projects.select {|proj| proj.visibility == false}.reverse_each do |proj|  %>
+  <% @projects.select {|proj| proj.visibility == false}.each do |proj|  %>
     <card
       name="<%= proj.name %>"
       description="<%= proj.description %>"
@@ -21,7 +21,7 @@
 </div>
 
 <div class="list-wrapper">
-  <% @projects.select {|proj| proj.visibility == false}.reverse_each do |proj|  %>
+  <% @projects.select {|proj| proj.visibility == false}.each do |proj|  %>
     <list
       name="<%= proj.name %>"
       imagecount="<%= proj.images.count %>"

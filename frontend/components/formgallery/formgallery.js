@@ -43,7 +43,7 @@ module.exports = {
           return this.imgFilename
         } else {
           let name = this.imgUrlFull;
-          return `${name.slice(0,40)}`
+          return `${name.slice(0,40)}` //Name length
         }
       }
     },

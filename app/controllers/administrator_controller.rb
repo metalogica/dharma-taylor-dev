@@ -12,7 +12,15 @@ class AdministratorController < ApplicationController
   end
 
   def edit_project
+    # Upload project
     @project = Project.find_by(id: params[:id])
+    # Find project image
+    cover_image = @project.images.select(&:coverimage)
+    cover_image = Image.find_by(url: cover_image[0].url)
+    # Sort images by numerical order
+    @images = @project.images.select{ |img| img.coverimage != true }.sort_by { |img| img.filename }
+    # Prepend cover imave to array
+    @images.unshift(cover_image)
   end
 
   def update_project
@@ -143,10 +151,7 @@ class AdministratorController < ApplicationController
     end
   end
 
-
   private
-
-
 
   # Methods concerning the Project model
   def project_params

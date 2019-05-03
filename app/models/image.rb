@@ -3,4 +3,5 @@ class Image < ApplicationRecord
 
   enum format: [ :landscape, :portrait ]
   enum nature: [ :photo, :printable, :videostill, :archive ]
+
 end
