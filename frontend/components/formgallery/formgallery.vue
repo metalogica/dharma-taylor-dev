@@ -11,7 +11,7 @@
     <div v-if="coverImage" class="cover-image-text">
       <span>Cover Image</span>
     </div>
-    <span><strong>Name:</strong> {{this.imgName}}</span>
+    <span>{{this.imgName}}</span>
     <span><strong>Format:</strong> {{this.imgformat}}</span>
     <div class="form-dlt-img"
         v-if="showDelete"

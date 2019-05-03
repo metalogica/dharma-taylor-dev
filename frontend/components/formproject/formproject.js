@@ -80,6 +80,11 @@ module.exports = {
           return this.patchurl
         }
       }
+    },
+    currentPage: {
+      get: function() {
+        return window.location.href;
+      }
     }
   }
 }

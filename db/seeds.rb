@@ -121,6 +121,12 @@ Project.all.each do |proj|
   img.save!
 end
 
+# Add original image cover images
+Project.all.each do |proj|
+  proj.images.each do |img|
+  end
+end
+
 footer = Footer.new(
   telephone_contact: "+44 (0) 754 713 68 08",
   email_primary: "studio@dharmataylor.com",

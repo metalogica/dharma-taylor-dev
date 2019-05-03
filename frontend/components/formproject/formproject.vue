@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="form-container">
     <form class="form"
           v-bind:action="httpaction"
@@ -29,7 +29,7 @@
       </div>
 
       <div class="form-button-container">
-        <input class="form-button" href="/admin" value="Discard"></input>
+        <button class="form-button" :href="currentPage">Discard</button>
         <input class="form-button" type="submit" value="Submit">
       </div>
     </form>
