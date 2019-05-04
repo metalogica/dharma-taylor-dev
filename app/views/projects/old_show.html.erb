@@ -1,0 +1,47 @@
+<b-container >
+  <%-@project.portrait_photos.each_slice(2) do |group|%>
+    <b-form-row class="justify-content-md-center">
+      <%-group.each do |portrait_photo|%>
+        <b-col sm="12" md="5">
+          <b-img src="<%=cl_image_path portrait_photo.url%>" alt="<%="#{portrait_photo.url.split('_').first}"%>" fluid></b-img>
+        </b-col>
+      <%end%>
+    </b-form-row>
+  <%end%>
+  <b-form-row>
+    <%-@project.landscape_photos.each do |landscape_photo|%>
+      <b-col sm="12" md="10" offset-md="1">
+        <b-img src="<%=cl_image_path landscape_photo.url%>" alt="<%="#{landscape_photo.url.split('_').first}"%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
+    <%-@project.prints.each do |print|%>
+      <b-col sm="12" md="10" offset-md="1">
+        <b-img src="<%=cl_image_path print.url%>" alt="<%="#{print.url.split('_').first}"%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
+    <%-@project.videostills.each do |videostill|%>
+      <b-col sm="12" md="10" offset-md="1">
+        <b-img src="<%=cl_image_path videostill.url%>" alt="<%="#{videostill.url.split('_').first}"%>" fluid></b-img>
+      </b-col>
+    <%end%>
+  </b-form-row>
+  <b-form-row>
+    <b-col sm="12" md="10" offset-md="1">
+      <b-form-row>
+        <b-col cols="6" offset="6">
+          <div class="description float-right">
+            <%= simple_format @project.description %>
+          </div>
+        </b-col>
+      </b-form-row>
+    </b-col>
+  </b-form-row>
+  <div class="pagination">
+    <%=@project.previous.nil? ? raw("<span></span>") : link_to("⟵", project_path(@project.previous))%>
+    <%=@project.next.nil? ? raw("<span></span>") : link_to("⟶", project_path(@project.next))%>
+  </div>
+</b-container>
