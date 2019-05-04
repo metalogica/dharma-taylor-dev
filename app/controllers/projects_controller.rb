@@ -36,30 +36,10 @@ class ProjectsController < ApplicationController
           # image_hash[photo_filename] = image_hash[photo_filename] + ("__skip_id__")
         end
       end
-      # create_photo_array(filename, image_hash)
-      # filename = filename.prepend("__skip_photo__")
-      # @images << img if img.format != "portrait"
     end
-
   end
 
   private
-
-  def create_photo_array(photo_filename, image_hash)
-    photos = @project.images.select{ |img| img.coverimage != true }.sort_by { |img| img.filename }
-    # Create array of two images in portrait .each_with_index
-    photos.each_with_index do |img, index|
-      if (img.filename == photo_filename) && image_hash[photo_filename] == "portrait"
-        # Generate an array of two portrait photos and place in images array
-        @images << [img, photos[index+1]]
-        # prepend index+1 in the original hash with 'skip-'
-        byebug
-        image_hash[photo_filename] = image_hash[photo_filename] + ("__skip_id__")
-      end
-      # Place landscape photo directly in images array
-      @images << img if img.format != "portrait"
-    end
-  end
 
   def set_title
     @title = "| Featured" if @projects.present?
