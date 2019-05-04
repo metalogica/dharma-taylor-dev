@@ -1,3 +1,11 @@
+<% @images.each do |img| %>
+  <% if img.class == Array %>
+    <% img.each do |e| %>
+      <p><%= e.format %><p>
+      <p><%= e.filename %></p>
+    <% end %>
+  <% end %>
+<% end %>
 <b-container >
   <%-@project.portrait_photos.each_slice(2) do |group|%>
     <b-form-row class="justify-content-md-center">
