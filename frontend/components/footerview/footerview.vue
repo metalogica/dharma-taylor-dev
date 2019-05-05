@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-container">
+  <div class="container">
     <ul>
       <li>© {{ this.copyright }} DHARMA TAYLOR</li>
       <li>All rights reserved.</li>
