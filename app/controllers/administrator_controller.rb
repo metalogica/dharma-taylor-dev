@@ -47,9 +47,10 @@ class AdministratorController < ApplicationController
     project = Project.new(
       name: project_params[:name],
       description: project_params[:description],
-      blurb: project_params[:blurb]
+      blurb: project_params[:blurb],
     )
     if project.save!
+      project.update!(project_order: project.id)
       save_images(project) if project_params[:user_upload].present?
       redirect_to(edit_project_path(project.id))
     else
