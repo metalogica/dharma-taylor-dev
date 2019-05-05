@@ -56,6 +56,11 @@ module.exports = {
       get: function() {
         return '/admin/projects/' + this.id + '/edit/set_cover_image'
       }
+    },
+    noImg: {
+      get: function() {
+        return this.imgFilename.length < 1 ? true : false;
+      }
     }
   },
   methods: {
