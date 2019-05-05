@@ -1,5 +1,6 @@
 <b-container >
   <% @images.each do |img| %>
+  <% #byebug %>
     <!-- Controller outputs array of images; portrait photos are are x2 array within the image array -->
     <% if img.size >= 2 %>
       <b-form-row class="justify-content-md-center">
