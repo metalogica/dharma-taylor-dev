@@ -20,6 +20,19 @@
     <% end %>
   <% end %>
 
+  <!-- Project description -->
+  <b-form-row>
+    <b-col sm="12" md="10" offset-md="1">
+      <b-form-row>
+        <b-col cols="6" offset="6">
+          <div class="description float-right">
+            <%= simple_format @project.description %>
+          </div>
+        </b-col>
+      </b-form-row>
+    </b-col>
+  </b-form-row>
+
   <!-- Pagination -->
   <div class="pagination">
     <%=@project.previous.nil? ? raw("<span></span>") : link_to("⟵", project_path(@project.previous))%>
