@@ -5,7 +5,7 @@
       <b-form-row class="justify-content-md-center">
         <% img.each do |portrait_photo|%>
           <b-col sm="12" md="5">
-            <b-img src="<%=cl_image_path portrait_photo.url%>" alt="<%="#{portrait_photo.url.split('/').last}"%>" fluid></b-img>
+            <b-img src="<%=cl_image_path portrait_photo.url unless portrait_photo.nil? %>" alt="<%="#{portrait_photo.url.split('/').last}" unless portrait_photo.nil? %>" fluid></b-img>
           </b-col>
         <% end %>
       </b-form-row>

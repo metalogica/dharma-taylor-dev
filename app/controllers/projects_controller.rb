@@ -30,9 +30,9 @@ class ProjectsController < ApplicationController
           # Generate an array of two portrait photos and place in images array
           @images << [photo_object, photos[index+1]]
           # save the next portrait image file as a variable
-          next_image = photos[index+1].filename
+          next_image = photos[index+1].filename unless next_image.nil?
           # prepend next portrait iamge variable in the original hash with '__skip_photo__'
-          image_hash[next_image] = "__skip_photo__" + image_hash[next_image]
+          image_hash[next_image] = "__skip_photo__" + image_hash[next_image] unless next_image.nil?
           # image_hash[photo_filename] = image_hash[photo_filename] + ("__skip_id__")
         end
       end

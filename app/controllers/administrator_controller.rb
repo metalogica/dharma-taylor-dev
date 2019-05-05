@@ -49,8 +49,8 @@ class AdministratorController < ApplicationController
       description: project_params[:description],
       blurb: project_params[:blurb],
     )
+    set_project_order(project)
     if project.save!
-      project.update!(project_order: project.id)
       save_images(project) if project_params[:user_upload].present?
       redirect_to(edit_project_path(project.id))
     else
@@ -155,6 +155,11 @@ class AdministratorController < ApplicationController
   end
 
   private
+
+  def set_project_order(project)
+    project_array = Project.all.sort_by(&:project_order)
+    project.project_order = project_array.last.project_order + 1
+  end
 
   # Methods concerning the Project model
   def project_params
