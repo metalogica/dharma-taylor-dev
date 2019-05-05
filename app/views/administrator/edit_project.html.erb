@@ -7,14 +7,14 @@
 <div class="form-picture-container">
   <% @images.each do |img| %>
     <formgallery
-      coverimage="<%= img.coverimage %>"
+      coverimage="<%= img.coverimage unless img.nil? %>"
       new="false"
-      imgurlstub="<%= img.url %>"
-      imgformat="<%= img.format %>"
-      img-filename="<%= img.filename unless img.filename.nil? %>"
+      imgurlstub="<%= img.url unless img.nil? %>"
+      imgformat="<%= img.format unless img.nil? %>"
+      img-filename="<%= img.filename unless img.nil?%>"
       mycsrf="<%= form_authenticity_token %>"
       pageurl="<%= request.original_fullpath %>"
-      id="<%= img.id %>">
+      id="<%= img.id unless img.nil?%>">
     </formgallery>
   <% end %>
 </div>

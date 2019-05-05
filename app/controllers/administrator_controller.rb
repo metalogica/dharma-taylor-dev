@@ -15,8 +15,10 @@ class AdministratorController < ApplicationController
     # Upload project
     @project = Project.find_by(id: params[:id])
     # Find project image
-    cover_image = @project.images.select(&:coverimage)
-    cover_image = Image.find_by(url: cover_image[0].url)
+    unless @project.images.size < 1
+      cover_image = @project.images.select(&:coverimage)
+      cover_image = Image.find_by(url: cover_image[0].url)
+    end
     # Sort images by numerical order
     @images = @project.images.select{ |img| img.coverimage != true }.sort_by { |img| img.filename }
     # Prepend cover imave to array
@@ -183,8 +185,10 @@ class AdministratorController < ApplicationController
 
   # Methods concerning the Image model
   def choose_next_cover_image(project)
-    new_cover = project.images.first
-    new_cover.update!(coverimage: true)
+    unless project.images.nil?
+      new_cover = project.images.first
+      new_cover.update!(coverimage: true)
+    end
   end
 
   def save_cover_image(project)
@@ -206,11 +210,16 @@ class AdministratorController < ApplicationController
       local_image.project_id = id
       local_image.url = callback["secure_url"]
       local_image.filename = callback["original_filename"]
+      local_image.format = "portrait" if local_image.filename.match(/portrait/)
+      local_image.format = "landscape" if local_image.filename.match(/landscape/)
+      local_image.coverimage = true if local_image.filename.match(/cover/)
       local_image.save!
     end
-    cover = project.images.first
-    cover.coverimage = true
-    cover.save!
+    unless project.images.any? { |img| img.coverimage == true }
+      cover = project.images.first
+      cover.coverimage = true
+      cover.save!
+    end
   end
 
   def delete_image
