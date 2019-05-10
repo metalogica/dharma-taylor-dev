@@ -92,7 +92,7 @@ class AdministratorController < ApplicationController
     image = Image.find(params[:id])
     project = image.project
     if image.destroy!
-      choose_next_cover_image(project)
+      choose_next_cover_image(project) unless project.images.any? {|e| e.coverimage == true}
       redirect_to(edit_project_path(project.id))
       puts "\n\nCRUD: #{image} deleted successfully.\n\n"
     else

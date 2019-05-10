@@ -40,6 +40,11 @@ body.projects.index {
       height: 600px;
       object-fit: cover;
       object-position: center;
+
+      @media only screen and (max-width: 768px) {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -53,6 +58,11 @@ body.projects.show {
       height: 600px;
       object-fit: cover;
       object-position: left;
+
+      @media only screen and (max-width: 768px) {
+        max-width: 100%;
+        height: auto;
+      }
     }
 
     .pagination {
