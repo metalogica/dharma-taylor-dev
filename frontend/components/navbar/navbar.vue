@@ -7,7 +7,7 @@
     <b-navbar-brand class="d-md-none">
       <breadcrumb></breadcrumb>
     </b-navbar-brand>
-    
+
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
 

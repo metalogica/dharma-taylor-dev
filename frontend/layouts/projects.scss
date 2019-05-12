@@ -50,6 +50,12 @@ body.projects.index {
 }
 
 body.projects.show {
+  @media only screen and (max-width: 768px) {
+    a.navbar-brand {
+      display: none;
+    }
+  }
+
   .page-content {
     font-family: "Lineto" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -87,5 +93,3 @@ body.projects.edit, body.projects.new {
     position: absolute;
   }
 }
-
-

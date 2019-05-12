@@ -24,8 +24,8 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .navbar-light a.navbar-brand{
-    // display:none;
+  .hidden {
+    display:none;
   }
   .navbar-light.home a.navbar-brand{
     display:inline-block;
