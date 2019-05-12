@@ -30,6 +30,8 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
 # Meta tags
 gem 'meta-tags', '~> 2.10'
+# Sitemap generator
+gem 'sitemap_generator'
 
 # Generates javascript file that defines all Rails named routes as javascript helpers
 # gem 'js-routes', '~> 1.4', '>= 1.4.3'
@@ -42,7 +44,7 @@ gem 'meta-tags', '~> 2.10'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  #Prye byebug
+  # Seed dump
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
