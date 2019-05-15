@@ -6,6 +6,7 @@ class CreateFooters < ActiveRecord::Migration[5.1]
       t.string :email_contact
       t.string :location
       t.json :social_media
+      t.string :copyright
 
       t.timestamps
     end
