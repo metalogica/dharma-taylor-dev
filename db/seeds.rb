@@ -1,6 +1,6 @@
-User.create!([
-  {email: "rjarram@me.com", encrypted_password: "$2a$11$pd8G/wvMVrc3r.u/ggJy4OFHO6IzJbmmBCpWrq99aWmQONum6KNwq", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true}
-])
+# User.create!([
+#   {email: "rjarram@me.com", encrypted_password: "$2a$11$pd8G/wvMVrc3r.u/ggJy4OFHO6IzJbmmBCpWrq99aWmQONum6KNwq", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true}
+# ])
 Footer.create!([
   {telephone_contact: "+44 (0) 754 713 68 08", email_primary: "studio@dharmataylor.com", email_contact: "dharmataylorcontact@gmail.com", location: "London, UK", social_media: {"ig/"=>"https://www.instagram.com/dharmataylor/?hl=en", "tb/"=>"https://dharma-taylor.tumblr.com/"}, copyright: "2019"}
 ])
