@@ -9,25 +9,42 @@ Lailo was contracted by Dharma Taylor to develop a backend control panel for her
 
 There was no readme in the inherited project. This docuement outlines the environment and deployment process of the website to the author's best knowledge.
 
-2. CONTEXT
-2.1 DEVELOPMENT ENVIRONMENT
-The site uses webpacker to locally compile assets; sprockets has been completely disabled. Puma runs the local server as standard.
-
-2.2 PRODUCTION ENVIRONMENT
-The server is hosted on an AWS instance and the site is deployed via Capistrano. Once the source code has been pushed to the master branch on the Bitbucket Repo, executing Capistrano will push these changes to the production environment.
+2. DEPLOYMENT
+2.1Push the site to the madter branch on BitBucket. Then, execute Capistrano to deploy to production:
 ```
+bundle exec cap production deploy
 ```
 
-As stated earlier, there is a bug in the production environment that I have not been able to solve. Once you deploy the site to the server via. capistrano, you have to manually edit the Rails secret key base with the one on the Ubuntu $ENV.
+2.2 SSH into the AWS EC2 Instance.
+Get the SECRET_KEY_BASE with the following command:
 ```
+printenv
+```
+Place the secret key in the /config/secrets.yml file.
+
+2.3 Ensure that the database is working correctly: In the worst case, drop the production database and reseed. All the data is included in the seed file.
+```
+RAILS_ENV=production rake db:drop
+RAILS_ENV=production rake db:create
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake db:seed
 ```
 
-3. DATABASE SCHEMA
-The admin control panel
+2.3.1 Re-create the Single Admin User by logging into the production console
+```
+rails c production
+User.create!({email: ..., password: ...})
+```
 
+2.4 Reboot the Puma server
+```
+bundle exec cap production puma:restart
+```
 
-4. SITE STRUCTURE
-4.1 USER AUTHENTICATION
+And Voila!
+
+3. SITE STRUCTURE
+3.1 USER AUTHENTICATION
 I have used Devise for user authentication. However it does not sit nicely with the VueJs asset pipeline set up in this program. A fuller integration would use Devise via. Axios to create a pure frontend authentication system (https://stephenhowells.net/rails-5-user-registration-with-devise-vue-js-and-axios/). However this is beyond the scope of this particular project, although it would be a welcome addition to the code.
 
 Devise Core Structure:
