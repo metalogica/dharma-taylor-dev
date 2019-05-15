@@ -273,7 +273,7 @@ class AdministratorController < ApplicationController
 
   def refresh_sitemap
     # Set the host name for URL creation
-    SitemapGenerator::Sitemap.default_host = "http://0.0.0.0:3000"
+    SitemapGenerator::Sitemap.default_host = "https:www.dharmataylor.com"
 
     # Create index sitemaps file intelligently
     SitemapGenerator::Sitemap.create_index = :auto
