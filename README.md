@@ -3,12 +3,12 @@ Richard Jarram, Lailo Web Development
 www.lailo.io
 solo@lailo.io
 
-# BACKGROUND
+# Background
 Lailo was contracted by Dharma Taylor to develop a backend control panel for her website; the website was originally built by Heavy London. The backend control panel is built using Rails and Vue JS.
 
-There was no readme in the inherited project. This document outlines the deployment process of the website as the author understands it.
+# Deployment Details
+This document outlines the deployment process of the website.
 
-# DEPLOYMENT
 ## i. Push the site to the master branch on BitBucket. Then, execute Capistrano to deploy to production:
 ```
 bundle exec cap production deploy
