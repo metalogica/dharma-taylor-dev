@@ -24,8 +24,9 @@ You'll need the AWS .pem to do this. After you're logged in, get the SECRET_KEY_
 ```
 printenv
 ```
+Place the secret key in the /config/secrets.yml file.
 
-## iii. Place the secret key in the /config/secrets.yml file.
+## iii. Run Database Migrations
 Ensure that the database is working correctly: open up the rails production console and check to see if all migrations have run successfully. If not, run the migrations manually as such:
 
 ```
