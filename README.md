@@ -9,14 +9,15 @@ Lailo was contracted by Dharma Taylor to develop a backend control panel for her
 # Deployment Details
 This document outlines the deployment process of the website.
 
-## i. Deploy via Capistrano
-Push the site to the master branch on BitBucket. Then, execute Capistrano to deploy to production:
+## i. Deploy Site Via. Capistrano
+Push the site to the master branch on BitBucket. Then, execute Capistrano to deploy to production with the command:
 ```
 bundle exec cap production deploy
 ```
+This will take the master branch at BitBucket and push it to the server on AWS.
 
 ## ii. SSH into the AWS EC2 Instance.
-Get the SECRET_KEY_BASE with the following command:
+You'll need the AWS .pem to do this. After you're logged in, get the SECRET_KEY_BASE with the following command:
 ```
 printenv
 ```
