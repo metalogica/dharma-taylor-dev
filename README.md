@@ -9,7 +9,7 @@ Lailo was contracted by Dharma Taylor to develop a backend control panel for her
 # Deployment Details
 This document outlines the deployment process of the website.
 
-## i. Deploy Site Via. Capistrano
+## i. Deploy Site Using Capistrano
 Push the site to the master branch on BitBucket. Then, execute Capistrano to deploy to production with the command:
 ```
 bundle exec cap production deploy
