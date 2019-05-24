@@ -26,7 +26,13 @@ printenv
 ```
 
 ## iii. Place the secret key in the /config/secrets.yml file.
-Ensure that the database is working correctly: In the worst case, drop the production database and reseed. All the data is included in the seed file.
+Ensure that the database is working correctly: open up the rails production console and check to see if all migrations have run successfully. If not, run the migrations manually as such:
+
+```
+RAILS_ENV=production rake db:migrate
+```
+
+In the worst case scenario, drop the production database and reseed. All the user data is included in the seed file.
 ```
 RAILS_ENV=production rake db:drop
 RAILS_ENV=production rake db:create
