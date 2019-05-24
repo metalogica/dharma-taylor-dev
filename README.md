@@ -1,7 +1,10 @@
 # Contact Details
-Richard Jarram, Lailo Web Development
-www.lailo.io
-solo@lailo.io
+Richard Jarram, Lailo Web Development.
+
+Website: www.lailo.io
+Email address: solo@lailo.io
+
+Feel free to contact me about any questiosn regarding the code.
 
 # Background
 Lailo was contracted by Dharma Taylor to develop a backend control panel for her website; the website was originally built by Heavy London. The backend control panel is built using Rails and Vue JS.
