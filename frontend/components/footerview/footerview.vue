@@ -11,7 +11,7 @@
     </ul>
     <ul>
       <li>
-        <a href="/archives_list">archive</a>
+        <a href="/archive">archive</a>
       </li>
       <li>
         <a href="/information">information</a>
