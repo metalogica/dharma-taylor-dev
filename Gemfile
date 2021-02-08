@@ -9,7 +9,7 @@ ruby "2.4.2"
 # Simpleform for Information page form
 gem 'simple_form'
 # Carrier Wave for multiple image upload
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 # Devise for authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
